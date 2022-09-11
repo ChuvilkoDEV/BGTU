@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/13. three candies/cmake-build-debug/CMakeFiles/13__three_candies.dir
+D:/BGTU/Programming Basics/Lab 2b/13. three candies/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/13. three candies/cmake-build-debug/CMakeFiles/rebuild_cache.dir

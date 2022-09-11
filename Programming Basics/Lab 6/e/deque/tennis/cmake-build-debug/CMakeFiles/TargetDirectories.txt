@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/deque/tennis/cmake-build-debug/CMakeFiles/tennis.dir
+D:/BGTU/Programming Basics/6e/deque/tennis/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6e/deque/tennis/cmake-build-debug/CMakeFiles/rebuild_cache.dir

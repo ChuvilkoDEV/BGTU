@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2a/16. buttons_game/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2a/16. buttons_game/cmake-build-debug/CMakeFiles/16__buttons_game.dir
+D:/BGTU/Programming Basics/Lab 2a/16. buttons_game/cmake-build-debug/CMakeFiles/rebuild_cache.dir

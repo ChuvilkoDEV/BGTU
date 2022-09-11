@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/lab 5c/libs/algorithms/algorithms.h
+stdio.h
+-
+math.h
+-
+
+D:/BGTU/Programming Basics/lab 5c/libs/array/array_.h
+stdio.h
+-
+stdbool.h
+-
+malloc.h
+-
+stdlib.h
+-
+time.h
+-
+../algorithms/algorithms.h
+D:/BGTU/Programming Basics/lab 5c/libs/algorithms/algorithms.h
+
+D:/BGTU/Programming Basics/lab 5c/libs/getTime/getTime.h
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
+-
+time.h
+-
+../algorithms/algorithms.h
+D:/BGTU/Programming Basics/lab 5c/libs/algorithms/algorithms.h
+memory.h
+-
+
+D:/BGTU/Programming Basics/lab 5c/libs/sorts/sorts.h
+../algorithms/algorithms.h
+D:/BGTU/Programming Basics/lab 5c/libs/algorithms/algorithms.h
+../array/array_.h
+D:/BGTU/Programming Basics/lab 5c/libs/array/array_.h
+
+D:/BGTU/Programming Basics/lab 5c/main.c
+libs/array/array_.h
+D:/BGTU/Programming Basics/lab 5c/libs/array/array_.h
+libs/getTime/getTime.h
+D:/BGTU/Programming Basics/lab 5c/libs/getTime/getTime.h
+libs/sorts/sorts.h
+D:/BGTU/Programming Basics/lab 5c/libs/sorts/sorts.h
+

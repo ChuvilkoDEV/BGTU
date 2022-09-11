@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2a/14. uravnenie/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/Lab 2a/14. uravnenie/cmake-build-debug/CMakeFiles/14__uravnenie.dir
+D:/BGTU/Programming Basics/Lab 2a/14. uravnenie/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/28. Commentatorskaya budka/cmake-build-debug/CMakeFiles/28__Commentatorskaya_budka.dir
+D:/BGTU/Programming Basics/Lab 2b/28. Commentatorskaya budka/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/28. Commentatorskaya budka/cmake-build-debug/CMakeFiles/rebuild_cache.dir

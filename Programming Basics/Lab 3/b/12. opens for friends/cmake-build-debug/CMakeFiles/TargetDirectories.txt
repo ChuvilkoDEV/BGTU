@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/12. opens for friends/cmake-build-debug/CMakeFiles/12__opens_for_friends.dir
+D:/BGTU/Programming Basics/Lab 3b/12. opens for friends/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/12. opens for friends/cmake-build-debug/CMakeFiles/rebuild_cache.dir

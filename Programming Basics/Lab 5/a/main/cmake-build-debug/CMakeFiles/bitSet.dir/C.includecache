@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/Lab 5a/main/array.c
+stdio.h
+-
+limits.h
+-
+assert.h
+-
+array.h
+D:/BGTU/Programming Basics/Lab 5a/main/array.h
+
+D:/BGTU/Programming Basics/Lab 5a/main/array.h
+stddef.h
+-
+

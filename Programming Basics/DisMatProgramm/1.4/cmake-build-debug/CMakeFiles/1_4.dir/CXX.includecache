@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/DisMatProgramm/1.4/main.cpp
+iostream
+-
+stack
+-
+string
+-
+cmath
+-
+vector
+D:/BGTU/Programming Basics/DisMatProgramm/1.4/vector
+utility
+-
+stdlib.h
+-
+stdint.h
+-
+assert.h
+-
+memory.h
+-
+stdio.h
+-
+stdbool.h
+-
+stdio.h
+-
+limits.h
+-
+assert.h
+-
+

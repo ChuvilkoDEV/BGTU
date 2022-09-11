@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/libs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/libs/cmake-build-debug/CMakeFiles/libs.dir
+D:/BGTU/Programming Basics/libs/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/10. Bahgold/cmake-build-debug/CMakeFiles/10__Bahgold.dir
+D:/BGTU/Programming Basics/Lab 3b/10. Bahgold/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/10. Bahgold/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/lab 5d/libs/algorithms/algorithms.h
+stdbool.h
+-
+
+D:/BGTU/Programming Basics/lab 5d/libs/data_structures/matrix/matrix.c
+matrix.h
+D:/BGTU/Programming Basics/lab 5d/libs/data_structures/matrix/matrix.h
+
+D:/BGTU/Programming Basics/lab 5d/libs/data_structures/matrix/matrix.h
+stdio.h
+-
+malloc.h
+-
+stdbool.h
+-
+assert.h
+-
+math.h
+-
+../../algorithms/algorithms.h
+D:/BGTU/Programming Basics/lab 5d/libs/algorithms/algorithms.h
+
+D:/BGTU/Programming Basics/lab 5d/main.c
+stdio.h
+-
+libs/data_structures/matrix/matrix.h
+D:/BGTU/Programming Basics/lab 5d/libs/data_structures/matrix/matrix.h
+libs/algorithms/algorithms.h
+D:/BGTU/Programming Basics/lab 5d/libs/algorithms/algorithms.h
+

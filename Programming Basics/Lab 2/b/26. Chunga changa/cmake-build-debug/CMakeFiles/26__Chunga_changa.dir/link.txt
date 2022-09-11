@@ -1,0 +1,3 @@
+"D:\Programms\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\26__Chunga_changa.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe cr CMakeFiles\26__Chunga_changa.dir/objects.a @CMakeFiles\26__Chunga_changa.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\26__Chunga_changa.dir/objects.a -Wl,--no-whole-archive -o 26__Chunga_changa.exe -Wl,--out-implib,lib26__Chunga_changa.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\26__Chunga_changa.dir\linklibs.rsp

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/4. Vanya and the fence/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/4. Vanya and the fence/cmake-build-debug/CMakeFiles/4__Vanya_and_the_fence.dir
+D:/BGTU/Programming Basics/Lab 3b/4. Vanya and the fence/cmake-build-debug/CMakeFiles/rebuild_cache.dir

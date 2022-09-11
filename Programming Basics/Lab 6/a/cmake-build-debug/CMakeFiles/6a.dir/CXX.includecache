@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/6a/Codeforces/Codeforces.h
+iostream
+-
+
+D:/BGTU/Programming Basics/6a/main.cpp
+iostream
+-
+fstream
+-
+ctime
+-
+vector
+-
+Codeforces/Codeforces.h
+D:/BGTU/Programming Basics/6a/Codeforces/Codeforces.h
+thread/thread.h
+D:/BGTU/Programming Basics/6a/thread/thread.h
+
+D:/BGTU/Programming Basics/6a/thread/thread.h
+fstream
+D:/BGTU/Programming Basics/6a/thread/fstream
+

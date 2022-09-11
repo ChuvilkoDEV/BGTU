@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/4. two rabbit/cmake-build-debug/CMakeFiles/4__two_rabbit.dir
+D:/BGTU/Programming Basics/Lab 2b/4. two rabbit/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/4. two rabbit/cmake-build-debug/CMakeFiles/rebuild_cache.dir

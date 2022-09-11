@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6c/4. Stupid Mike/cmake-build-debug/CMakeFiles/4__Stupid_Mike.dir
+D:/BGTU/Programming Basics/6c/4. Stupid Mike/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6c/4. Stupid Mike/cmake-build-debug/CMakeFiles/rebuild_cache.dir

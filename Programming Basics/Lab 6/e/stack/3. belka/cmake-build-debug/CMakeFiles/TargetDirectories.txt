@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/stack/3. belka/cmake-build-debug/CMakeFiles/3__belka.dir
+D:/BGTU/Programming Basics/6e/stack/3. belka/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6e/stack/3. belka/cmake-build-debug/CMakeFiles/rebuild_cache.dir

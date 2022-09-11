@@ -1,0 +1,3 @@
+D:/BGTU/Informatics/calculator system schisl/cmake-build-debug/CMakeFiles/calculator_system_schisl.dir
+D:/BGTU/Informatics/calculator system schisl/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Informatics/calculator system schisl/cmake-build-debug/CMakeFiles/rebuild_cache.dir

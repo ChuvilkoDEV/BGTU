@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/21. BearInvest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/21. BearInvest/cmake-build-debug/CMakeFiles/21__BearInvest.dir
+D:/BGTU/Programming Basics/Lab 3b/21. BearInvest/cmake-build-debug/CMakeFiles/edit_cache.dir

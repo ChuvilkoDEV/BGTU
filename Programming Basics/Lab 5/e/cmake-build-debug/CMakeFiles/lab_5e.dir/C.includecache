@@ -1,0 +1,142 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+stdio.h
+-
+assert.h
+-
+string.h
+-
+ctype.h
+-
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/10_reverseWordInString.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/11_printWordBeforeFirstWordWithA.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/12_lastCommonWord.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/13_haveSameWord.h
+12_lastCommonWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/12_lastCommonWord.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/15_differentFromTheLastWord.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/16_lastCommonWords.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/1_digitToStartTransform.h
+stdio.h
+-
+stdbool.h
+-
+ctype.h
+-
+assert.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/assert.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/2_removeAdjacentEqualLetters.h
+stdio.h
+-
+stdbool.h
+-
+ctype.h
+-
+assert.h
+-
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/3_getWord.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/4_replaceNumberDigitsBySpace.h
+ctype.h
+-
+string.h
+-
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/5_replace.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/6_isOrderedWord.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/7_outputReverse.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/8_countPalindroms.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/9_wordAlternation.h
+../string_.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/tests.c
+tests.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/tests.h
+
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/tests.h
+stdio.h
+-
+stdbool.h
+-
+ctype.h
+-
+assert.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/assert.h
+1_digitToStartTransform.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/1_digitToStartTransform.h
+2_removeAdjacentEqualLetters.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/2_removeAdjacentEqualLetters.h
+3_getWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/3_getWord.h
+4_replaceNumberDigitsBySpace.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/4_replaceNumberDigitsBySpace.h
+5_replace.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/5_replace.h
+6_isOrderedWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/6_isOrderedWord.h
+7_outputReverse.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/7_outputReverse.h
+8_countPalindroms.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/8_countPalindroms.h
+9_wordAlternation.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/9_wordAlternation.h
+10_reverseWordInString.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/10_reverseWordInString.h
+11_printWordBeforeFirstWordWithA.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/11_printWordBeforeFirstWordWithA.h
+12_lastCommonWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/12_lastCommonWord.h
+13_haveSameWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/13_haveSameWord.h
+15_differentFromTheLastWord.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/15_differentFromTheLastWord.h
+16_lastCommonWords.h
+D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/16_lastCommonWords.h
+

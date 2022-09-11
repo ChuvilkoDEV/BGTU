@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/15. sys admin/cmake-build-debug/CMakeFiles/15__sys_admin.dir
+D:/BGTU/Programming Basics/Lab 3b/15. sys admin/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/15. sys admin/cmake-build-debug/CMakeFiles/rebuild_cache.dir

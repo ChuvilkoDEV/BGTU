@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/stack/1. gameString/cmake-build-debug/CMakeFiles/1__gameString.dir
+D:/BGTU/Programming Basics/6e/stack/1. gameString/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6e/stack/1. gameString/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6c/12. Stupid CAt/cmake-build-debug/CMakeFiles/12__Stupid_CAt.dir
+D:/BGTU/Programming Basics/6c/12. Stupid CAt/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6c/12. Stupid CAt/cmake-build-debug/CMakeFiles/rebuild_cache.dir

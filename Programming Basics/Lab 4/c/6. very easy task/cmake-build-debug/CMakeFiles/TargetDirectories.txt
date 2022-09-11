@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/6. very easy task/cmake-build-debug/CMakeFiles/6__very_easy_task.dir
+D:/BGTU/Programming Basics/Lab 4c/6. very easy task/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/6. very easy task/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/Lab 6/f/algorithms/algorithms.h
+iostream
+-
+algorithm
+-
+cmath
+D:/BGTU/Programming Basics/Lab 6/f/algorithms/cmath
+
+D:/BGTU/Programming Basics/Lab 6/f/fraction/Fraction.cpp
+Fraction.h
+D:/BGTU/Programming Basics/Lab 6/f/fraction/Fraction.h
+
+D:/BGTU/Programming Basics/Lab 6/f/fraction/Fraction.h
+cassert
+-
+iostream
+-
+../algorithms/algorithms.h
+D:/BGTU/Programming Basics/Lab 6/f/algorithms/algorithms.h
+

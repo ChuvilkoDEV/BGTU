@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/2. Polikarp and money/cmake-build-debug/CMakeFiles/2__Polikarp_and_money.dir
+D:/BGTU/Programming Basics/Lab 2b/2. Polikarp and money/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/2. Polikarp and money/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4a/4. getDistance/cmake-build-debug/CMakeFiles/4__getDistance.dir
+D:/BGTU/Programming Basics/Lab 4a/4. getDistance/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4a/4. getDistance/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/13. PARA TEM/cmake-build-debug/CMakeFiles/13__PARA_TEM.dir
+D:/BGTU/Programming Basics/Lab 4c/13. PARA TEM/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/13. PARA TEM/cmake-build-debug/CMakeFiles/rebuild_cache.dir

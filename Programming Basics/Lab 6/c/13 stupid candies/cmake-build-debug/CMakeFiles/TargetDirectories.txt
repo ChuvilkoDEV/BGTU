@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6c/stupid candies/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6c/stupid candies/cmake-build-debug/CMakeFiles/stupid_candies.dir
+D:/BGTU/Programming Basics/6c/stupid candies/cmake-build-debug/CMakeFiles/rebuild_cache.dir

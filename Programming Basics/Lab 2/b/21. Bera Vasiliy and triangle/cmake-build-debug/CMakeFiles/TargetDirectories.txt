@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/21. Bera Vasiliy and triangle/cmake-build-debug/CMakeFiles/21__Bera_Vasiliy_and_triangle.dir
+D:/BGTU/Programming Basics/Lab 2b/21. Bera Vasiliy and triangle/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/21. Bera Vasiliy and triangle/cmake-build-debug/CMakeFiles/rebuild_cache.dir

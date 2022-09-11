@@ -1,0 +1,3 @@
+"D:\Programms\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\bitSet.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe cr CMakeFiles\bitSet.dir/objects.a @CMakeFiles\bitSet.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\bitSet.dir/objects.a -Wl,--no-whole-archive -o bitSet.exe -Wl,--out-implib,libbitSet.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\bitSet.dir\linklibs.rsp

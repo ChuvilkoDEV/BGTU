@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2a/8. func/cmake-build-debug/CMakeFiles/8.dir
+D:/BGTU/Programming Basics/Lab 2a/8. func/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2a/8. func/cmake-build-debug/CMakeFiles/rebuild_cache.dir

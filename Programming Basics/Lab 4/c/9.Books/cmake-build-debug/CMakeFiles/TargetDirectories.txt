@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/9.Books/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/9.Books/cmake-build-debug/CMakeFiles/9_Books.dir
+D:/BGTU/Programming Basics/Lab 4c/9.Books/cmake-build-debug/CMakeFiles/edit_cache.dir

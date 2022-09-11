@@ -1,0 +1,959 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{cmap}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{multirow}
+\usepackage{indentfirst}
+% русский язык
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage[T2A]{fontenc} % кодировка 
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel} % локализация и переносы
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+
+% математика
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[left=3cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+%для блок-схемы
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows,arrows.meta}
+\usepackage{enumerate}
+
+
+\lstdefinestyle{grsy}{
+	language=C++,
+	backgroundcolor=\color{black!3},                 
+	basicstyle=\footnotesize,                      
+	breakatwhitespace=false, 
+	breaklines=true,   
+	frame=single,                             
+	commentstyle=\color{ForestGreen},                  
+	directivestyle=\color{black},               	
+	extendedchars=\true,                            
+	firstnumber=1,                                 
+	keepspaces=true,                               
+	keywordstyle=\color{WildStrawberry},                
+	otherkeywords={int32\_t,int64\_t,size\_t,bool,true,false},
+	numbers=left, 
+	numbersep=5pt,
+	numberstyle=\tiny\color{darkgray},
+	showspaces=false,                              
+	showstringspaces=false,                         
+	showtabs=false,                                
+	stepnumber=1,                                  
+	stringstyle=\color{blue}\ttfamily,  
+	morestring=[b]",                 
+	tabsize=4,
+	texcl=true,
+	inputencoding=utf8             
+}
+
+\lstset{style=grsy}
+
+
+\begin{document}
+	
+	
+\title{text}
+	
+\thispagestyle{empty}
+	
+\begin{center}
+	
+	\textsc{МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ\\
+		ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ \\}
+	\textbf{«БЕЛГОРОДСКИЙ ГОСУДАРСТВЕННЫЙ
+		ТЕХНОЛОГИЧЕСКИЙ УНИВЕРСИТЕТ им. В. Г. ШУХОВА»}\\[1mm]
+	
+	Кафедра программного обеспечения вычислительной техники и автоматизированных систем\\[4.5cm]
+	
+	{\huge \textbf{Лабораторная работа №6f}} \\
+	
+	\large 	по дисциплине: Основы программирования\\
+	\large 	Тема: "Структуры в стиле С++"\\[3.5cm]
+	
+\end{center}
+	
+	\begin{flushright}
+		
+		\begin{minipage}{.45\textwidth}
+			
+			Выполнил: ст. группы ПВ-211
+			
+			Чувилко Илья Романович\\[2mm]
+			
+			Проверили:
+			
+			Притчин Иван Сергеевич
+			
+			Черников Сергей Викторович
+			
+		\end{minipage}
+		
+	\end{flushright}
+	
+	\vfill
+	
+	\begin{center}
+		
+		\large Белгород 2022 г.
+		
+	\end{center}
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	\tableofcontents
+	
+	
+	
+	\setcounter{page}{2}
+	
+	
+\newpage
+\section{\textbf{Fraction}}
+	
+Fraction – структура для работы с дробями.
+	
+\subsection{Заголовочный файл $Fraction.h$:}
+	
+\begin{lstlisting}
+#include <cassert>
+#include <iostream>
+
+#include "../algorithms/algorithms.h"
+
+struct Fraction {
+  int numerator = 0;
+  int denumerator = 1;
+
+  // Конструктор для Fraction
+  Fraction() = default;
+
+  // Конструктор для Fraction
+  Fraction(Fraction &f);
+
+  // Конструктор для Fraction
+  Fraction(int n, int d);
+
+  // Возвращает true, если дробь положительна
+  bool isPositive() const;
+
+  // Приводит Fraction к нормальному виду
+  void bringingToNormal();
+
+  // Возвращает упрощенную дробь f структуры Fraction
+  void simpleFraction();
+
+  // Возвращает дробь, которая является результатом произведения дроби f1 и f2
+  Fraction operator*(Fraction &other) const;
+
+  // Возвращает дробь, которая является результатом делением дроби f1 на f2
+  Fraction operator/(Fraction &other) const;
+
+  // Возвращает дробь, которая является разницей f1 и f2
+  Fraction operator-(Fraction &f);
+
+  // Возвращает дробь, которая является суммой f1 и f2
+  Fraction operator+(Fraction &f) const;
+};
+
+void tests_Fraction();
+
+\end{lstlisting}
+
+\bigbreak
+
+\subsection{Файл реализации $Fraction.cpp$:}
+
+\begin{lstlisting}
+#include "Fraction.h"
+
+using namespace std;
+
+// Конструктор для Fraction
+Fraction::Fraction(int n, int d) {
+  numerator = n;
+  denumerator = d;
+  bringingToNormal();
+}
+
+// Конструктор для Fraction
+Fraction::Fraction(Fraction &f) {
+  numerator = f.numerator;
+  denumerator = f.denumerator;
+  bringingToNormal();
+}
+
+// Возвращает true, если дробь положительна
+bool Fraction::isPositive() const {
+  return (numerator >= 0) == (denumerator >= 0);
+}
+
+// Приводит Fraction к нормальному виду
+void Fraction::bringingToNormal() {
+  if (numerator == 0) {
+    denumerator = 1;
+    return;
+  }
+  simpleFraction();
+  if (isPositive())
+    numerator = abs(numerator);
+  else
+    numerator = -abs(numerator);
+  denumerator = abs(denumerator);
+}
+
+// Возвращает упрощенную дробь f структуры Fraction
+void Fraction::simpleFraction() {
+  assert(denumerator != 0);
+  int d = gcd(numerator, denumerator);
+  numerator /= d;
+  denumerator /= d;
+}
+
+// Возвращает дробь, которая является результатом произведения дроби f1 и f2
+Fraction Fraction::operator*(Fraction &other) const {
+  Fraction res(this->numerator * other.numerator,
+               this->denumerator * other.denumerator);
+  res.bringingToNormal();
+  return res;
+}
+
+// Возвращает дробь, которая является результатом делением дроби f1 на f2
+Fraction Fraction::operator/(Fraction &other) const {
+  Fraction tmp1(other.denumerator, other.numerator);
+  Fraction tmp2((Fraction &) *this);
+  Fraction res;
+  res = tmp2 * tmp1;
+  return res;
+}
+
+// Возвращает дробь, которая является суммой f1 и f2
+Fraction Fraction::operator+(Fraction &f) const {
+  int d = lcm(this->denumerator, f.denumerator);
+  Fraction res(this->numerator * (d / this->denumerator) +
+               f.numerator * (d / f.denumerator),
+               d);
+  res.bringingToNormal();
+  return res;
+}
+
+// Возвращает дробь, которая является разницей f1 и f2
+Fraction Fraction::operator-(Fraction &f) {
+  Fraction temp(-f.numerator, f.denumerator);
+  Fraction res;
+  res = temp + *this;
+  return res;
+}
+\end{lstlisting}
+
+
+\textbf{Результаты работы программы:}
+
+
+\subsection{Тесты:}
+
+\begin{lstlisting}
+void test_Fraction_constructor1() {
+  Fraction f{};
+
+  assert(f.numerator == 0);
+  assert(f.denumerator == 1);
+}
+
+void test_Fraction_constructor2() {
+  Fraction f1{1, 2};
+  Fraction f2{f1};
+
+  assert(f1.numerator == 1);
+  assert(f1.denumerator == 2);
+  assert(f1.numerator == f2.numerator);
+  assert(f1.denumerator == f2.denumerator);
+}
+
+void test_Fraction_constructor3() {
+  Fraction f1{2, 4};
+
+  assert(f1.numerator == 1);
+  assert(f1.denumerator == 2);
+}
+
+void test_Fraction_constructor4() {
+  Fraction f1{0, 4};
+
+  assert(f1.numerator == 0);
+  assert(f1.denumerator == 1);
+}
+
+void test_Fraction_constructor5() {
+  Fraction f1{-1, -2};
+
+  assert(f1.numerator == 1);
+  assert(f1.denumerator == 2);
+}
+
+void test_Fraction_constructor6() {
+  Fraction f1{1, -2};
+
+  assert(f1.numerator == -1);
+  assert(f1.denumerator == 2);
+}
+
+void test_Fraction_constructor() {
+  test_Fraction_constructor1();
+  test_Fraction_constructor2();
+  test_Fraction_constructor3();
+  test_Fraction_constructor4();
+  test_Fraction_constructor5();
+  test_Fraction_constructor6();
+}
+
+void test_Fraction_mul() {
+  Fraction f1(2, 5);
+  Fraction f2(10, 8);
+
+  Fraction res{};
+  res = f1 * f2;
+
+  assert(res.numerator == 1);
+  assert(res.denumerator == 2);
+}
+
+void test_Fraction_div() {
+  Fraction f1(5, 2);
+  Fraction f2(10, 8);
+
+  Fraction res{};
+  res = f1 / f2;
+
+  assert(res.numerator == 2);
+  assert(res.denumerator == 1);
+}
+
+void test_Fraction_plus() {
+  Fraction f1(5, 2);
+  Fraction f2(10, 8);
+
+  Fraction res{};
+  res = f1 + f2;
+
+  assert(res.numerator == 15);
+  assert(res.denumerator == 4);
+}
+
+void test_Fraction_minus() {
+  Fraction f1(5, 2);
+  Fraction f2(10, 8);
+
+  Fraction res{};
+  res = f1 - f2;
+
+  assert(res.numerator == 5);
+  assert(res.denumerator == 4);
+}
+
+void tests_Fraction() {
+  test_Fraction_constructor();
+  test_Fraction_mul();
+  test_Fraction_div();
+  test_Fraction_plus();
+  test_Fraction_minus();
+}
+\end{lstlisting}
+
+\newpage
+
+\section{\textbf{Material Point}}
+	
+ MaterialPoint – структура для работы с материальными точками.
+	
+\subsection{Заголовочный файл $MaterialPoint.h$:}
+	
+\begin{lstlisting}
+
+#include <iostream>
+#include <cmath>
+#include <cassert>
+
+class MaterialPoint {
+private:
+  double _position = 0;       // Положение материальной точки
+  double _speed = 0;         // Скорость материальной точки
+  double _acceleration = 0;  // Ускорение материальной точки
+
+public:
+  // Конструктор материальной точки
+  explicit MaterialPoint(double speed = 0, double acceleration = 0);
+
+  // Сеттер скорости
+  void setSpeed(double speed);
+
+  // Сеттер ускорения
+  void setAcceleration(double acceleration);
+
+  // Геттер позиции
+  double getPosition() const;
+
+  // Геттер скорости
+  double getSpeed() const;
+
+  double getAcceleration() const;
+
+  // Двигает материальную точку по числовой прямой на протяжении duration секунд
+  void move(int duration);
+};
+
+void tests_MaterialPoint();
+
+\end{lstlisting}
+
+\subsection{Файл реализации $.cpp$:}
+	
+\begin{lstlisting}
+
+#include "MaterialPoint.h"
+
+// Конструктор материальной точки
+MaterialPoint::MaterialPoint(double speed, double acceleration) {
+  _speed = speed;
+  _acceleration = acceleration;
+}
+
+// Сеттер скорости
+void MaterialPoint::setSpeed(double speed) {
+  _speed = speed;
+}
+
+// Сеттер ускорения
+void MaterialPoint::setAcceleration(double acceleration) {
+  _acceleration = acceleration;
+}
+
+// Геттер позиции
+double MaterialPoint::getPosition() const {
+  return _position;
+}
+
+// Геттер скорости
+double MaterialPoint::getSpeed() const {
+  return _speed;
+}
+
+double MaterialPoint::getAcceleration() const {
+  return _acceleration;
+}
+
+// Двигает материальную точку по числовой прямой на протяжении duration секунд
+void MaterialPoint::move(int duration) {
+  _position += duration * _speed + _acceleration * pow(duration, 2) / 2;
+  _speed += duration * _acceleration;
+}
+
+\end{lstlisting}
+
+\subsection{Тесты:}
+	
+\begin{lstlisting}
+void tests_MaterialPoint_constructor1() {
+  MaterialPoint m;
+
+  assert(m.getPosition() == 0);
+  assert(m.getSpeed() == 0);
+  assert(m.getAcceleration() == 0);
+}
+
+void tests_MaterialPoint_constructor2() {
+  MaterialPoint m(1);
+
+  assert(m.getPosition() == 0);
+  assert(m.getSpeed() == 1);
+  assert(m.getAcceleration() == 0);
+}
+
+void tests_MaterialPoint_constructor3() {
+  MaterialPoint m(1, 2);
+
+  assert(m.getPosition() == 0);
+  assert(m.getSpeed() == 1);
+  assert(m.getAcceleration() == 2);
+}
+
+void tests_MaterialPoint_constructor() {
+  tests_MaterialPoint_constructor1();
+  tests_MaterialPoint_constructor2();
+  tests_MaterialPoint_constructor3();
+}
+
+void tests_MaterialPoint() {
+  tests_MaterialPoint_constructor();
+}
+\end{lstlisting}
+
+\newpage
+
+\section{\textbf{BitSet}}
+	
+BitSet – структура для хранения множества в битовом представлении.
+	
+\subsection{Заголовочный файл $BitSet.h$:}
+	
+\begin{lstlisting}
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cassert>
+
+using namespace std;
+
+class BitSet {
+  private:
+  // максимальное поддерживаемое значение битсетом как таковым
+  static const int _MAX_VALUE_SUPPORTED = 31;
+  // максимальное поддерживаемое значение
+  // для создаваемой структуры
+  const int _maxValue = _MAX_VALUE_SUPPORTED;
+  // поле для хранения значений
+  uint32_t _values = 0;
+  // мощность множества
+  unsigned _power = 0;
+
+  public:
+  BitSet() = default;
+
+  BitSet(uint32_t maxValue);
+
+  BitSet(const vector<int> &v);
+
+  uint32_t getValues() const;
+
+  void setValues(uint32_t values);
+
+  unsigned getPower() const;
+
+  bool empty() const;
+
+  bool find(unsigned x) const;
+
+  void insert(unsigned x);
+
+  void erase(unsigned x);
+
+  bool operator==(BitSet &other) const;
+
+  bool operator!=(BitSet &other) const;
+
+  bool isSubset(const BitSet &set) const;
+
+  static BitSet intersection_(const BitSet &lhs, const BitSet &rhs);
+
+  static BitSet difference_(const BitSet &lhs, const BitSet &rhs);
+
+  static BitSet symmetricDifference_(const BitSet &lhs,
+                                     const BitSet &rhs);
+
+  static BitSet complement_(const BitSet &set);
+
+  friend ostream& operator<<(std::ostream &out, const BitSet &f);
+};
+
+void tests_BitSet();
+
+\end{lstlisting}
+
+\subsection{Файл реализации $BitSet.cpp$:}
+	
+\begin{lstlisting}
+#include "BitSet.h"
+
+
+BitSet::BitSet(uint32_t maxValue) {
+  insert(maxValue);
+}
+
+BitSet::BitSet(const vector<int> &v) {
+  for (auto &i: v) {
+    insert(i);
+  }
+}
+
+uint32_t BitSet::getValues() const {
+  return _values;
+}
+
+void BitSet::setValues(uint32_t values) {
+  _values = values;
+  _power = 0;
+  for (int i = 0; i < 32; i++)
+    if (find(i))
+      _power++;
+}
+
+unsigned BitSet::getPower() const {
+  return _power;
+}
+
+bool BitSet::empty() const {
+  return _power == 0;
+}
+
+bool BitSet::find(unsigned x) const {
+  return (_values >> x) % 2;
+}
+
+void BitSet::insert(unsigned x) {
+  try {
+    if (x > _MAX_VALUE_SUPPORTED)
+      throw (string) "invalid_argument: x > 31";
+    if (!find(x)) {
+      _values |= 1 << x;
+      _power++;
+    }
+  } catch (const string &s) {
+    cerr << s;
+    exit(2);
+  }
+}
+
+void BitSet::erase(unsigned x) {
+  try {
+    if (x > _MAX_VALUE_SUPPORTED)
+      throw (string) "invalid_argument: x > 31";
+    if (find(x)) {
+      _values &= ~(0 & (1 << x));
+      _power--;
+    }
+  } catch (const string &s) {
+    cerr << s;
+    exit(2);
+  }
+}
+
+bool BitSet::operator==(BitSet &other) const {
+  return this->_values == other.getValues();
+}
+
+bool BitSet::operator!=(BitSet &other) const {
+  return this->_values != other.getValues();
+}
+
+bool BitSet::isSubset(const BitSet &set) const {
+  return set.getValues() == (set.getValues() | this->getValues());
+}
+
+BitSet BitSet::intersection_(const BitSet &lhs, const BitSet &rhs) {
+  BitSet res(0);
+  res.setValues(lhs.getValues() & rhs.getValues());
+  return res;
+}
+
+BitSet BitSet::difference_(const BitSet &lhs, const BitSet &rhs) {
+  BitSet res{};
+  res.setValues(intersection_(lhs, complement_(rhs)).getValues());
+  return res;
+}
+
+BitSet BitSet::symmetricDifference_(const BitSet &lhs,
+                                    const BitSet &rhs) {
+  BitSet res{};
+  res.setValues(
+    difference_(lhs, rhs).getValues() |
+    difference_(rhs, lhs).getValues());
+  return res;
+}
+
+BitSet BitSet::complement_(const BitSet &set) {
+  BitSet res(0);
+  res.setValues(~set.getValues());
+  return res;
+}
+
+ostream &operator<<(ostream &out, const BitSet &f) {
+  out << '{';
+  for (int i = 0; i < 31; i++)
+    if (f.find(i))
+      out << i << ", ";
+  out << "\b\b}";
+  return out;
+}
+
+void test_getValues() {
+  BitSet a({1, 2, 3, 4});
+  uint32_t res = 0;
+  res += 1 << 1;
+  res += 1 << 2;
+  res += 1 << 3;
+  res += 1 << 4;
+
+  assert(a.getValues() == res);
+}
+\end{lstlisting}
+
+\subsection{Тесты:}
+	
+\begin{lstlisting}
+void test_find1() {
+  BitSet a(4);
+
+  assert(a.find(4));
+}
+
+void test_find2() {
+  BitSet a(4);
+
+  assert(a.find(4));
+}
+
+void test_find() {
+  test_find1();
+  test_find2();
+}
+
+void test_getPower1() {
+  BitSet a({1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+
+  assert(a.getPower() == 10);
+}
+
+void test_getPower2() {
+  BitSet a({1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
+  a.erase(1);
+  a.erase(10);
+
+  assert(a.getPower() == 8);
+}
+
+void test_getPower() {
+  test_getPower1();
+  test_getPower2();
+}
+
+void test_operators_equal() {
+  BitSet a({1, 2, 3});
+  BitSet b({1, 2, 3});
+
+  assert(a == b);
+}
+
+void test_operators_notEqual() {
+  BitSet a({1, 2, 3});
+  BitSet b({1, 2});
+
+  assert(a != b);
+}
+
+void test_operators() {
+  test_operators_equal();
+  test_operators_notEqual();
+}
+
+void test_isSubset1() {
+  BitSet a({1, 2, 3});
+  BitSet b({1, 2});
+
+  assert(b.isSubset(a));
+}
+
+void test_isSubset2() {
+  BitSet a({1, 2, 3});
+  BitSet b({1, 2});
+
+  assert(!a.isSubset(b));
+}
+
+void test_isSubset() {
+  test_isSubset1();
+  test_isSubset2();
+}
+
+void test_intersection() {
+  BitSet a({1, 2, 3, 4});
+  BitSet b({3, 4, 5, 6});
+  BitSet c = BitSet::intersection_(a, b);
+
+  BitSet res({3, 4});
+
+  assert(res == c);
+  assert(c.getPower() == res.getPower());
+}
+
+void test_difference() {
+  BitSet a({1, 2, 3, 4});
+  BitSet b({3, 4, 5, 6});
+  BitSet c = BitSet::difference_(a, b);
+
+  BitSet res({1, 2});
+
+  assert(res == c);
+  assert(c.getPower() == res.getPower());
+}
+
+void test_symmetricDifference() {
+  BitSet a({1, 2, 3, 4});
+  BitSet b({3, 4, 5, 6});
+  BitSet c = BitSet::symmetricDifference_(a, b);
+
+  BitSet res({1, 2, 5, 6});
+
+  assert(res == c);
+  assert(c.getPower() == res.getPower());
+}
+
+void tests_BitSet() {
+  test_getValues();
+  test_find();
+  test_getPower();
+  test_operators();
+  test_isSubset();
+  test_intersection();
+  test_difference();
+  test_symmetricDifference();
+}
+\end{lstlisting}
+
+\newpage
+
+\section{\textbf{Prefix Sum}}
+	
+PrefixSum – структура для хранения префиксных сумм.
+	
+\subsection{Заголовочный файл $PrefixSum.h$:}
+	
+\begin{lstlisting}
+
+#include <iostream>
+#include <vector>
+#include <cassert>
+
+using namespace std;
+
+struct PrefixSum {
+  private:
+  vector<int> prefixSum_{};
+
+  public:
+  PrefixSum(const int *a, size_t n);
+
+  PrefixSum(const vector<int> &a);
+
+  vector<int> &getPrefixSum();
+
+// возвращает сумму элементов от l до r не включая r.
+// например, для массива 1, 3, 5
+// запрос getSum(0, 2) должен возвращать 1 + 3 = 4;
+  long long getSum(int l, int r);
+
+// данный запрос должен каким-то образом,
+// без хранения старого массива
+// обновлять префиксный массив так, как будто мы
+// заменили i-ый элемент старого массива на v
+  void set(size_t i, int v);
+};
+
+void tests_PrefixSum();
+
+\end{lstlisting}
+
+\subsection{Файл реализации $PrefixSum.cpp$:}
+	
+\begin{lstlisting}
+#include "PrefixSum.h"
+
+PrefixSum::PrefixSum(const int *a, size_t n) {
+  int s = 0;
+  prefixSum_.push_back(s);
+  for (size_t i = 0; i < n; i++) {
+    s += a[i];
+    prefixSum_.push_back(s);
+  }
+}
+
+PrefixSum::PrefixSum(const vector<int> &a) {
+  int s = 0;
+  prefixSum_.push_back(s);
+  for (auto &i: a) {
+    s += i;
+    prefixSum_.push_back(s);
+  }
+}
+
+vector<int> &PrefixSum::getPrefixSum() {
+  return prefixSum_;
+}
+
+long long PrefixSum::getSum(int l, int r) {
+  return prefixSum_[r] - prefixSum_[l];
+}
+
+void PrefixSum::set(size_t i, int v) {
+  int iElementOld = prefixSum_[i + 1] - prefixSum_[i];
+  int diff = v - iElementOld;
+  for (size_t j = i + 1; j < prefixSum_.size(); j++)
+    prefixSum_[j] += diff;
+}
+
+\end{lstlisting}
+
+\subsection{Тесты:}
+	
+\begin{lstlisting}
+void test_constructor1() {
+  int a[] = {1, 2, 5, 7};
+  PrefixSum s(a, 4);
+
+  vector<int> res{0, 1, 3, 8, 15};
+
+  assert(res == s.getPrefixSum());
+}
+
+void test_constructor2() {
+  vector<int> v{1, 2, 5, 7};
+  PrefixSum s(v);
+
+  vector<int> res{0, 1, 3, 8, 15};
+
+  assert(res == s.getPrefixSum());
+}
+
+void test_constructor() {
+  test_constructor1();
+  test_constructor2();
+}
+
+void test_getSum() {
+  vector<int> v{1, 3, 6, 9};
+  PrefixSum s(v);
+
+  assert(s.getSum(1, 4) == 18);
+}
+
+void test_set() {
+  vector<int> v{1, 3, 6, 9};
+  PrefixSum s(v);
+
+  s.set(2, 4);
+
+  vector<int> res{0, 1, 4, 8, 17};
+  assert(s.getPrefixSum() == res);
+}
+
+void tests_PrefixSum() {
+  test_constructor();
+  test_getSum();
+  test_set();
+}
+\end{lstlisting}
+
+
+\end{document}

@@ -1,0 +1,304 @@
+[33mcommit 1da3c493317c797f06a51c5947bff54ce2f02602[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Tue Feb 8 20:22:40 2022 +0300
+
+    refactoring + tests
+
+ cmake-build-debug/Lab_5b.exe                     | Bin [31m86164[m -> [32m87354[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log |   4 [32m+[m[31m-[m
+ libs/data_structures/vector/voidVector.c         |  14 [32m+++[m[31m--[m
+ libs/data_structures/vector/voidVector.h         |   2 [32m+[m
+ main.c                                           |  67 [32m+++++++++++++++++++[m[31m----[m
+ 5 files changed, 71 insertions(+), 16 deletions(-)
+
+[33mcommit b35665eed7cc98605fae01935ee35892424c18c5[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 20:32:37 2022 +0300
+
+    append push / pop functions
+
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |   6 [32m+[m[31m--[m
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m8130[m -> [32m8126[m bytes
+ .../libs/data_structures/vector/voidVector.c.obj   | Bin [31m1377[m -> [32m7079[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m12965[m -> [32m13685[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m33860[m -> [32m40448[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m81589[m -> [32m86164[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m-[m
+ libs/data_structures/vector/vector.c               |  18 [32m++++[m[31m----[m
+ libs/data_structures/vector/voidVector.c           |  51 [32m+++++++++++++++++[m[31m----[m
+ libs/data_structures/vector/voidVector.h           |  13 [32m+++++[m[31m-[m
+ main.c                                             |  19 [32m+++++++[m[31m-[m
+ 11 files changed, 84 insertions(+), 27 deletions(-)
+
+[33mcommit 929c54b8af9092df3554d83669e8655caf8b245d[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 14:35:14 2022 +0300
+
+    memory usage of vectorVoid
+
+ .../libs/data_structures/vector/voidVector.c.obj   | Bin [31m0[m -> [32m1377[m bytes
+ libs/data_structures/vector/voidVector.c           |  42 [32m+++++++++++++++++++++[m
+ libs/data_structures/vector/voidVector.h           |  11 [32m++++++[m
+ 3 files changed, 53 insertions(+)
+
+[33mcommit 7c7cd919e3bb10fa8a91a303efeba4f480673f70[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 14:28:03 2022 +0300
+
+    init vectorVoid
+
+ CMakeLists.txt                                     |   4 [32m++[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |  10 [32m++++++++[m
+ .../CMakeFiles/Lab_5b.dir/DependInfo.cmake         |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/build.make |  19 [32m+++++++++++++[m[31m--[m
+ .../CMakeFiles/Lab_5b.dir/cmake_clean.cmake        |   1 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/depend.internal          |   4 [32m+++[m
+ .../CMakeFiles/Lab_5b.dir/depend.make              |   4 [32m+++[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m12729[m -> [32m12965[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m32108[m -> [32m33860[m bytes
+ .../CMakeFiles/Lab_5b.dir/objects1.rsp             |   2 [32m+[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/progress.make            |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/Makefile2             |   4 [32m+[m[31m--[m
+ cmake-build-debug/CMakeFiles/progress.marks        |   2 [32m+[m[31m-[m
+ cmake-build-debug/Lab_5b.cbp                       |   6 [32m+++++[m
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m81265[m -> [32m81589[m bytes
+ cmake-build-debug/Makefile                         |  27 [32m+++++++++++++++++++++[m
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/voidVector.c           |   1 [32m+[m
+ libs/data_structures/vector/voidVector.h           |  18 [32m++++++++++++++[m
+ main.c                                             |   3 [32m++[m[31m-[m
+ 20 files changed, 101 insertions(+), 10 deletions(-)
+
+[33mcommit c6d435d865f0378277ee801b88c366a376fd96a2[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 14:02:38 2022 +0300
+
+    refactoring #2
+
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |   4 [32m++[m
+ .../CMakeFiles/Lab_5b.dir/libs/array/array.c.obj   | Bin [31m9479[m -> [32m9964[m bytes
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m8110[m -> [32m8130[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m8739[m -> [32m12729[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m27448[m -> [32m32108[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m77394[m -> [32m81265[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m-[m
+ libs/array/array.c                                 |  11 [32m+++++[m
+ libs/array/array.h                                 |   3 [32m++[m
+ libs/data_structures/vector/vector.c               |  10 [32m++[m[31m--[m
+ main.c                                             |  55 [32m+++++++++++++++++++++[m
+ 11 files changed, 80 insertions(+), 7 deletions(-)
+
+[33mcommit b4d6746d9aebf1b8d55a7b9518f174c192ccdd68[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 12:54:17 2022 +0300
+
+    refactoring #1
+
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m7768[m -> [32m8110[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m7528[m -> [32m8739[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m26142[m -> [32m27448[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m75723[m -> [32m77394[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/vector.c               |   7 [32m++[m[31m--[m
+ main.c                                             |  40 [32m+++++++++++++++++++++[m
+ 7 files changed, 47 insertions(+), 4 deletions(-)
+
+[33mcommit 00b296e874323a1830d53a29ff5122a724ee9a46[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 12:27:37 2022 +0300
+
+    append access functions
+
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m6322[m -> [32m7528[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m24530[m -> [32m26142[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m75110[m -> [32m75723[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/vector.c               |   5 [32m++++[m
+ libs/data_structures/vector/vector.h               |   2 [32m++[m
+ main.c                                             |  29 [32m++++++++++++++++++[m[31m---[m
+ 7 files changed, 34 insertions(+), 6 deletions(-)
+
+[33mcommit 45d49b6fc51121dca63510e0c3c82141caafcb0f[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sun Feb 6 00:21:08 2022 +0300
+
+    index vector
+
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |  20 [32m+++++[m[31m---[m
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m6902[m -> [32m7768[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m4732[m -> [32m6322[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m21914[m -> [32m24530[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m72321[m -> [32m75110[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m-[m
+ libs/data_structures/vector/vector.c               |  19 [32m+++++[m[31m--[m
+ libs/data_structures/vector/vector.h               |   4 [32m++[m
+ main.c                                             |  56 [32m+++++++++++++++++[m[31m----[m
+ 9 files changed, 83 insertions(+), 20 deletions(-)
+
+[33mcommit ebfe6fd97280631563652ff5eaefccc2ec1bc89e[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sat Feb 5 19:56:57 2022 +0300
+
+    +lib array
+
+ .../CMakeFiles/Lab_5b.dir/libs/array/array.c.obj   | Bin [31m0[m -> [32m9479[m bytes
+ libs/array/array.c                                 | 133 [32m+++++++++++++++++++++[m
+ libs/array/array.h                                 |  68 [32m+++++++++++[m
+ 3 files changed, 201 insertions(+)
+
+[33mcommit cbcca423c28ebfab4f1b4f4dffcd91fe75a1a3a2[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sat Feb 5 19:52:36 2022 +0300
+
+    +lib array
+
+ CMakeLists.txt                                     |   3 [32m++[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/DependInfo.cmake         |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/build.make |  19 [32m+++++++++++++[m[31m--[m
+ .../CMakeFiles/Lab_5b.dir/cmake_clean.cmake        |   1 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/depend.internal          |   4 [32m+++[m
+ .../CMakeFiles/Lab_5b.dir/depend.make              |   4 [32m+++[m
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m6099[m -> [32m6902[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m4467[m -> [32m4732[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m11038[m -> [32m21914[m bytes
+ .../CMakeFiles/Lab_5b.dir/objects1.rsp             |   2 [32m+[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/progress.make            |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/Makefile2             |   4 [32m+[m[31m--[m
+ cmake-build-debug/CMakeFiles/progress.marks        |   2 [32m+[m[31m-[m
+ cmake-build-debug/Lab_5b.cbp                       |   6 [32m+++++[m
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m64507[m -> [32m72321[m bytes
+ cmake-build-debug/Makefile                         |  27 [32m+++++++++++++++++++++[m
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/vector.c               |  26 [32m++++++++++++++[m[31m------[m
+ libs/data_structures/vector/vector.h               |   2 [32m++[m
+ main.c                                             |  11 [32m++++++++[m[31m-[m
+ 20 files changed, 99 insertions(+), 18 deletions(-)
+
+[33mcommit 5f3a00a39fec6151a9d2a14ae0a844f91c9f296d[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Sat Feb 5 18:14:56 2022 +0300
+
+    №8
+
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |  10 [32m++[m[31m-----[m
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m2554[m -> [32m6099[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m2514[m -> [32m4467[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m5286[m -> [32m11038[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m56522[m -> [32m64507[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/vector.c               |  20 [32m+++++++++++[m[31m--[m
+ libs/data_structures/vector/vector.h               |   6 [32m++++[m
+ main.c                                             |  33 [32m++++++++++++++++++++[m[31m-[m
+ 9 files changed, 60 insertions(+), 13 deletions(-)
+
+[33mcommit 1d180d157c8be5f277f2aa078fc1a07dde892a43[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Wed Feb 2 19:43:55 2022 +0300
+
+    second
+
+ libs/data_structures/vector/vector.c | 19 [32m++++++++++++++++++[m[31m-[m
+ libs/data_structures/vector/vector.h |  3 [32m+++[m
+ 2 files changed, 21 insertions(+), 1 deletion(-)
+
+[33mcommit b55fc52df732873d7865ab9215596f30c1dedb16[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Wed Feb 2 17:37:01 2022 +0300
+
+    memory usage of vector
+
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |  16 [32m++++++++++[m
+ .../CMakeFiles/Lab_5b.dir/depend.internal          |   4 [32m+++[m
+ .../CMakeFiles/Lab_5b.dir/depend.make              |   4 [32m+++[m
+ .../libs/data_structures/vector/vector.c.obj       | Bin [31m0[m -> [32m2554[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m2183[m -> [32m2514[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m2326[m -> [32m5286[m bytes
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m54714[m -> [32m56522[m bytes
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   4 [32m+[m[31m--[m
+ libs/data_structures/vector/vector.c               |  35 [32m++++++++++++++++++[m[31m---[m
+ libs/data_structures/vector/vector.h               |  20 [32m++++++++++++[m
+ main.c                                             |   7 [32m+++[m[31m--[m
+ 11 files changed, 82 insertions(+), 8 deletions(-)
+
+[33mcommit 1d98baac84d15675447877703797a98acadd0032[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Wed Feb 2 16:49:20 2022 +0300
+
+    second
+
+ CMakeLists.txt                                     |  2 [32m+[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/DependInfo.cmake         |  1 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/build.make | 19 [32m++++++[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/cmake_clean.cmake        |  1 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/objects1.rsp             |  2 [32m+[m[31m-[m
+ .../CMakeFiles/Lab_5b.dir/progress.make            |  1 [32m+[m
+ cmake-build-debug/CMakeFiles/Makefile.cmake        | 61 [31m----------------------[m
+ cmake-build-debug/CMakeFiles/Makefile2             |  4 [32m+[m[31m-[m
+ cmake-build-debug/CMakeFiles/clion-log.txt         |  6 [31m---[m
+ cmake-build-debug/CMakeFiles/progress.marks        |  2 [32m+[m[31m-[m
+ cmake-build-debug/Lab_5b.cbp                       |  6 [32m+++[m
+ cmake-build-debug/Makefile                         | 27 [32m++++++++++[m
+ cmake-build-debug/Testing/Temporary/LastTest.log   |  4 [32m+[m[31m-[m
+ libs/data_structures/vector/vector.c               |  5 [32m++[m
+ libs/data_structures/vector/vector.h               |  4 [32m++[m
+ 15 files changed, 69 insertions(+), 76 deletions(-)
+
+[33mcommit e56848060c0b50518458abf5aad3d511ee9fe695[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Wed Feb 2 16:44:36 2022 +0300
+
+    second
+
+ .idea/.gitignore                                   |   8 [32m+[m
+ .idea/.name                                        |   1 [32m+[m
+ .idea/Lab 5b.iml                                   |   2 [32m+[m
+ .idea/misc.xml                                     |   4 [32m+[m
+ .idea/modules.xml                                  |   8 [32m+[m
+ .idea/vcs.xml                                      |   7 [32m+[m
+ CMakeLists.txt                                     |   6 [32m+[m
+ cmake-build-debug/CMakeCache.txt                   | 372 [32m++++++++++[m
+ .../CMakeFiles/3.20.2/CMakeCCompiler.cmake         |  78 [32m+++[m
+ .../3.20.2/CMakeDetermineCompilerABI_C.bin         | Bin [31m0[m -> [32m53997[m bytes
+ .../CMakeFiles/3.20.2/CMakeRCCompiler.cmake        |   6 [32m+[m
+ .../CMakeFiles/3.20.2/CMakeSystem.cmake            |  15 [32m+[m
+ .../3.20.2/CompilerIdC/CMakeCCompilerId.c          | 752 [32m+++++++++++++++++++++[m
+ .../CMakeFiles/3.20.2/CompilerIdC/a.exe            | Bin [31m0[m -> [32m54020[m bytes
+ .../CMakeFiles/CMakeDirectoryInformation.cmake     |  16 [32m+[m
+ cmake-build-debug/CMakeFiles/CMakeOutput.log       | 245 [32m+++++++[m
+ .../CMakeFiles/Lab_5b.dir/C.includecache           |  12 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/DependInfo.cmake         |  28 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/build.make | 107 [32m+++[m
+ .../CMakeFiles/Lab_5b.dir/cmake_clean.cmake        |  12 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/depend.internal          |   5 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/depend.make              |   5 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/flags.make |  10 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/link.txt   |   3 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/linklibs.rsp             |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/main.c.obj | Bin [31m0[m -> [32m2183[m bytes
+ cmake-build-debug/CMakeFiles/Lab_5b.dir/objects.a  | Bin [31m0[m -> [32m2326[m bytes
+ .../CMakeFiles/Lab_5b.dir/objects1.rsp             |   1 [32m+[m
+ .../CMakeFiles/Lab_5b.dir/progress.make            |   3 [32m+[m
+ cmake-build-debug/CMakeFiles/Makefile.cmake        | 111 [32m+++[m
+ cmake-build-debug/CMakeFiles/Makefile2             | 111 [32m+++[m
+ cmake-build-debug/CMakeFiles/TargetDirectories.txt |   3 [32m+[m
+ cmake-build-debug/CMakeFiles/clion-environment.txt |   4 [32m+[m
+ cmake-build-debug/CMakeFiles/clion-log.txt         |  10 [32m+[m
+ cmake-build-debug/CMakeFiles/cmake.check_cache     |   1 [32m+[m
+ cmake-build-debug/CMakeFiles/progress.marks        |   1 [32m+[m
+ cmake-build-debug/Lab_5b.cbp                       |  84 [32m+++[m
+ cmake-build-debug/Lab_5b.exe                       | Bin [31m0[m -> [32m54714[m bytes
+ cmake-build-debug/Makefile                         | 180 [32m+++++[m
+ cmake-build-debug/Testing/Temporary/LastTest.log   |   3 [32m+[m
+ cmake-build-debug/cmake_install.cmake              |  49 [32m++[m
+ main                                               |   1 [31m-[m
+ main.c                                             |   6 [32m+[m
+ 43 files changed, 2270 insertions(+), 1 deletion(-)
+
+[33mcommit df587854119f3d98acc759d1140ae5d7a765b935[m
+Author: ChuvilkoDEV <ilyasutton@gmail.com>
+Date:   Wed Feb 2 16:39:16 2022 +0300
+
+    fc
+
+ main | 1 [32m+[m
+ 1 file changed, 1 insertion(+)

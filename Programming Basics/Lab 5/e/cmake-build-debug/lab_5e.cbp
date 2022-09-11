@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="lab_5e"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lab_5e">
+				<Option output="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/lab_5e.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab_5e"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lab_5e/fast">
+				<Option output="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/lab_5e.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 lab_5e/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/BGTU/Programming Basics/lab 5e/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/mingw32-make.exe -f &quot;D:/BGTU/Programming Basics/lab 5e/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/string_.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/string_.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/10_reverseWordInString.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/10_reverseWordInString.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/11_printWordBeforeFirstWordWithA.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/11_printWordBeforeFirstWordWithA.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/12_lastCommonWord.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/12_lastCommonWord.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/13_haveSameWord.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/13_haveSameWord.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/15_differentFromTheLastWord.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/15_differentFromTheLastWord.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/16_lastCommonWords.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/16_lastCommonWords.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/18_padTheSmallerString.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/18_padTheSmallerString.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/1_digitToStartTransform.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/1_digitToStartTransform.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/2_removeAdjacentEqualLetters.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/2_removeAdjacentEqualLetters.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/3_getWord.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/3_getWord.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/4_replaceNumberDigitsBySpace.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/4_replaceNumberDigitsBySpace.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/5_replace.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/5_replace.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/6_isOrderedWord.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/6_isOrderedWord.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/7_outputReverse.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/7_outputReverse.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/8_countPalindroms.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/8_countPalindroms.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/9_wordAlternation.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/9_wordAlternation.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/tests.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/libs/string/tasks/tests.h">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/main.c">
+			<Option target="lab_5e"/>
+		</Unit>
+		<Unit filename="D:/BGTU/Programming Basics/lab 5e/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

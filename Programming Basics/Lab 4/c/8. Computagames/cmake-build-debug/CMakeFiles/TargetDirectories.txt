@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/8. Computagames/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/8. Computagames/cmake-build-debug/CMakeFiles/8__Computagames.dir
+D:/BGTU/Programming Basics/Lab 4c/8. Computagames/cmake-build-debug/CMakeFiles/edit_cache.dir

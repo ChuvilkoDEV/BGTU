@@ -1,0 +1,3 @@
+D:/BGTU/codeforce/793/cmake-build-debug/CMakeFiles/793.dir
+D:/BGTU/codeforce/793/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/codeforce/793/cmake-build-debug/CMakeFiles/rebuild_cache.dir

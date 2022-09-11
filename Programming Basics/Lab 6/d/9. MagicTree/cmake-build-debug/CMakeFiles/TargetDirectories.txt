@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6d/9. MagicTree/cmake-build-debug/CMakeFiles/9__MagicTree.dir
+D:/BGTU/Programming Basics/6d/9. MagicTree/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6d/9. MagicTree/cmake-build-debug/CMakeFiles/rebuild_cache.dir

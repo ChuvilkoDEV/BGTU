@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/31. toys/cmake-build-debug/CMakeFiles/31__toys.dir
+D:/BGTU/Programming Basics/Lab 2b/31. toys/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/31. toys/cmake-build-debug/CMakeFiles/rebuild_cache.dir

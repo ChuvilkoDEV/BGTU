@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/13. Vanya and blocks/cmake-build-debug/CMakeFiles/13__Vanya_and_blocks.dir
+D:/BGTU/Programming Basics/Lab 3b/13. Vanya and blocks/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/13. Vanya and blocks/cmake-build-debug/CMakeFiles/rebuild_cache.dir

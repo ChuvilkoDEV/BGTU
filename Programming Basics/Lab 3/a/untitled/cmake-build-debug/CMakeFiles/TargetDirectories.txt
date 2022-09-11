@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3a/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3a/untitled/cmake-build-debug/CMakeFiles/untitled.dir
+D:/BGTU/Programming Basics/Lab 3a/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/10. Pasha and stick/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/10. Pasha and stick/cmake-build-debug/CMakeFiles/10__Pasha_and_stick.dir
+D:/BGTU/Programming Basics/Lab 2b/10. Pasha and stick/cmake-build-debug/CMakeFiles/rebuild_cache.dir

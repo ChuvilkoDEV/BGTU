@@ -1,0 +1,3 @@
+D:/BGTU/DisMat/Lab1/variant4/cmake-build-debug/CMakeFiles/variant4.dir
+D:/BGTU/DisMat/Lab1/variant4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/DisMat/Lab1/variant4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

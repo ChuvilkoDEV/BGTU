@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3a/19 с БС/cmake-build-debug/CMakeFiles/19.dir
+D:/BGTU/Programming Basics/Lab 3a/19 с БС/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3a/19 с БС/cmake-build-debug/CMakeFiles/rebuild_cache.dir

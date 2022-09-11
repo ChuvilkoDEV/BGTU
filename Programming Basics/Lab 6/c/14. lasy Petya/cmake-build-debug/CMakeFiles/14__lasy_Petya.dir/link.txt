@@ -1,0 +1,3 @@
+"D:\Programms\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\14__lasy_Petya.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe cr CMakeFiles\14__lasy_Petya.dir/objects.a @CMakeFiles\14__lasy_Petya.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\14__lasy_Petya.dir/objects.a -Wl,--no-whole-archive -o 14__lasy_Petya.exe -Wl,--out-implib,lib14__lasy_Petya.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\14__lasy_Petya.dir\linklibs.rsp

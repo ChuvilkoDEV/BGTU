@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/14.  teatral square/cmake-build-debug/CMakeFiles/14___teatral_square.dir
+D:/BGTU/Programming Basics/Lab 2b/14.  teatral square/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/14.  teatral square/cmake-build-debug/CMakeFiles/rebuild_cache.dir

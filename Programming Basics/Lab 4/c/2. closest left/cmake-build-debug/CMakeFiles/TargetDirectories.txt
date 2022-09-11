@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/2. closest left/cmake-build-debug/CMakeFiles/2__closest_left.dir
+D:/BGTU/Programming Basics/Lab 4c/2. closest left/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/2. closest left/cmake-build-debug/CMakeFiles/rebuild_cache.dir

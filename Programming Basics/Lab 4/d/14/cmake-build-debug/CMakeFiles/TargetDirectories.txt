@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4d/14/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4d/14/cmake-build-debug/CMakeFiles/14.dir
+D:/BGTU/Programming Basics/Lab 4d/14/cmake-build-debug/CMakeFiles/rebuild_cache.dir

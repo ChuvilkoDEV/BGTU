@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6c/9. Valera the Horse/cmake-build-debug/CMakeFiles/9__Valera_the_Horse.dir
+D:/BGTU/Programming Basics/6c/9. Valera the Horse/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6c/9. Valera the Horse/cmake-build-debug/CMakeFiles/rebuild_cache.dir

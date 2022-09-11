@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/queue/2. Photo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/Programming Basics/6e/queue/2. Photo/cmake-build-debug/CMakeFiles/2__Photo.dir
+D:/BGTU/Programming Basics/6e/queue/2. Photo/cmake-build-debug/CMakeFiles/edit_cache.dir

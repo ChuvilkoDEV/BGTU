@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/27. heating/cmake-build-debug/CMakeFiles/27__heating.dir
+D:/BGTU/Programming Basics/Lab 2b/27. heating/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/27. heating/cmake-build-debug/CMakeFiles/rebuild_cache.dir

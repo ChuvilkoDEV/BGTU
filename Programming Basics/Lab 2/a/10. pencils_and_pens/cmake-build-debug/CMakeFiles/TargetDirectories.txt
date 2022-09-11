@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2a/10. pencils_and_pens/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2a/10. pencils_and_pens/cmake-build-debug/CMakeFiles/pencils_and_pens.dir
+D:/BGTU/Programming Basics/Lab 2a/10. pencils_and_pens/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/deque/1. SocWeb/cmake-build-debug/CMakeFiles/1__SocWeb.dir
+D:/BGTU/Programming Basics/6e/deque/1. SocWeb/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6e/deque/1. SocWeb/cmake-build-debug/CMakeFiles/rebuild_cache.dir

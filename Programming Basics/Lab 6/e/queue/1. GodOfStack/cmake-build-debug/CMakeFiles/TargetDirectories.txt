@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6e/queue/1. GodOfStack/cmake-build-debug/CMakeFiles/1__GodOfStack.dir
+D:/BGTU/Programming Basics/6e/queue/1. GodOfStack/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6e/queue/1. GodOfStack/cmake-build-debug/CMakeFiles/rebuild_cache.dir

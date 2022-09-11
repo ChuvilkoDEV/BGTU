@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/3. BS. Tram/cmake-build-debug/CMakeFiles/3__BS__Tram.dir
+D:/BGTU/Programming Basics/Lab 3b/3. BS. Tram/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/3. BS. Tram/cmake-build-debug/CMakeFiles/rebuild_cache.dir

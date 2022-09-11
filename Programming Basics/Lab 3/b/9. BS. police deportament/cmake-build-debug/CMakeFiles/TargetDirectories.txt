@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 3b/9. BS. police deportament/cmake-build-debug/CMakeFiles/9__BS__police_deportament.dir
+D:/BGTU/Programming Basics/Lab 3b/9. BS. police deportament/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 3b/9. BS. police deportament/cmake-build-debug/CMakeFiles/rebuild_cache.dir

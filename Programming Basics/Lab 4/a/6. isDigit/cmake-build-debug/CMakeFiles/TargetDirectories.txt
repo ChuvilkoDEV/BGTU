@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4a/6. isDigit/cmake-build-debug/CMakeFiles/6__isDigit.dir
+D:/BGTU/Programming Basics/Lab 4a/6. isDigit/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4a/6. isDigit/cmake-build-debug/CMakeFiles/rebuild_cache.dir

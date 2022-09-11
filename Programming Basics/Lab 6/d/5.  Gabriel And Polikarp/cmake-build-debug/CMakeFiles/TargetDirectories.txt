@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/6d/5.  Gabriel And Polikarp/cmake-build-debug/CMakeFiles/5___Gabriel_And_Polikarp.dir
+D:/BGTU/Programming Basics/6d/5.  Gabriel And Polikarp/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/6d/5.  Gabriel And Polikarp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

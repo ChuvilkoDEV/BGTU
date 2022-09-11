@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/Programming Basics/Lab 5b/libs/array/array.h
+stdbool.h
+-
+stddef.h
+-
+
+D:/BGTU/Programming Basics/Lab 5b/libs/data_structures/vector/vector.h
+stdio.h
+-
+malloc.h
+-
+stdbool.h
+-
+
+D:/BGTU/Programming Basics/Lab 5b/libs/data_structures/vector/voidVector.h
+stdbool.h
+-
+limits.h
+-
+
+D:/BGTU/Programming Basics/Lab 5b/main.c
+stdio.h
+-
+stdint.h
+-
+stdlib.h
+-
+assert.h
+-
+libs/data_structures/vector/vector.h
+D:/BGTU/Programming Basics/Lab 5b/libs/data_structures/vector/vector.h
+libs/data_structures/vector/voidVector.h
+D:/BGTU/Programming Basics/Lab 5b/libs/data_structures/vector/voidVector.h
+libs/array/array.h
+D:/BGTU/Programming Basics/Lab 5b/libs/array/array.h
+

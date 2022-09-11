@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 4c/7. Humburger/cmake-build-debug/CMakeFiles/7__Humburger.dir
+D:/BGTU/Programming Basics/Lab 4c/7. Humburger/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 4c/7. Humburger/cmake-build-debug/CMakeFiles/rebuild_cache.dir

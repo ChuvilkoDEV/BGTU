@@ -1,0 +1,3 @@
+D:/BGTU/Programming Basics/Lab 2b/23. Start olymp/cmake-build-debug/CMakeFiles/23__Start_olymp.dir
+D:/BGTU/Programming Basics/Lab 2b/23. Start olymp/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/Programming Basics/Lab 2b/23. Start olymp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
