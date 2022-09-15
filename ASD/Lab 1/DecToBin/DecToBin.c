@@ -1,5 +1,9 @@
 #include "DecToBin.h"
 
+#include <stdio.h>
+
+#define ARRAY_SIZE 6
+
 // Выводит представление в память одного байта по адресу a
 void PrintByte(const unsigned char *a) {
   for (int i = sizeof(char) * 8 - 1; i >= 0; i--)
@@ -16,7 +20,7 @@ void PrintVar(void *a, int size) {
 
 // Выводит на экран представление структуру по адресу a размером size.
 // s - именование переменной для вывода строки
-void Test_Print(void *a, int size, char *s) {
+void PrintTest(void *a, int size, char *s) {
   printf("%s", s);
   PrintVar(a, size);
 }
@@ -25,9 +29,9 @@ void Test_Print(void *a, int size, char *s) {
 void Test_Integers_DTB() {
   printf("INTEGERS\n");
   int a = 178;
-  Test_Print(&a, sizeof(int), "int a = ");
+  PrintTest(&a, sizeof(int), "int a = ");
   int b = -7895;
-  Test_Print(&b, sizeof(int), "int b = ");
+  PrintTest(&b, sizeof(int), "int b = ");
   printf("\n");
 }
 
@@ -35,9 +39,9 @@ void Test_Integers_DTB() {
 void Test_LongDoubles_DTB() {
   printf("LONG DOUBLE\n");
   long double x = 56.48;
-  Test_Print(&x, sizeof(long double), "long double x = ");
+  PrintTest(&x, sizeof(long double), "long double x = ");
   long double y = -126.234;
-  Test_Print(&y, sizeof(long double), "long double y = ");
+  PrintTest(&y, sizeof(long double), "long double y = ");
   printf("\n");
 }
 
@@ -45,9 +49,9 @@ void Test_LongDoubles_DTB() {
 void Test_IntArray_DTB() {
   printf("INT ARRAY\n");
   int n[ARRAY_SIZE] = {0, 1, 2, 3, 4, 5};
-  Test_Print(n, sizeof(int) * ARRAY_SIZE, "int n[6] = ");
+  PrintTest(n, sizeof(int) * ARRAY_SIZE, "int n[6] = ");
   int m[ARRAY_SIZE] = {253, 148, 1111, 777, 321, 999999};
-  Test_Print(m, sizeof(int) * ARRAY_SIZE, "int m[6] = ");
+  PrintTest(m, sizeof(int) * ARRAY_SIZE, "int m[6] = ");
   printf("\n");
 }
 

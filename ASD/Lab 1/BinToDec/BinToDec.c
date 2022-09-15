@@ -1,5 +1,7 @@
 #include "BinToDec.h"
 
+#include  <stdio.h>
+
 #define BIT_IN_BYTE 8
 #define ARRAY_SIZE 6
 
@@ -15,6 +17,7 @@ void GetVarFromString(char *s, void *res, int size) {
 }
 
 void Test_Integers_BTD() {
+  printf("INTEGERS\n");
   int a = 0;
   char s1[] = "00000000000000000000000010110010";
   GetVarFromString(s1, &a, sizeof(int));
@@ -27,6 +30,7 @@ void Test_Integers_BTD() {
 }
 
 void Test_LongDouble_BTD() {
+  printf("LONG DOUBLE\n");
   long double x = 0;
   char s1[] = "00000000000000000000000010110010"
               "11111111111111110100000000000100"
@@ -46,6 +50,7 @@ void Test_LongDouble_BTD() {
 
 // Массив целых чисел
 void Test_IntArray_BTD() {
+  printf("INT ARRAY\n");
   int n[ARRAY_SIZE] = {0,0,0,0,0,0};
   char s1[] = "00000000000000000000000000000101"
               "00000000000000000000000000000100"
