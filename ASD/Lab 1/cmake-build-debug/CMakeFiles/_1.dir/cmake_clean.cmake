@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/_1.dir/BinToDec/BinToDec.c.obj"
+  "CMakeFiles/_1.dir/DecToBin/DecToBin.c.obj"
   "CMakeFiles/_1.dir/main.c.obj"
   "_1.exe"
   "_1.exe.manifest"

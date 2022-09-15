@@ -128,6 +128,54 @@ _1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/build
 .PHONY : _1/fast
 
+BinToDec/BinToDec.obj: BinToDec/BinToDec.c.obj
+.PHONY : BinToDec/BinToDec.obj
+
+# target to build an object file
+BinToDec/BinToDec.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/BinToDec/BinToDec.c.obj
+.PHONY : BinToDec/BinToDec.c.obj
+
+BinToDec/BinToDec.i: BinToDec/BinToDec.c.i
+.PHONY : BinToDec/BinToDec.i
+
+# target to preprocess a source file
+BinToDec/BinToDec.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/BinToDec/BinToDec.c.i
+.PHONY : BinToDec/BinToDec.c.i
+
+BinToDec/BinToDec.s: BinToDec/BinToDec.c.s
+.PHONY : BinToDec/BinToDec.s
+
+# target to generate assembly for a file
+BinToDec/BinToDec.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/BinToDec/BinToDec.c.s
+.PHONY : BinToDec/BinToDec.c.s
+
+DecToBin/DecToBin.obj: DecToBin/DecToBin.c.obj
+.PHONY : DecToBin/DecToBin.obj
+
+# target to build an object file
+DecToBin/DecToBin.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/DecToBin/DecToBin.c.obj
+.PHONY : DecToBin/DecToBin.c.obj
+
+DecToBin/DecToBin.i: DecToBin/DecToBin.c.i
+.PHONY : DecToBin/DecToBin.i
+
+# target to preprocess a source file
+DecToBin/DecToBin.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/DecToBin/DecToBin.c.i
+.PHONY : DecToBin/DecToBin.c.i
+
+DecToBin/DecToBin.s: DecToBin/DecToBin.c.s
+.PHONY : DecToBin/DecToBin.s
+
+# target to generate assembly for a file
+DecToBin/DecToBin.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\_1.dir\build.make CMakeFiles/_1.dir/DecToBin/DecToBin.c.s
+.PHONY : DecToBin/DecToBin.c.s
+
 main.obj: main.c.obj
 .PHONY : main.obj
 
@@ -161,6 +209,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... _1
+	@echo ... BinToDec/BinToDec.obj
+	@echo ... BinToDec/BinToDec.i
+	@echo ... BinToDec/BinToDec.s
+	@echo ... DecToBin/DecToBin.obj
+	@echo ... DecToBin/DecToBin.i
+	@echo ... DecToBin/DecToBin.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

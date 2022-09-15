@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-D:/BGTU/ASD/Lab 1/main.c
+D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.c
+DecToBin.h
+D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.h
+
+D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.h
 stdio.h
 -
+string.h
+D:/BGTU/ASD/Lab 1/DecToBin/string.h
+
+D:/BGTU/ASD/Lab 1/main.c
+DecToBin/DecToBin.h
+D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.h
 

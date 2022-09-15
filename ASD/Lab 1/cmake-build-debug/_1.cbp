@@ -74,6 +74,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/BGTU/ASD/Lab 1/BinToDec/BinToDec.c">
+			<Option target="_1"/>
+		</Unit>
+		<Unit filename="D:/BGTU/ASD/Lab 1/BinToDec/BinToDec.h">
+			<Option target="_1"/>
+		</Unit>
+		<Unit filename="D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.c">
+			<Option target="_1"/>
+		</Unit>
+		<Unit filename="D:/BGTU/ASD/Lab 1/DecToBin/DecToBin.h">
+			<Option target="_1"/>
+		</Unit>
 		<Unit filename="D:/BGTU/ASD/Lab 1/main.c">
 			<Option target="_1"/>
 		</Unit>
