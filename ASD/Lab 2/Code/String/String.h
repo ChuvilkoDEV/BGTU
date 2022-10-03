@@ -27,7 +27,10 @@ static const int STRING_CONCAT_ERROR = -4;
 //Ошибка поиска в меньшей строки большей подстроки
 static const int STRING_POS_ERROR = -5;
 
-int STRING_ERROR;
+// Ошибка выхода за пределы массива при удалении подстроки
+static const int STRING_DELETE_ERROR = -6;
+
+static int STRING_ERROR = 0;
 
 typedef struct str {
   char *s; // Указатель на строку
@@ -38,32 +41,30 @@ typedef struct str {
 
 typedef str *string1;
 
-// Выделение динамической памяти под строку st, содержащую от 0 до n символов.
-void InitStr(string1 st, unsigned n);
+// Выделение динамической памяти под строку str, содержащую от 0 до n символов.
+void InitStr(string1 str, unsigned n);
 
-// Запись данных в строку st из строки s.
-void WriteToStr(string1 st, const char *s);
+// Запись данных в строку dest из строки source.
+void WriteToStr(string1 dest, const char *source);
 
-// Запись данных в строку s из строки st.
-void WriteFromStr(char *s, string1 st);
+// Запись данных в строку dest из строки source.
+void WriteFromStr(char *dest, string1 source);
 
-// Ввод строки st с клавиатуры.
-void InputStr(string1 st);
+// Ввод строки str с клавиатуры.
+void InputStr(string1 str);
 
-//Вывод строки s на экран монитора
-void OutputStr(string1 st);
+//Вывод строки str на экран монитора
+void OutputStr(string1 str);
 
 //Сравнивает строки s1 и s2 возвращает 0 если
 //s1 == s2; 1 если s1 > s2; -1 если s1 < s2
 int Comp(string1 s1, string1 s2);
 
-//Удаляет count символов из строки s
-//начиная с позиции index
-void Delete(string1 st, unsigned index, unsigned count);
+//Удаляет count символов из строки str начиная с позиции index
+void Delete(string1 str, unsigned index, unsigned count);
 
-//Вставляет подстроку subS в строку st
-//начиная с позиции index
-void Insert(string1 subS, string1 st, unsigned index);
+//Вставляет подстроку subS в строку str начиная с позиции index
+void Insert(string1 subS, string1 str, unsigned index);
 
 //Выполняет конкатенацию строк s1 и s2 результат помещает в sRez
 void Concat(string1 s1, string1 s2, string1 sRez);
@@ -80,5 +81,11 @@ void reverse(string1 s);
 //Возвращает позицию начиная с которой в строке s
 //распологается строка subS
 unsigned Pos(string1 subS, string1 s);
+
+// Удаляет строку s из динамической памяти.
+void DoneStr(string1 s);
+
+// сравнение строк(с игнорированием множественных пробелов)
+int WordCmp(string1 s1, string1 s2);
 
 #endif //CODE_STRING_H

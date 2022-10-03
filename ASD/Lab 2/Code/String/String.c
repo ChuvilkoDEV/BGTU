@@ -1,44 +1,44 @@
 #include "String.h"
 
-// Выделение динамической памяти под строку st, содержащую от 0 до n символов.
-void InitStr(string1 st, unsigned n) {
-  st->s = malloc(n);
-  st->max = n;
-  st->N = 0;
+// Выделение динамической памяти под строку str, содержащую от 0 до n символов.
+void InitStr(string1 str, unsigned n) {
+  str->max = n;
+  str->N = 0;
+  str->s = malloc(sizeof(char) * n);
 }
 
-// Запись данных в строку st из строки s.
-void WriteToStr(string1 st, const char *s) {
+// Запись данных в строку dest из строки source.
+void WriteToStr(string1 dest, const char *source) {
   int i = 0;
-  while (s[i++] != '\0')
+  while (source[i++] != '\0')
     continue;
 
-  if (st->max < i)
+  if (dest->max < i)
     STRING_ERROR = STRING_INPUT_ERROR;
   else
-    memcpy(st->s, s, i);
+    memcpy(dest->s, source, i);
 }
 
-// Запись данных в строку s из строки st.
-void WriteFromStr(char *s, string1 st) {
-  memcpy(s, st->s, st->N);
+// Запись данных в строку dest из строки source.
+void WriteFromStr(char *dest, string1 source) {
+  memcpy(dest, source->s, source->N);
 }
 
 //Ввод строки s с клавиатуры
-void InputStr(string1 st) {
+void InputStr(string1 str) {
   char k = getchar();
   unsigned short i = 0;
 
-  while (k != '\n' && i < st->max) {
-    st->s[i] = k;
+  while (k != '\n' && i < str->max) {
+    str->s[i] = k;
     ++i;
     k = getchar();
   }
 
-  st->N = i;
-  st->s[i++] = '\0';
+  str->N = i;
+  str->s[i++] = '\0';
 
-  if (k != '\n' && i == st->max) {
+  if (k != '\n' && i == str->max) {
     STRING_ERROR = STRING_INPUT_ERROR;
     assert (STRING_ERROR == -1);
   } else
@@ -46,9 +46,9 @@ void InputStr(string1 st) {
 }
 
 //Вывод строки s на экран монитора
-void OutputStr(string1 st) {
-  for (int i = 0; i < st->N; i++)
-    putchar(st->s[i]);
+void OutputStr(string1 str) {
+  for (int i = 0; i < str->N; i++)
+    putchar(str->s[i]);
 }
 
 //Сравнивает строки s1 и s2 возвращает 0 если
@@ -58,48 +58,39 @@ int Comp(string1 s1, string1 s2) {
     return 1;
   else if (s1->N < s2->N)
     return -1;
-  else {
-    int i = 0;
-    while ((s1->s[i] == s2->s[i]) && (i < s1->N)) {
-      i++;
-    }
 
-    if ((i == s1->N) && (i == s2->N)) {
-      STRING_ERROR = STR_SUCCESSFUL;
-      return 0;
-    }
-
-    if (s1->s[i] > s2->s[i]) {
-      STRING_ERROR = STR_SUCCESSFUL;
+  for (int i = 0; i < s1->N; i++) {
+    if (s1->s[i] > s2->s[i])
       return 1;
-    }
+    else if (s1->s[i] < s2->s[i])
+      return -1;
+  }
+  return 0;
+}
 
+//Удаляет count символов из строки s начиная с позиции index
+void Delete(string1 str, unsigned index, unsigned count) {
+  if (index + count >= str->N)
+    STRING_ERROR = STRING_DELETE_ERROR;
+  else {
+    unsigned ptr = index;
+    for (unsigned i = index + count; i < str->N; i++)
+      str->s[ptr++] = str->s[i];
+    str->N -= count;
   }
 }
 
-//Удаляет count символов из строки s
-//начиная с позиции index
-void Delete(string1 st, unsigned index, unsigned count) {
-  for (int i = index; i < st->N; i++) {
-    st->s[i] = st->s[i + count];
-  }
-
-  st->s[st->N - count] = '\0';
-  st->N = st->N - count;
-}
-
-//Вставляет подстроку subS в строку st
-//начиная с позиции index
-void Insert(string1 subS, string1 st, unsigned index) {
-  if (index > st->N)
+//Вставляет подстроку subS в строку str, начиная с позиции index
+void Insert(string1 subS, string1 str, unsigned index) {
+  if (index > str->N)
     STRING_ERROR = STRING_NO_PLACE;
-  else if (subS->N + st->N > st->max)
+  else if (subS->N + str->N > str->max)
     STRING_ERROR = STRING_INSERT_ERROR;
   else {
-    unsigned i = st->N + 1;
+    unsigned i = str->N + 1;
 
     while (i >= index) {
-      st->s[i + subS->N] = st->s[i];
+      str->s[i + subS->N] = str->s[i];
       --i;
     }
 
@@ -107,12 +98,12 @@ void Insert(string1 subS, string1 st, unsigned index) {
     unsigned j = 0;
 
     while (j < subS->N) {
-      st->s[i] = subS->s[j];
+      str->s[i] = subS->s[j];
       ++i;
       ++j;
     }
 
-    st->N = st->N + subS->N;
+    str->N = str->N + subS->N;
   }
 
   assert (STRING_ERROR == (-3 || -2));
@@ -170,15 +161,15 @@ void reverse(string1 s) {
   char c;
   int i, j;
 
-  for (i = 0, j = length - 1; i < j; i++, j - -) {
+  for (i = 0, j = length - 1; i < j; i++, j--) {
     c = s->s[i];
     s->s[i] = s->s[j];
     s->s[j] = c;
   }
 }
 
-//Возвращает позицию начиная с которой в строке s
-//распологается строка subS
+// Возвращает позицию начиная с которой в строке s
+// располагается строка subS
 unsigned Pos(string1 subS, string1 s) {
   unsigned short j;
   unsigned short lens = s->N;
@@ -199,5 +190,29 @@ unsigned Pos(string1 subS, string1 s) {
   }
 
   return 0;
+}
+
+// Удаляет строку s из динамической памяти.
+void DoneStr(string1 s) {
+  free(s->s);
+  s->N = 0;
+  s->max = 0;
+}
+
+// сравнение строк(с игнорированием множественных пробелов)
+int WordCmp(string1 s1, string1 s2) {
+  int s1Ptr = 0;
+  int s2Ptr = 0;
+  while (s1->s[s1Ptr] != '\0' && s2->s[s2Ptr] != '\0') {
+    while (s1->s[s1Ptr] == ' ')
+      s1Ptr++;
+    while (s2->s[s2Ptr] == ' ')
+      s2Ptr++;
+    if (s1->s[s1Ptr] != s2->s[s2Ptr])
+      return 0;
+    s1Ptr++;
+    s2Ptr++;
+  }
+  return 1;
 }
 
