@@ -6,6 +6,8 @@
 #include <string.h>
 #include <stdio.h>
 
+#define MAX_LEN 50
+
 //Операция прошла успешно
 static const int STR_SUCCESSFUL = 0;
 
@@ -41,37 +43,38 @@ typedef struct str {
 
 typedef str *string1;
 
-// Выделение динамической памяти под строку str, содержащую от 0 до n символов.
-void InitStr(string1 str, unsigned n);
+// Выделение динамической памяти под строку s, содержащую от 0 до n символов.
+void InitStr(string1 s, unsigned n);
 
-// Запись данных в строку dest из строки source.
-void WriteToStr(string1 dest, const char *source);
+unsigned GetLenStr(const char *src);
+
+// Запись данных в строку dst из строки src.
+void WriteToStr(string1 dst, char *src);
 
 // Запись данных в строку dest из строки source.
 void WriteFromStr(char *dest, string1 source);
 
-// Ввод строки str с клавиатуры.
-void InputStr(string1 str);
+// Ввод строки s с клавиатуры.
+void InputStr(string1 s);
 
-//Вывод строки str на экран монитора
-void OutputStr(string1 str);
+//Вывод строки s на экран монитора
+void OutputStr(string1 s);
 
 //Сравнивает строки s1 и s2 возвращает 0 если
 //s1 == s2; 1 если s1 > s2; -1 если s1 < s2
 int Comp(string1 s1, string1 s2);
 
-//Удаляет count символов из строки str начиная с позиции index
-void Delete(string1 str, unsigned index, unsigned count);
+//Удаляет count символов из строки s начиная с позиции index
+void Delete(string1 s, unsigned index, unsigned count);
 
-//Вставляет подстроку subS в строку str начиная с позиции index
-void Insert(string1 subS, string1 str, unsigned index);
+//Вставляет подстроку subS в строку s начиная с позиции index
+void Insert(string1 s, string1 subS, unsigned index);
 
 //Выполняет конкатенацию строк s1 и s2 результат помещает в sRez
 void Concat(string1 s1, string1 s2, string1 sRez);
 
-//Записывает count символов в строку subS из строки s
-//начиная с позиции index
-void Copy(string1 s, unsigned index, unsigned count, string1 subS);
+//Записывает count символов в строку subS из строки s, начиная с позиции index
+void Copy(string1 s, string1 subS, unsigned index, unsigned count);
 
 //Возвращает текущую длинну строки s
 unsigned Length(string1 s);
@@ -87,5 +90,7 @@ void DoneStr(string1 s);
 
 // сравнение строк(с игнорированием множественных пробелов)
 int WordCmp(string1 s1, string1 s2);
+
+void Tests();
 
 #endif //CODE_STRING_H

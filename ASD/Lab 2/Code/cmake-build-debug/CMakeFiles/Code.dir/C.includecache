@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/BGTU/ASD/Lab 2/Code/String/String.c
+String.h
+D:/BGTU/ASD/Lab 2/Code/String/String.h
+
 D:/BGTU/ASD/Lab 2/Code/String/String.h
 malloc.h
 -
@@ -15,8 +19,4 @@ string.h
 -
 stdio.h
 -
-
-D:/BGTU/ASD/Lab 2/Code/main.c
-String/String.h
-D:/BGTU/ASD/Lab 2/Code/String/String.h
 
