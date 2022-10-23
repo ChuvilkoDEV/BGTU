@@ -228,6 +228,7 @@ int isSorted(int *a) {
 
 #define ARRAY_SIZE(array) \
 sizeof(array) / sizeof(int)
+
 const int sizes[] = {5, 10, 15, 20, 25, 30, 35, 40, 45};
 const int sizes_count = ARRAY_SIZE(sizes);
 typedef struct {
@@ -239,7 +240,7 @@ typedef struct {
 int main() {
   for (int i = 0; i < 3; i++) {
     char filename[100];
-    sprintf(filename, " data %d. csv ", i);
+    sprintf(filename, "data%d.txt", i);
     csvFiles[i] = fopen(filename, "w");
   }
   int a[1000];
