@@ -4,47 +4,51 @@
 #include <stdlib.h>
 #include <math.h>
 
+unsigned numCompares = 0;
 
-int min(const int x, const int y) {
-  return x < y ? x : y;
+bool linearSearch(int *a, const int n, const int x) {
+  int *ptr = a;
+  for (int i = 0; i < n; i++) {
+    numCompares++;
+    if (*ptr == x)
+      return true;
+  }
+  return false;
 }
 
-long long max(const long long x, const long long y) {
-  return x > y ? x : y;
-}
-bool linearSearch(const int *a, const int n, const int x, long long *nComps) {
-  int i = 0;
-  while ((*nComps += 2) && i < n && a[i] != x)
-    i++;
-  return a[i] == x;
-}
-
-bool linearSearchFast(int *a, const int n, const int x, long long *nComps) {
+bool linearSearchFast(int *a, const int n, const int x) {
   int i = 0;
   int t = a[n];
   a[n] = x;
-  while (++*(nComps) && a[i] != x)
+  while (a[i] != x) {
+    numCompares++;
     i++;
+  }
   a[n] = t;
   return a[i] == x;
 }
 
-bool linearSearchOrdered(int *a, const int n, const int x, long long *nComps) {
+bool linearSearchOrdered(int *a, const int n, const int x) {
   int i = 0;
   int t = a[n];
   a[n] = x;
-  while (++*(nComps) && a[i] < x)
+  while (a[i] < x) {
+    numCompares++;
     i++;
+  }
   a[n] = t;
   return i < n;
 }
 
-bool binarySearch(const int *a, const int n, const int x, long long *nComps) {
+bool binarySearch(int *a, const int n, const int x) {
   int left = -1;
   int right = n;
   while (right - left > 1) {
+    numCompares++;
     int middle = left + (right - left) / 2;
-    if (++*(nComps) && a[middle] < x)
+
+    numCompares++;
+    if (a[middle] < x)
       left = middle;
     else
       right = middle;
@@ -52,96 +56,108 @@ bool binarySearch(const int *a, const int n, const int x, long long *nComps) {
   return a[right] == x;
 }
 
-bool blockSearch(int *a, const int n, const int x, long long *nComps) {
+int min(const int x, const int y) {
+  return x < y ? x : y;
+}
+ 
+bool blockSearch(int *a, const int n, const int x) {
   const int blockSize = ceil(sqrt(n));
   const int nBlocks = ceil(n / blockSize);
   for (int beginningOfBlock = blockSize * (nBlocks - 1);
        beginningOfBlock >= 0; beginningOfBlock -= blockSize)
-    if (++*(nComps) && a[beginningOfBlock] <= x)
+    if (++numCompares && a[beginningOfBlock] <= x)
       return linearSearchOrdered(a + beginningOfBlock,
-                                 min(blockSize, n - beginningOfBlock), x,
-                                 nComps);
+                                 min(blockSize, n - beginningOfBlock), x);
   return false;
 }
 
-// __________Generators__________
-void generateOrderedArray(int *a, int n) {
-  for (int i = 0; i < n; i++)
+
+void getSortedArray(int *a, int n) {
+  for (int i = 0; i < n; i++) {
     a[i] = i;
-}
-
-void generateRandomArray(int *a, int n) {
-  srand(time(0));
-  for (int i = 0; i < n; i++)
-    a[i] = rand();
-}
-
-
-void checkComps(bool (*searchFunc)(int *, int, int, long long *),
-                void (*generateFunc)(int *, int), int size,
-                char *experimentName) {
-  static size_t runCounter = 1;
-  static int innerBuffer[500];
-  generateFunc(innerBuffer, size);
-  printf("Run #%zu| ", runCounter++);
-  printf("Name: %s\n", experimentName);
-  long long maxComps = 0;
-  long long allComps = 0;
-  for (int i = 0; i < size; ++i) {
-    long long nComps = 0;
-    searchFunc(innerBuffer, size, innerBuffer[i], &nComps);
-    allComps += nComps;
-    maxComps = max(maxComps, nComps);
   }
-  long long averageComps = allComps / size;
-  printf("OK! Max comparisons: %lld, average comparisons: %lld\n",
-         maxComps, averageComps);
-  // запись в файл
-  char filename[256];
-  sprintf(filename, "./data/%s.csv", experimentName);
-  FILE *f = fopen(filename, "a");
-  if (f == NULL) {
-    printf("FileOpenError %s", filename);
-    exit(1);
-  }
-  fprintf(f, "%d; %lld %lld\n", size, maxComps, averageComps);
-  fclose(f);
 }
 
-void compsExperiment() {
-// описание функций поиска
-  SearchFunc unorderedSearch[] = {
-    {linearSearch,     "linearSearch"},
-    {linearSearchFast, "linearSearchFast"}
-  };
-  SearchFunc orderedSearch[] = {
-    {linearSearchOrdered, "linearSearchOrdered"},
-    {binarySearch,        "binarySearch"},
-    {blockSearch,         "blockSearch"}
-  };
-  const unsigned UNORDERED_SEARCHES_N = ARRAY_SIZE(unorderedSearch);
-  const unsigned ORDERED_SEARCHES_N = ARRAY_SIZE(orderedSearch);
-  // запись статистики в файл
-  for (int size = 50; size <= 450; size += 50) {
-    printf("------------------------------\n");
-    printf("Size: %d\n", size);
-    static char filename[128];
-    for (int i = 0; i < UNORDERED_SEARCHES_N; i++) {
-      // генерация имени файла
-      sprintf(filename, "%s_%s",
-              unorderedSearch[i].name, "random");
-      checkComps(unorderedSearch[i].search,
-                 generateRandomArray,
-                 size, filename);
+void getReversedArray(int *a, int n) {
+  for (int i = 0; i < n; i++) {
+    a[i] = n - 1 - i;
+  }
+}
+
+void getRandomArray(int *a, int n) {
+  for (int i = 0; i < n; i++) {
+    a[i] = rand() % n;
+  }
+}
+
+#define SIZE_ARRAY 50
+#define ACCURACY 1000
+
+void getTimesForOrdered(bool (*SearchFunc)(int*, int, int)) {
+  int array[SIZE_ARRAY];
+
+  for (int size = 5; size <= SIZE_ARRAY; size += 5) {
+    getSortedArray(array, size);
+
+    unsigned sum = 0;
+    for (int i = 0; i < ACCURACY; i++) {
+      numCompares = 0;
+      SearchFunc(array, size, rand() % size);
+      sum += numCompares;
     }
-    for (int i = 0; i < ORDERED_SEARCHES_N; i++) {
-      // генерация имени файла
-      sprintf(filename, "%s_%s",
-              orderedSearch[i].name, "ordered");
-      checkComps(orderedSearch[i].search,
-                 generateOrderedArray,
-                 size, filename);
-    }
-    printf("\n");
+
+    printf("%d ", (int)ceil((float)sum / (float)ACCURACY));
   }
+  printf("\n");
+}
+
+void getTimesForUnordered(bool (*SearchFunc)(int*, int, int)) {
+  int array[100];
+
+  getTimesForOrdered(SearchFunc);
+
+  for (int size = 5; size <= SIZE_ARRAY; size += 5) {
+    getReversedArray(array, size);
+
+    unsigned sum = 0;
+    for (int j = 0; j < ACCURACY; j++) {
+      numCompares = 0;
+      SearchFunc(array, size, rand() % size);
+      sum += numCompares;
+    }
+
+    printf("%d ", sum / ACCURACY);
+  }
+  printf("\n");
+
+  for (int size = 5; size <= SIZE_ARRAY; size += 5) {
+    getRandomArray(array, size);
+
+    unsigned sum = 0;
+    for (int i = 0; i < ACCURACY; i++) {
+      numCompares = 0;
+      SearchFunc(array, size, rand() % size);
+      sum += numCompares;
+    }
+
+    printf("%d ", sum / ACCURACY);
+  }
+  printf("\n");
+}
+
+int main() {
+  printf("linearSearch:\n");
+  getTimesForUnordered(&linearSearch);
+
+  printf("\nlinearSearchFast:\n");
+  getTimesForUnordered(&linearSearchFast);
+
+  printf("\nlinearSearchOrdered:\n");
+  getTimesForOrdered(&linearSearchOrdered);
+
+  printf("\nbinarySearch:\n");
+  getTimesForOrdered(&binarySearch);
+
+  printf("\nblockSearch:\n");
+  getTimesForOrdered(&blockSearch);
 }
