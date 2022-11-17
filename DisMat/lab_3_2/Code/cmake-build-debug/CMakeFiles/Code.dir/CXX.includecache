@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/DisMat/lab_3_2/Code/binaryRelation.cpp
+iostream
+-
+vector
+-
+set
+-
+
+D:/BGTU/DisMat/lab_3_2/Code/binaryRelation.h
+
+D:/BGTU/DisMat/lab_3_2/Code/main.cpp
+iostream
+-
+vector
+-
+set
+-
+ctime
+-
+binaryRelation.h
+D:/BGTU/DisMat/lab_3_2/Code/binaryRelation.h
+float.h
+-
+fstream
+-
+
