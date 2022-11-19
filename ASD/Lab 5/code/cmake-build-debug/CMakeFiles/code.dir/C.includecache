@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/ASD/Lab 5/code/List7/List7.h
+malloc.h
+-
+stdlib.h
+-
+stdbool.h
+-
+
+D:/BGTU/ASD/Lab 5/code/main.c
+stdio.h
+-
+assert.h
+-
+List7/List7.h
+D:/BGTU/ASD/Lab 5/code/List7/List7.h
+
