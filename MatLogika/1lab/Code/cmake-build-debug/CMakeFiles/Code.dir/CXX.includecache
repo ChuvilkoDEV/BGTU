@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/MatLogika/1lab/Code/main.cpp
+iostream
+-
+string
+-
+set
+-
+map
+-
+stack
+-
+queue
+-
+cassert
+-
+cstdlib
+-
+windows.h
+-
+iomanip
+-
+
