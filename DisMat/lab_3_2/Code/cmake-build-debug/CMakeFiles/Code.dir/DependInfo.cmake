@@ -4,21 +4,12 @@ set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
 
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/BGTU/DisMat/lab_3_2/Code/binaryRelation.cpp" "D:/BGTU/DisMat/lab_3_2/Code/cmake-build-debug/CMakeFiles/Code.dir/binaryRelation.cpp.obj"
-  "D:/BGTU/DisMat/lab_3_2/Code/main.cpp" "D:/BGTU/DisMat/lab_3_2/Code/cmake-build-debug/CMakeFiles/Code.dir/main.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/BGTU/BGTU/DisMat/lab_3_2/Code/binaryRelation.cpp" "CMakeFiles/Code.dir/binaryRelation.cpp.obj" "gcc" "CMakeFiles/Code.dir/binaryRelation.cpp.obj.d"
+  "C:/BGTU/BGTU/DisMat/lab_3_2/Code/main.cpp" "CMakeFiles/Code.dir/main.cpp.obj" "gcc" "CMakeFiles/Code.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
