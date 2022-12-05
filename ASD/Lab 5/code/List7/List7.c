@@ -3,7 +3,7 @@
 void InitList(List *L, unsigned SizeMem) {
   L->PMemList = malloc(sizeof(BaseType) * SizeMem);
   L->SizeMem = SizeMem;
-  L->N = capacity;
+  L->N = 0;
   L->ptr = 0;
 }
 
@@ -14,14 +14,15 @@ void PutList(List *L, BaseType x) {
   }
   L->PMemList[++(L->ptr)] = x;
   L->N++;
+  ListError = LIST_OK;
 }
 
-void GetList(List *L, BaseType x) {
+void GetList(List *L, BaseType *x) {
   bool isFind = false;
   for (int i = 0; i < L->SizeMem; i++) {
     if (isFind) {
       L->PMemList[i - 1] = L->PMemList[i];
-    } else if (L->PMemList[i] == x) {
+    } else if (L->PMemList[i] == *x) {
       isFind = true;
       (L->N)--;
     }

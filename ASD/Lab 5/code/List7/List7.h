@@ -18,8 +18,9 @@ static short ListError;
 
 typedef int BaseType;
 typedef unsigned ptrel;
+
 struct List {
-  BaseType *PMemList;
+  int *PMemList;
   ptrel ptr;
   unsigned int N; // длина списка
   unsigned int SizeMem; // размер массива
@@ -29,7 +30,7 @@ void InitList(List *L, unsigned SizeMem);
 
 void PutList(List *L, BaseType x);
 
-void GetList(List *L, BaseType x);
+void GetList(List *L, BaseType *x);
 
 void ReadList(List *L, BaseType *x);
 
@@ -48,6 +49,8 @@ void MovePtr(List *L);
 void MoveTo(List *L, unsigned int n);
 
 void CopyList(List *L1,List *L2);
+
+void DoneList(List *L);
 
 bool isEqual(List *L1,List *L2);
 
