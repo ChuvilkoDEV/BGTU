@@ -1,11 +1,11 @@
 #ifndef CODE_QUEUE_H
 #define CODE_QUEUE_H
 
-#include "../../../Lab 5/code/List7/List7.h" // Смотреть лаб. раб. №5
+#include "../OLS/OLS.h" // Смотреть лаб. раб. №5
 
-const int FifoOk = LIST_OK;
+const int FifoOk = ListOk;
 const int FifoUnder = ListUnder;
-const int FifoOver = LIST_NOT_MEM;
+const int FifoOver = ListNotMem;
 int FifoError; // Переменная ошибок
 
 typedef List Fifo;

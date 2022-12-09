@@ -3,7 +3,7 @@
 #include <malloc.h>
 
 void InitFifo(Fifo *f, unsigned SizeMem) {
-    InitList(f, SizeMem);
+    InitList(f);
 }
 
 void PutFifo(Fifo *f, BaseType E) {
@@ -21,8 +21,7 @@ void GetFifo(Fifo *f, BaseType *E) {
 }
 
 void ReadFifo(Fifo *f, BaseType *E) {
-    *E = f->PMemList[f->ptr];
-    FifoError = FifoOk;
+    ReadList(f, E);
 }
 
 int EmptyFifo(Fifo *f) {

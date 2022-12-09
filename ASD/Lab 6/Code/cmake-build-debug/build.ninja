@@ -67,6 +67,12 @@ build CMakeFiles/Code.dir/Queue/Queue.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU
   OBJECT_DIR = CMakeFiles\Code.dir
   OBJECT_FILE_DIR = CMakeFiles\Code.dir\Queue
 
+build CMakeFiles/Code.dir/OLS/OLS.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU/BGTU/ASD/Lab$ 6/Code/OLS/OLS.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles\Code.dir\OLS\OLS.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\Code.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code.dir\OLS
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Code
@@ -75,7 +81,7 @@ build CMakeFiles/Code.dir/Queue/Queue.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU
 #############################################
 # Link the executable Code.exe
 
-build Code.exe: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/main.cpp.obj CMakeFiles/Code.dir/Stack/Stack.cpp.obj CMakeFiles/Code.dir/Queue/Queue.cpp.obj
+build Code.exe: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/main.cpp.obj CMakeFiles/Code.dir/Stack/Stack.cpp.obj CMakeFiles/Code.dir/Queue/Queue.cpp.obj CMakeFiles/Code.dir/OLS/OLS.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Code.dir

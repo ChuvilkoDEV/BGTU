@@ -8,13 +8,12 @@ const int StackOk = 0; // Все ОК
 const int StackOver = 1; // Стек переполнен
 const int StackUnder = 2; // Стек пуст
 int StackError; // Переменная ошибок
-typedef int BaseType; // Определить тип элемента стека
 
-typedef struct Stack
-{
+typedef int BaseType; // Определить тип элемента стека
+struct Stack {
     int Buf[StackSize];
     unsigned ptr; // Указывает на элемент, являющийся вершиной стека
-};
+} typedef Stack;
 
 void InitStack(Stack *s); // Инициализация стека
 int EmptyStack(Stack *s); // Проверка: стек пуст?

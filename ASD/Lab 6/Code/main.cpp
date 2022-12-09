@@ -3,7 +3,7 @@
 #include "Stack/Stack.h"
 #include "Queue/Queue.h"
 
- struct TInquiry
+struct TInquiry
 {
     char Name[10]; // имя запроса
     unsigned Time; // время обслуживания
@@ -59,13 +59,13 @@ int main() {
 
         switch (T.P) {
             case 0:
-                PutFifo(f0, T);
+                PutFifo(&f0, T);
                 break;
             case 1:
-                PutFifo(f1, T);
+                PutFifo(&f1, T);
                 break;
             case 2:
-                PutFifo(f2, T);
+                PutFifo(&f2, T);
                 break;
         }
     }

@@ -1,9 +1,18 @@
 # ninja log v5
-9	214	6919293801924155	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
+3	91	6919310178371041	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
 5	216	6919293801934147	CMakeFiles/Code.dir/Stack/Stack.cpp.obj	fcc0e15e01bde45f
 0	504	6919293804841707	CMakeFiles/Code.dir/main.cpp.obj	48e62613274d0e75
-4	102	6919295429192706	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
-3	98	6919299254967462	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
-6	120	6919309931815772	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
-3	91	6919310178371041	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
 91	210	6919310179500091	Code.exe	bbe66910f616c815
+10	384	6922830413890550	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
+19	386	6922830413890550	CMakeFiles/Code.dir/OLS/OLS.cpp.obj	cbfe1c0bfbd9cc50
+14	387	6922830413880573	CMakeFiles/Code.dir/Stack/Stack.cpp.obj	fcc0e15e01bde45f
+11	129	6922831273793615	CMakeFiles/Code.dir/Stack/Stack.cpp.obj	fcc0e15e01bde45f
+12	135	6922872322550160	CMakeFiles/Code.dir/OLS/OLS.cpp.obj	cbfe1c0bfbd9cc50
+12	134	6922876990517339	CMakeFiles/Code.dir/OLS/OLS.cpp.obj	cbfe1c0bfbd9cc50
+8	129	6922887914384417	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
+14	138	6922890481929714	CMakeFiles/Code.dir/Stack/Stack.cpp.obj	fcc0e15e01bde45f
+19	164	6922890482190126	CMakeFiles/Code.dir/OLS/OLS.cpp.obj	cbfe1c0bfbd9cc50
+10	165	6922890482200110	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
+8	141	6922891704259025	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
+15	131	6922892335408579	CMakeFiles/Code.dir/OLS/OLS.cpp.obj	cbfe1c0bfbd9cc50
+9	135	6922892335449131	CMakeFiles/Code.dir/Queue/Queue.cpp.obj	31a046d14ddd6b1
