@@ -57,7 +57,7 @@ void DoneList(List *L);
 void CopyList(List *L1, List *L2);
 
 void InitMem();/*присваивает Flag каждoго элемента в 0*/
-int EmptyMem(); /*возвращает 1, если в массиве нет свободных
+int EmptyMemList(); /*возвращает 1, если в массиве нет свободных
 элементов*/
 unsigned NewMem();//возвращает номер свободного элемента
 void DisposeMem(unsigned n);/*делает n-й элемент масcива cвободным*/

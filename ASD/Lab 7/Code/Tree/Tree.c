@@ -1,28 +1,22 @@
 #include "Tree.h"
 
-// Инициализация БД
-void InitTree(Tree *T, unsigned size) {
-    T->Size = size;
-    T->MemTree[0].RSon = 1;
+// Связывает все элементы массива в список свободных элементов
+void InitMem(Tree *T) {
+    for (int i = 0; i < Size; i++)
+        MemTree[i].RSon = i + 1;
 }
 
-// Добавляет лист дереву T
-void AddLeaf(Tree *T, BaseType x, unsigned index) {
-    if (index > T->Size) {
-        TreeError = TreeNotMem;
-        return;
-    }
-
-    T->MemTree[index].data = x;
-    T->MemTree[index].RSon = 0;
-    T->MemTree[index].LSon = 0;
-    TreeError = TreeOk;
+// Инициализация БД
+void InitTree(Tree *T, unsigned size) {
+    MemTree[0].RSon = 1;
+    Size = size;
+    InitMem(T);
 }
 
 // Возвращает 1, если в массиве нет свободных элементов,
 // 0 — в противном случае
 int EmptyMem(Tree *T) {
-    return T->MemTree[0].RSon >= T->Size;
+    return MemTree[0].RSon == Size;
 }
 
 // Возвращает номер свободного элемента и исключает его из ССЭ
@@ -31,68 +25,75 @@ unsigned int NewMem(Tree *T) {
         TreeError = TreeNotMem;
         exit(TreeNotMem);
     }
-    return (T->MemTree[0].RSon)++;
+
+    unsigned freeElementIndex = MemTree[0].RSon;
+    MemTree[0].RSon = MemTree[freeElementIndex].RSon;
+    return freeElementIndex;
 }
 
 // Создает корень дереву T, со значением x
 void CreateRoot(Tree *T, BaseType x) {
-    AddLeaf(T, x, NewMem(T));
+    unsigned index = NewMem(T);
+    element el = MemTree[index];
+    el.data = x;
+    el.RSon = 0;
+    el.LSon = 0;
 }
 
 // Возвращает 1, если у элемента под номером index есть левый сын.
 // 0 - в ином случае
 int IsLSon(Tree *T, unsigned index) {
-    return T->MemTree[index].LSon != 0;
+    return MemTree[index].LSon != 0;
 }
 
 // Возвращает 1, если у элемента под номером index есть правый сын.
 // 0 - в ином случае
 int IsRSon(Tree *T, unsigned index) {
-    return T->MemTree[index].RSon != 0;
+    return MemTree[index].RSon != 0;
 }
 
 // Возвращает 1, если БД пустое. 0 - в ином случае
 int IsEmptyTree(Tree *T) {
-    return T->MemTree[0].RSon == 1;
+    return MemTree[0].RSon == 1;
 }
 
 // Записывает элемент x, в дерево Tree
 void WriteDataTree(Tree *T, BaseType x) {
     if (IsEmptyTree(T)) {
         CreateRoot(T, x);
-    } else if (T->MemTree[1].data < x) {
+    } else if (MemTree[1].data < x) {
         if (IsLSon(T, 1)) {
-            WriteDataTree_(T, x, T->MemTree[1].LSon);
+            WriteDataTree_(T, x, MemTree[1].LSon);
         } else {
-            T->MemTree[1].LSon = NewMem(T);
-            AddLeaf(T, x, T->MemTree[1].LSon);
+            MemTree[1].LSon = MemTree[0].RSon;
+            CreateRoot(T, x);
         }
     } else {
         if (IsRSon(T, 1)) {
-            WriteDataTree_(T, x, T->MemTree[1].RSon);
+            WriteDataTree_(T, x, MemTree[1].RSon);
         } else {
-            T->MemTree[1].RSon = NewMem(T);
-            AddLeaf(T, x, T->MemTree[1].RSon);
+            MemTree[1].RSon = MemTree[0].RSon;
+            CreateRoot(T, x);
         }
     }
 }
 
 // Рекурсивно погружется для записи элемента x
 void WriteDataTree_(Tree *T, BaseType x, unsigned index) {
-    if (T->MemTree[index].data < x) {
+    if (MemTree[index].data < x) {
         if (IsLSon(T, index)) {
-            WriteDataTree_(T, x, T->MemTree[index].LSon);
+            WriteDataTree_(T, x, MemTree[index].LSon);
         } else {
-            T->MemTree[index].LSon = NewMem(T);
-            AddLeaf(T, x, T->MemTree[index].LSon);
+            MemTree[index].LSon = MemTree[0].RSon;
+            CreateRoot(T, x);
             return;
         }
     } else {
         if (IsRSon(T, index)) {
-            WriteDataTree_(T, x, T->MemTree[index].RSon);
+            WriteDataTree_(T, x, MemTree[index].RSon);
         } else {
-            T->MemTree[index].RSon = NewMem(T);
-            AddLeaf(T, x, T->MemTree[index].RSon);
+            MemTree[index].RSon = MemTree[0].RSon;
+            CreateRoot(T, x);
             return;
         }
     }
@@ -102,22 +103,16 @@ void WriteDataTree_(Tree *T, BaseType x, unsigned index) {
 // вершины, TS — адрес ячейки, содержащей адрес корня левого
 // поддерева(левого сына)
 void MoveToLSon(Tree *T, Tree *TS) {
-    InitMem(TS);
-    unsigned sonIndex = T->MemTree[1].LSon;
-    CreateRoot(TS, T->MemTree[sonIndex].data);
-
-}
-
-
-
-
-
-// Связывает все элементы массива в список свободных элементов
-void InitMem(Tree *T) {
-    T->MemTree[0].RSon = 1;
+    **TS = MemTree[**T].LSon;
 }
 
 // Удаляет дерево
 void DelTree(Tree *T) {
-    T->Size = 0;
+    Size = 0;
+}
+
+// делает n-й элемент массива свободным и включает его в ССЭ
+void DisposeMem(unsigned n) {
+    MemTree[n].RSon = MemTree[0].RSon;
+    MemTree[0].RSon = n;
 }

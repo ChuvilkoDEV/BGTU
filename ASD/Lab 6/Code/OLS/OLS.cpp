@@ -55,7 +55,7 @@ bool IsListFull(List *L) {
 }
 
 bool EndList(List *L) {
-    return L->ptr->next->next == NULL;
+    return L->ptr->next->next == nullptr;
 }
 
 bool BeginList(List *L) {
@@ -114,7 +114,7 @@ void CopyList(List *L1, List *L2) {
     BeginPtr(L2);
 }
 
-int EmptyMem() {
+int EmptyMemList() {
     int i = 0;
     while (i < SizeList) {
         if (!MemList[i].isUsing)

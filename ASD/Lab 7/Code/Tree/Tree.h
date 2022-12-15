@@ -3,16 +3,17 @@
 
 #include "stdio.h"
 #include "stdlib.h"
-#include "../../../Lab 6/Code/OLS/OLS.h"
 
 #define capacity 1000
 
-const int TreeOk = 0;
-const int TreeNotMem = 1;
-const int TreeUnder = 2;
-int TreeError;
+typedef int BaseType;
 
-typedef unsigned char PtrEl;
+static const int TreeOk = 0;
+static const int TreeNotMem = 1;
+static const int TreeUnder = 2;
+static int TreeError;
+
+typedef unsigned int PtrEl;
 
 struct element {
     BaseType data;
@@ -21,16 +22,12 @@ struct element {
 } typedef element;
 
 typedef PtrEl *Tree;
-unsigned Size;
-
-element MemTree[capacity];
+static unsigned Size;
+static element MemTree[capacity];
 
 
 // инициализация дерева
 void InitTree(Tree *T, unsigned size);
-
-// Добавление листа дерева
-void AddLeaf(Tree *T, BaseType x, unsigned index);
 
 // Создание корня
 void CreateRoot(Tree *T, BaseType x);
