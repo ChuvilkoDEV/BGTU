@@ -1,0 +1,3 @@
+C:/BGTU/BGTU/MatLogika/4lab/Code/cmake-build-debug/CMakeFiles/Code.dir
+C:/BGTU/BGTU/MatLogika/4lab/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/BGTU/BGTU/MatLogika/4lab/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
