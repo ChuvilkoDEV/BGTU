@@ -1,3 +1,4 @@
+/*
 #ifndef CODE_TREE_H
 #define CODE_TREE_H
 
@@ -76,3 +77,4 @@ void DelTree(Tree *T);
 void DisposeMem(unsigned n);
 
 #endif //CODE_TREE_H
+ */

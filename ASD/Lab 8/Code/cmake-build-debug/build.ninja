@@ -61,6 +61,12 @@ build CMakeFiles/Code.dir/Table/Table.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU
   OBJECT_DIR = CMakeFiles\Code.dir
   OBJECT_FILE_DIR = CMakeFiles\Code.dir\Table
 
+build CMakeFiles/Code.dir/Tree/Tree.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU/BGTU/ASD/Lab$ 8/Code/Tree/Tree.cpp || cmake_object_order_depends_target_Code
+  DEP_FILE = CMakeFiles\Code.dir\Tree\Tree.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\Code.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code.dir\Tree
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Code
@@ -69,7 +75,7 @@ build CMakeFiles/Code.dir/Table/Table.cpp.obj: CXX_COMPILER__Code_Debug C$:/BGTU
 #############################################
 # Link the executable Code.exe
 
-build Code.exe: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/main.cpp.obj CMakeFiles/Code.dir/Table/Table.cpp.obj
+build Code.exe: CXX_EXECUTABLE_LINKER__Code_Debug CMakeFiles/Code.dir/main.cpp.obj CMakeFiles/Code.dir/Table/Table.cpp.obj CMakeFiles/Code.dir/Tree/Tree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Code.dir

@@ -3,4 +3,7 @@ project(Code)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Code main.cpp Table/Table.cpp Table/Table.h)
+add_executable(Code main.cpp
+        Table/Table.cpp Table/Table.h
+        Tree/Tree.cpp Tree/Tree.h
+        )

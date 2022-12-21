@@ -1,3 +1,4 @@
+/*
 #include "Tree.h"
 
 // Связывает все элементы массива в список свободных элементов
@@ -115,4 +116,4 @@ void DelTree(Tree *T) {
 void DisposeMem(unsigned n) {
     MemTree[n].RSon = MemTree[0].RSon;
     MemTree[0].RSon = n;
-}
+} */

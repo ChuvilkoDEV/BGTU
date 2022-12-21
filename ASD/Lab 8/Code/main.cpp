@@ -1,6 +1,13 @@
+#include <windows.h>
 #include <iostream>
+#include "string"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+  SetConsoleOutputCP(CP_UTF8);
+  string s;
+  cin >> s;
+  cout << "Пришла заработная плата в размере 125 тысяч 408 рублей 19 копеек";
+
 }
