@@ -1,4 +1,3 @@
-/*
 #include "Table.h"
 #include <cstdio>
 #include <cstdlib>
@@ -127,4 +126,3 @@ bool writeTable(Table *T, BaseType E, T_Key Key) {
 void doneTable(Table *T) {
   delTree(*T);
 }
- */

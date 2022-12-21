@@ -1,4 +1,3 @@
-/*
 #ifndef CODE_TABLE_H
 #define CODE_TABLE_H
 
@@ -35,4 +34,3 @@ bool writeTable(Table *T, BaseType E, T_Key Key);
 void doneTable(Table *T);
 
 #endif //CODE_TABLE_H
- */
