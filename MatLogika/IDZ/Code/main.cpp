@@ -48,15 +48,19 @@ void BrainFuckInterpreter(vector<char> &acc, char *cpu) {
 }
 
 int main() {
-  std::cout << "Input Brainfuck code: \n";
-  char cpu[30000];
-  std::vector<char> acc;
-  char ch = getchar();
-  while (ch != '\n') {
-    acc.push_back(ch);
-    ch = getchar();
+  int a, b;
+  scanf("%d %d", &a, &b);
+
+  int a1 = a, b1 = b;
+  if (a < b) {
+    a = a1 + b1;
+    b = a1 * b1;
+  } else {
+    a = a1 * b1;
+    b = a1 + b1;
   }
-  cout << "\n";
-  BrainFuckInterpreter(acc, cpu);
+
+  printf("%d %d", a, b);
+
   return 0;
 }
