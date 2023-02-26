@@ -43,6 +43,7 @@ void outputMatrix(Matrix &matrix) {
 }
 
 void deleteFirstElements(Matrix &matrix) {
+  matrix[0].clear();
   matrix.erase(matrix.begin());
   for (auto &i : matrix)
     i.erase(i.begin());

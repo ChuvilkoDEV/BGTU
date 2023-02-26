@@ -7,8 +7,11 @@ int main() {
   matrix m = {{3, 5, 1}, {1, 0, 2}, {2, 2, -1}};
 
   Matrix M1(m);
+  Matrix M2(m);
   M1.inverse();
-  M1.Output();
+
+  Matrix res = Matrix::Multiplication(M1, M2);
+  res.Output();
 
   return 0;
 }

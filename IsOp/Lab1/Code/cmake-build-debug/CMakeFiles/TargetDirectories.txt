@@ -1,0 +1,3 @@
+D:/BGTU/IsOp/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir
+D:/BGTU/IsOp/Lab1/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/IsOp/Lab1/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
