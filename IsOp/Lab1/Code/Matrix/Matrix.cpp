@@ -1,7 +1,6 @@
 #include "Matrix.h"
 
 void Matrix::Output() {
-  cout << setprecision(3);
   for (const auto &i: data) {
     for (auto j: i)
       cout << j << ",\t";
@@ -111,12 +110,6 @@ void Matrix::Transposition() {
 void Matrix::forwardGauss() {
   for (int i = 0; i < nRows - 1; i++) {
     for (int j = i + 1; j < nRows; j++)
-      if (data[j][i] > data[i][i]) {
-        swap(data[j], data[i]);
-        nSwap++;
-      }
-
-    for (int j = i + 1; j < nRows; j++)
       if (abs(data[i][i]) >= EPS) {
         double dif = data[j][i] / data[i][i];
         for (int k = i; k < nColumns; k++)
@@ -170,10 +163,9 @@ void Matrix::linearEquation() {
 }
 
 void Matrix::deleteZeroRows() {
-  int n = nRows;
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < nRows; i++) {
     bool allZero = true;
-    for (int j = 0; j < n; j++) {
+    for (int j = 0; j < nRows; j++) {
       if (abs(data[i][j]) > EPS) {
         allZero = false;
         break;
@@ -217,7 +209,7 @@ void Matrix::inverse() {
 }
 
 Matrix Matrix::division(Matrix &m, double x) {
-  return Multiplication(m, 1/x);
+  return Multiplication(m, 1 / x);
 }
 
 void Matrix::deleteRow(int rowIndex) {
@@ -229,6 +221,102 @@ void Matrix::deleteRow(int rowIndex) {
   data.erase(data.begin() + rowIndex);
   nRows--;
 }
+
+void _generateCombinations(int n, int k, int i, int b,
+                           vector<int> inputSet,
+                           vector<int> generatingSet,
+                           vector<vector<int>> &combinations) {
+  for (int x = b; x <= n - k + i; x++) {
+    vector<int> copyGeneratingSet = generatingSet;
+    copyGeneratingSet.push_back(inputSet[x]);
+    if (i == k) {
+      combinations.push_back(generatingSet);
+      return;
+    } else
+      _generateCombinations(n, k, i + 1, x + 1, inputSet,
+                            copyGeneratingSet, combinations);
+  }
+}
+
+vector<vector<int>> Matrix::generateCombinations() {
+  vector<int> inputSet;
+  for (int i = nColumns - 1 - 1; i >= 0; i--)
+    inputSet.push_back(i);
+  vector<vector<int>> combinations;
+  vector<int> generatingSet;
+  _generateCombinations(nColumns - 1, nRows, 0, 0, inputSet, generatingSet, combinations);
+  return combinations;
+}
+
+
+void Matrix::reverseGauss(vector<int> &supports) {
+  for (int i = nRows - 1; i >= 0; i--) {
+    int j = supports[nRows - i - 1];
+    if (abs(data[i][j]) >= EPS) {
+      double dif = data[i][j];
+      for (int k = 0; k < nColumns; k++)
+        data[i][k] /= dif;
+    }
+
+    for (int k = i - 1; k >= 0; k--) {
+      if (abs(data[i][j]) >= EPS) {
+        double dif = data[k][j];
+        for (int m = 0; m < nColumns; m++)
+          data[k][m] -= dif * data[i][m];
+      }
+    }
+  }
+}
+
+bool Matrix::CheckBasisMatrix(vector<int> &supports) {
+  matrix m(nRows);
+  for (int i = 0; i < nRows; i++)
+    for (int j = nRows - 1; j >= 0; j--)
+      m[i].push_back(data[i][supports[j]]);
+  Matrix MMM(m);
+  if (MMM.determinant() > 0)
+    return true;
+  return false;
+}
+
+bool Matrix::isHaveSolution() {
+  for (int i = 0; i < nRows; i++) {
+    bool isAllZero = true;
+    for (int j = 0; j < nColumns - 1; j++) {
+      if (abs(data[i][j]) >= EPS) {
+        isAllZero = false;
+        break;
+      }
+    }
+    if (isAllZero && abs(data[i][nColumns - 1]) >= 0)
+      return false;
+  }
+  return true;
+}
+
+void Matrix::findAllBasis() {
+  Matrix M(data);
+  M.forwardGauss();
+  if (!M.isHaveSolution()) {
+    cout << "No solution!";
+    return;
+  }
+
+  vector<vector<int>> res = M.generateCombinations();
+  cout << "Basis solutions:\n";
+  for (auto &i: res) {
+    if (CheckBasisMatrix(i)){
+      Matrix tmp(M);
+      tmp.reverseGauss(i);
+      for (int j = 0; j < i.size(); j++)
+        cout << 'x' << i[j] << " = " << tmp.data[j][nColumns - 1] << ",\t";
+      cout << "\b\b\n";
+    }
+  }
+}
+
+
+
 
 
 

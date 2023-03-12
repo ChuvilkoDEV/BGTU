@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Code.dir/Matrix/Matrix.cpp.obj"
+  "CMakeFiles/Code.dir/Matrix/Matrix.cpp.obj.d"
   "CMakeFiles/Code.dir/main.cpp.obj"
+  "CMakeFiles/Code.dir/main.cpp.obj.d"
   "Code.exe"
   "Code.exe.manifest"
   "Code.pdb"
