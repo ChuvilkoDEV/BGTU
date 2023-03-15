@@ -60,7 +60,12 @@ class Matrix {
   double determinant();
   void inverse();
 
+  vector<vector<int>> generateCombinations();
   void deleteRow(int rowIndex);
+  void reverseGauss(vector<int> &supports);
+  bool CheckBasisMatrix(vector<int> &supports);
+  void findAllBasis();
+  bool isHaveSolution();
 };
 
 
