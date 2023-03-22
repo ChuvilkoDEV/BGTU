@@ -101,7 +101,8 @@ void Upload::upload() {
     string genre;
     cin >> genre;
     if (genre == "\"Все\"" || genre == "Все") {
-      cout << "Ну вот и все. Вы добавили свой... Шедевр! Мы благодарны вам.\n\n";
+      cout
+        << "Ну вот и все. Вы добавили свой... Шедевр! Мы благодарны вам.\n\n";
       break;
     }
     movie.genres.push_back(genre);
