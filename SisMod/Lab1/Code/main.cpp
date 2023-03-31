@@ -62,7 +62,7 @@ double equationOXDerivativeY(double x, double y, double F) {
 int main() {
   //matrix m1 = {{1, 2, 3}, }
   cout << setw(3) << "F |" << setw(13) << "x |" << setw(14) << "y |\n";
-  for (double F = 0; F < 1000000000000000; F += 10000000000000) {
+  for (double F = 0; F < 100000; F += 1000) {
     // x, y
     vector<double> Values(2);
     for (int i = 0; i < 100; i++) {
