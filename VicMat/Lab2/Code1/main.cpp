@@ -100,6 +100,13 @@ int factorial(int n) {
 
   return result;
 }
+void outputDifferences(vector<vector<float>> &v) {
+  for (auto &i : v) {
+    for (auto j :i)
+      cout << j << ' ';
+    cout << '\n';
+  }
+}
 
 int main(int argc, char *argv[]) {
   //Выбор способа ввода
@@ -149,6 +156,7 @@ int main(int argc, char *argv[]) {
 
   if (checkIfUniform(points)) {
     vector<vector<float>> finiteDifferences = getFiniteDifferences(points);
+    outputDifferences(finiteDifferences);
 
     float value = 0;
     if (substitutedValue >= points[0].first) {
@@ -177,6 +185,7 @@ int main(int argc, char *argv[]) {
     //Метод разделенных разностей
   } else {
     vector<vector<float>> dividedDifferences = getDividedDifferences(points);
+    outputDifferences(dividedDifferences);
 
     float value = 0;
     for (int column = 0; column < dividedDifferences[0].size(); column++) {

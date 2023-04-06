@@ -318,3 +318,29 @@ void Matrix::findAllBasis() {
 
 
 }
+
+// Проверка на базисы
+bool Matrix::isEnoughBasis() {
+  for (int i = 0; i < nColumns - 1; i++) {
+    int counterOfZero = 0;
+    for (int j = 0; j < nRows - 1; j++)
+      if (data[j][i] == 0)
+        counterOfZero++;
+    if (counterOfZero == nRows - 2)
+      basis.push_back(i);
+  }
+  return basis.size() == nRows - 1;
+}
+
+// Возвращает значение true, если члены Z функции больше нуля
+bool Matrix::isAllElementZGreaterZero() {
+  for (int i = 0; i < nColumns - 1; i++)
+    if (data[nRows][i] < 0)
+      return false;
+  return true;
+}
+
+// Симплекс метод
+void Matrix::SimplexMethod() {
+
+}

@@ -14,7 +14,7 @@ using namespace std;
 #define n3 0.7
 #define m 10
 #define g 10
-#define dif 0.00001
+#define dif 0.001
 
 /////////////////////////////////////////
 
@@ -29,12 +29,12 @@ double equationOY(double x, double y) {
 }
 
 double equationOYDerivativeX(double x, double y) {
-  return (equationOY(x + dif, y) - equationOY(x, y)) / dif;
+  return (equationOY(x + dif, y) - equationOY(x - dif, y)) / (2 * dif);
 }
 
 
 double equationOYDerivativeY(double x, double y) {
-  return (equationOY(x, y + dif) - equationOY(x, y)) / dif;
+  return (equationOY(x, y + dif) - equationOY(x, y - dif)) / (2 * dif);
 }
 
 /////////////////////////////////////////
@@ -50,12 +50,12 @@ double equationOX(double x, double y, double F) {
 }
 
 double equationOXDerivativeX(double x, double y, double F) {
-  return (equationOX(x + dif, y, F) - equationOX(x, y, F)) / dif;
+  return (equationOX(x + dif, y, F) - equationOX(x - dif, y, F)) / (2 * dif);
 }
 
 
 double equationOXDerivativeY(double x, double y, double F) {
-  return (equationOX(x, y + dif, F) - equationOX(x, y, F)) / dif;
+  return (equationOX(x, y + dif, F) - equationOX(x, y - dif, F)) / (2 * dif);
 }
 
 
@@ -65,17 +65,21 @@ int main() {
     // x, y
     vector<double> Values(2);
     for (int i = 0; i < 100; i++) {
-      matrix w = {{equationOXDerivativeX(Values[0], Values[1], F), equationOXDerivativeY(Values[0], Values[1], F)},
-                  {equationOYDerivativeX(Values[0], Values[1]),    equationOYDerivativeY(Values[0], Values[1])}};
+      matrix w = {{equationOXDerivativeX(Values[0], Values[1], F),
+                    equationOXDerivativeY(Values[0], Values[1], F)},
+                  {equationOYDerivativeX(Values[0], Values[1]),
+                    equationOYDerivativeY(Values[0], Values[1])}};
       Matrix W(w);
       W.inverse();
 
-      vector<double> fVal = {equationOX(Values[0], Values[1], F), equationOY(Values[0], Values[1])};
+      vector<double> fVal = {equationOX(Values[0], Values[1], F),
+                             equationOY(Values[0], Values[1])};
       vector<double> ffff = Matrix::Multiplication(W, fVal);
       Values[0] -= ffff[0];
       Values[1] -= ffff[1];
     }
-    cout << setw(8) << F << " |" << setprecision(3) << setw(7) << Values[0] * 100 << " cm | " << setprecision(3)
+    cout << setw(8) << F << " |" << setprecision(3) << setw(7)
+         << Values[0] * 100 << " cm | " << setprecision(3)
          << setw(7) << Values[1] * 100 << " cm |\n";
   }
 

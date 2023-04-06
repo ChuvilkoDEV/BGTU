@@ -30,7 +30,7 @@ class Matrix {
     }
   }
 
-  explicit Matrix(matrix m) {
+  explicit Matrix(matrix &m) {
     this->nColumns = m[0].size();
     this->nRows = m.size();
     nSwap = 0;
@@ -68,7 +68,9 @@ class Matrix {
   void findAllBasis();
   bool isHaveSolution();
 
-
+  bool isEnoughBasis();
+  bool isAllElementZGreaterZero();
+  void SimplexMethod();
 };
 
 
