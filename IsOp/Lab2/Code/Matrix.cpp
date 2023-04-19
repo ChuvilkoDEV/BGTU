@@ -10,10 +10,9 @@ void Matrix::Output() {
 }
 
 void Matrix::Input() {
-  for (int i = 0; i < nRows; i++) {
+  for (int i = 0; i < nRows; i++)
     for (int j = 0; j < nColumns; j++)
       cin >> this->data[i][j];
-  }
 }
 
 Matrix Matrix::Multiplication(Matrix &m1, Matrix &m2) {
@@ -39,7 +38,7 @@ vector<double> Matrix::Multiplication(Matrix &m1, vector<double> &m2) {
   if (m1.nColumns != m2.size()) {
     cerr << "The number of columns of the first matrix is not equal "
             "to the number of rows of the second matrix";
-    vector<double>  res(0);
+    vector<double> res(0);
     return res;
   }
 
@@ -246,7 +245,8 @@ vector<vector<int>> Matrix::generateCombinations() {
     inputSet.push_back(i);
   vector<vector<int>> combinations;
   vector<int> generatingSet;
-  _generateCombinations(nColumns - 1, nRows, 0, 0, inputSet, generatingSet, combinations);
+  _generateCombinations(nColumns - 1, nRows, 0, 0, inputSet, generatingSet,
+                        combinations);
   return combinations;
 }
 
@@ -307,7 +307,7 @@ void Matrix::findAllBasis() {
   vector<vector<int>> res = M.generateCombinations();
   cout << "Basis solutions:\n";
   for (auto &i: res) {
-    if (CheckBasisMatrix(i)){
+    if (CheckBasisMatrix(i)) {
       Matrix tmp(M);
       tmp.reverseGauss(i);
       for (int j = 0; j < i.size(); j++)
@@ -315,8 +315,6 @@ void Matrix::findAllBasis() {
       cout << "\b\b\n";
     }
   }
-
-
 }
 
 // Проверка на базисы
@@ -335,12 +333,89 @@ bool Matrix::isEnoughBasis() {
 // Возвращает значение true, если члены Z функции больше нуля
 bool Matrix::isAllElementZGreaterZero() {
   for (int i = 0; i < nColumns - 1; i++)
-    if (data[nRows][i] < 0)
+    if (data[nRows - 1][i] < 0)
       return false;
   return true;
 }
 
 // Симплекс метод
 void Matrix::SimplexMethod() {
-
+//выбор разрешающего столбца
+  int indexOfResolutioncolumn;
+  double minForCollumn = data[nRows - 1][0];
+  for (int i = 0; i < nColumns - 1; i++) {
+    if (data[nRows - 1][i] > 0) {
+      continue;
+    } else {
+      double min1 = data[nRows - 1][i];
+      if (min1 < minForCollumn) {
+        minForCollumn = min1;
+        indexOfResolutioncolumn = i;
+      }
+    }
+  }
+  cout << "Индекс разрешающего столбца: " << indexOfResolutioncolumn << "\n";
+  //выбор разрешающей строки
+  int indexOfResolutionRow;
+  double minimumRatio;
+  for (int i = 0; i < nRows - 1; i++) {
+    if (data[i][indexOfResolutioncolumn] > 0) {
+      minimumRatio = data[i][nColumns - 1] /
+                     data[i][indexOfResolutioncolumn];
+      indexOfResolutionRow = i;
+    }
+  }
+  double minimumRatio1;
+  for (int i = 0; i < nRows - 1; i++) {
+    minimumRatio1 = data[i][nColumns - 1] /
+                    data[i][indexOfResolutioncolumn];
+    if (minimumRatio1 < minimumRatio && minimumRatio1 > 0) {
+      minimumRatio = minimumRatio1;
+      indexOfResolutionRow = i;
+    }
+  }
+  cout << "Индекс разрешающей строки: " << indexOfResolutionRow << "\n";
+  //выбрав разрешающий стоблец и разрешающую строку начинаем работать с матрицей
+  //преобразовали разрешающую строку
+  double FirstCoef = data[indexOfResolutionRow][indexOfResolutioncolumn];
+  for (int i = 0; i < nColumns; i++) {
+    data[indexOfResolutionRow][i] /= FirstCoef;
+  }
+  //работаем с остальными строками
+  double coef;
+  for (int i = 0; i < nRows; i++) {
+    coef = data[i][indexOfResolutioncolumn] /
+           data[indexOfResolutionRow][indexOfResolutioncolumn];
+    for (int j = 0; j < nColumns; j++) {
+      if (i != indexOfResolutionRow) {
+        data[i][j] -= data[indexOfResolutionRow][j] * coef;
+      }
+    }
+  }
 }
+
+//Вектор, который хранит ответ для x;
+void Matrix::indexes(vector<double> &indexes) {
+  for (int i = 0; i < nColumns-1; i++) {
+    int counterOfZero = 0;
+    for (int j = 0; j < nRows; j++)
+      if (data[j][i] == 0)
+        counterOfZero++;
+    if (counterOfZero == (nRows - 1))
+      indexes.push_back(i);
+  }
+}
+
+void Matrix::newIndex(vector<double> &indexes) {
+  vector<vector<double>> newMatrix(nRows, vector<double>(nRows));
+  for (int i = 0; i < nRows; i++)
+    for (int j = 0; j < nRows; j++)
+      newMatrix[i][j] = data[i][indexes[j]];
+  vector<double> newIndexes;
+  for (int i = 0; i < nRows; i++)
+    for (int j = 0; j < nRows; j++)
+      if (newMatrix[i][j] == 1)
+        newIndexes.push_back(indexes[j] + 1);
+  indexes = newIndexes;
+}
+

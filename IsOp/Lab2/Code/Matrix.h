@@ -24,8 +24,8 @@ class Matrix {
     this->nRows = nRows;
     this->nColumns = nColumns;
     nSwap = 0;
-    for (int i = 0; i < nColumns; i++) {
-      matrixRow r(nRows);
+    for (int i = 0; i < nRows; i++) {
+      matrixRow r(nColumns);
       data.push_back(r);
     }
   }
@@ -71,6 +71,8 @@ class Matrix {
   bool isEnoughBasis();
   bool isAllElementZGreaterZero();
   void SimplexMethod();
+  void indexes(vector<double> &indexes);
+  void newIndex(vector<double> &indexes);
 };
 
 

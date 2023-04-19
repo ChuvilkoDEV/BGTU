@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/IsOp/Lab2/Code/Matrix.cpp
+Matrix.h
+D:/BGTU/IsOp/Lab2/Code/Matrix.h
+
+D:/BGTU/IsOp/Lab2/Code/Matrix.h
+iostream
+-
+utility
+-
+vector
+-
+iomanip
+-
+
