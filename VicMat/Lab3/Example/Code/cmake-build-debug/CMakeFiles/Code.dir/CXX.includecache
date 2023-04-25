@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/BGTU/VicMat/Lab3/Example/Code/libs/integrals/integrals.h
+vector
+D:/BGTU/VicMat/Lab3/Example/Code/libs/integrals/vector
+
+D:/BGTU/VicMat/Lab3/Example/Code/main.cpp
+iostream
+-
+libs/integrals/integrals.h
+D:/BGTU/VicMat/Lab3/Example/Code/libs/integrals/integrals.h
+cmath
+D:/BGTU/VicMat/Lab3/Example/Code/cmath
+windows.h
+D:/BGTU/VicMat/Lab3/Example/Code/windows.h
+
