@@ -3,10 +3,13 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="Code" targetName="Code" />
     </generated>
@@ -17,7 +20,34 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30a223f3-ad04-4a41-b1e0-06e77e5659e6" name="Changes" comment="" />
+    <list default="true" id="30a223f3-ad04-4a41-b1e0-06e77e5659e6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/cache-v2-1c49976f5a237cac1667.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-ce08b7c03e2eca3ee209.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-1109e9177d621f4d9971.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/index-2023-03-31T08-35-35-0741.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/target-Code-Debug-a9060fe6a2fc864bf18f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-43fe5dd09e6a6719d07c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Code.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab1/Code/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Code.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../SisMod/Lab2/Code1/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,24 +74,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../OOP/lab 5/Code" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "D:/BGTU/VicMat/Lab4/Example/Code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="Code" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Code" TARGET_NAME="Code" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Code" RUN_TARGET_NAME="Code">
@@ -69,9 +100,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -87,11 +118,18 @@
       <workItem from="1680680428962" duration="6924000" />
       <workItem from="1680687429844" duration="171000" />
       <workItem from="1682457292980" duration="696000" />
+      <workItem from="1682867363526" duration="695000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

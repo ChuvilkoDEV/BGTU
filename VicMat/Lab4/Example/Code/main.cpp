@@ -127,20 +127,18 @@ public:
 };
 
 double target_function(double x, double y) {
-    return sin(x) - y / x;
+    return std::pow(M_E, x) * std::pow(x + 1, 2) + (2*y)/(x+1);
 }
 
 int main() {
     system("chcp 65001");
     KoshiSolver solver;
-    double x0 = M_PI;
-    double y0 = 1 / M_PI;
+    double x0 = 0;
+    double y0 = 1;
 
     cout << "Точность для пятого знака"
-    << "\nМетод Коши: " << solver.solveKoshiWithPrecision(target_function, x0, y0, M_PI + 1, 1, "Euler", 0.00001)
-    << "\nМетод Эйлера Коши: " << solver.solveKoshiWithPrecision(target_function, x0, y0, M_PI + 1, 1, "Euler Koshi", 0.00001)
-    << "\nМетод модифицированный Эйлера: " << solver.solveKoshiWithPrecision(target_function, x0, y0, M_PI + 1, 1, "Modified Euler", 0.00001)
-    << "\nМетод Рунге Кутта: " << solver.solveKoshiWithPrecision(target_function, x0, y0, M_PI + 1, 1, "Runge Kutta", 0.00001);
+    << "\nМетод Эйлера: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Euler", 0.0001)
+    << "\nМетод Эйлера Коши: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Euler Koshi", 0.0001)
+    << "\nМетод модифицированный Эйлера: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Modified Euler", 0.0001)
+    << "\nМетод Рунге Кутта: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Runge Kutta", 0.0001);
 }
-
-
