@@ -12,7 +12,7 @@ struct Segment {
 };
 
 float taskFunction(float x) {
-    return (2 * pow(x, 2) - 3 * x) * (3 * pow(x, 2) + 6);
+    return 2 * (x*x+2)*x*x;
 }
 
 float findMinFunctionValue(func f, Segment segment, float eps, float &xMinValue) {
@@ -88,10 +88,5 @@ float findMinFunctionValueFibonacci(func f, Segment segment, float eps, float &x
 
 int main() {
     float xMinValue;
-    cout << findMinFunctionValueFibonacci(taskFunction, {0, 2}, 0.00001, xMinValue) << " " << xMinValue << "\n";
-
-    for (float i = -1; i <= 2; i += 0.5) {
-        cout << i << " " << taskFunction(i) << "\n ";
-    }
-
+    cout << findMinFunctionValueFibonacci(taskFunction, {-1, 1}, 0.00001, xMinValue) << " " << xMinValue << "\n";
 }

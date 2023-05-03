@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.21"
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Code::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Code-Debug-5bcd1165f2900e83272d.json",
+					"jsonFile" : "target-Code-Debug-39d9d42e35763a622ae3.json",
 					"name" : "Code",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/dmedv/Desktop/Учеба/4 семестр/Вычислительная математика/Лабораторные работы/ЛР6/Code/cmake-build-debug",
-		"source" : "/Users/dmedv/Desktop/Учеба/4 семестр/Вычислительная математика/Лабораторные работы/ЛР6/Code"
+		"build" : "D:/BGTU/VicMat/Lab6/Example/Code/cmake-build-debug",
+		"source" : "D:/BGTU/VicMat/Lab6/Example/Code"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 3
+		"minor" : 4
 	}
 }
