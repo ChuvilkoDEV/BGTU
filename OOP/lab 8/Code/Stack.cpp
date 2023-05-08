@@ -1,27 +1,23 @@
 #include "Stack.h"
-template<typename T>
-Stack<T>::Stack() {
-  ptr = 0;
-}
 
-template<typename T>
-int Stack<T>::EmptyStack() {
-  return ptr == 0;
-}
-
-template<typename T>
-void Stack<T>::Push(T x) {
-  assert(ptr <= size);
-  data[ptr++] = x;
-}
-
-template<typename T>
-void Stack<T>::Pop() {
-  assert(!EmptyStack());
-  ptr--;
-}
-
-template<typename T>
-T Stack<T>::Get() {
-  return data[ptr];
-}
+//Stack::Stack() {
+//  ptr = 0;
+//}
+//
+//bool Stack::EmptyStack() const {
+//  return ptr == 0;
+//}
+//
+//void Stack::Push(BaseType x) {
+//  assert(ptr <= sizeA);
+//  data[ptr++] = x;
+//}
+//
+//void Stack::Pop() {
+//  assert(!EmptyStack());
+//  ptr--;
+//}
+//
+//BaseType Stack::Get() {
+//  return data[ptr-1];
+//}

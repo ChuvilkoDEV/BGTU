@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/BGTU/Архив/ASD/Lab 6/Code/OLS/OLS.cpp" "CMakeFiles/Code.dir/OLS/OLS.cpp.obj" "gcc" "CMakeFiles/Code.dir/OLS/OLS.cpp.obj.d"
-  "D:/BGTU/Архив/ASD/Lab 6/Code/Queue/Queue.cpp" "CMakeFiles/Code.dir/Queue/Queue.cpp.obj" "gcc" "CMakeFiles/Code.dir/Queue/Queue.cpp.obj.d"
-  "D:/BGTU/Архив/ASD/Lab 6/Code/Stack/Stack.cpp" "CMakeFiles/Code.dir/Stack/Stack.cpp.obj" "gcc" "CMakeFiles/Code.dir/Stack/Stack.cpp.obj.d"
-  "D:/BGTU/Архив/ASD/Lab 6/Code/main.cpp" "CMakeFiles/Code.dir/main.cpp.obj" "gcc" "CMakeFiles/Code.dir/main.cpp.obj.d"
+  "C:/BGTU/BGTU/Архив/ASD/Lab 6/Code/OLS/OLS.cpp" "CMakeFiles/Code.dir/OLS/OLS.cpp.obj" "gcc" "CMakeFiles/Code.dir/OLS/OLS.cpp.obj.d"
+  "C:/BGTU/BGTU/Архив/ASD/Lab 6/Code/Queue/Queue.cpp" "CMakeFiles/Code.dir/Queue/Queue.cpp.obj" "gcc" "CMakeFiles/Code.dir/Queue/Queue.cpp.obj.d"
+  "C:/BGTU/BGTU/Архив/ASD/Lab 6/Code/Stack/Stack.cpp" "CMakeFiles/Code.dir/Stack/Stack.cpp.obj" "gcc" "CMakeFiles/Code.dir/Stack/Stack.cpp.obj.d"
+  "C:/BGTU/BGTU/Архив/ASD/Lab 6/Code/main.cpp" "CMakeFiles/Code.dir/main.cpp.obj" "gcc" "CMakeFiles/Code.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
