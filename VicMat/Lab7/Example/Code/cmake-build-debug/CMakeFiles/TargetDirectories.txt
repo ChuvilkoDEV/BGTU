@@ -1,3 +1,3 @@
-/Users/dmedv/Desktop/Учеба/4 семестр/Вычислительная математика/Лабораторные работы/ЛР7/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/dmedv/Desktop/Учеба/4 семестр/Вычислительная математика/Лабораторные работы/ЛР7/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/dmedv/Desktop/Учеба/4 семестр/Вычислительная математика/Лабораторные работы/ЛР7/Code/cmake-build-debug/CMakeFiles/Code.dir
+C:/BGTU/BGTU/VicMat/Lab7/Example/Code/cmake-build-debug/CMakeFiles/Code.dir
+C:/BGTU/BGTU/VicMat/Lab7/Example/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/BGTU/BGTU/VicMat/Lab7/Example/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
