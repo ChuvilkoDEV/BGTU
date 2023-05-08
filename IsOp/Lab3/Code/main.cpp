@@ -1,6 +1,8 @@
 #include <iostream>
-#include "libs/matrix/matrix.h"
-#include "libs/simplexTable/simplexTable.h"
+#include <vector>
+#include "simplexTable.h"
+
+using namespace std;
 int main() {
   SimplexTable simplexTable;
   simplexTable.inputTable(2, 6,
