@@ -1,21 +1,6 @@
 from matplotlib import pyplot as plt
 import math
-
-k1 = 20000
-k2 = 10000
-k3 = 40000
-n1 = 1
-n2 = 0.5
-n3 = 0.7
-m = 10
-g = 9.8
-
-t0 = 0
-x0 = 0.5
-y0 = 0.5
-Vx = 0
-Vy = 0
-
+from const import *
 
 def func_Vy(t, x, y, V, w):
   c1 = ((n1 + abs(x)) ** 2 + y ** 2) ** (1 / 2)
@@ -76,8 +61,8 @@ if __name__ == '__main__':
     [t0, x0, y0, Vx, Vy]
   ]
 
-  for i in range(150000):
-    runge_kutt_step(runge_kutt_table, 0.00001)
+  for i in range(int(time / step)):
+    runge_kutt_step(runge_kutt_table, step)
     # if (i % 100 == 0):
     #   print(runge_kutt_table[i], '  ', func_Vx(*runge_kutt_table[i]), '  ', func_Vy(*runge_kutt_table[i]))
 
