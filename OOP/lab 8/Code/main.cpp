@@ -6,6 +6,14 @@ using namespace std;
 
 const int sizeA = 100;
 
+struct StackError : std::exception {
+  long long value;
+
+  explicit StackError(double Value) {
+    value = Value;
+  }
+};
+
 template<typename T>
 struct Stack {
   T data[sizeA];
@@ -20,12 +28,14 @@ struct Stack {
   }
 
   void Push(T x) {
-    assert(ptr <= sizeA);
+    if (ptr >= sizeA)
+      throw StackError(1);
     data[ptr++] = x;
   }
 
   void Pop() {
-    assert(!EmptyStack());
+    if (EmptyStack())
+      throw StackError(2);
     ptr--;
   }
 
