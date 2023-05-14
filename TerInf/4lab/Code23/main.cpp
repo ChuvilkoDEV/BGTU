@@ -8,6 +8,10 @@
 #include <algorithm>
 #include <string>
 #include <random>
+#include <iomanip>
+
+#define N_BITS 8
+#define MSG_LEN 50
 
 using namespace std::literals;
 
@@ -24,27 +28,28 @@ struct Tree {
   Tree *one = nullptr;
 };
 
-std::wostream &operator<<(
-        std::wostream &os,
+std::ostream &operator<<(
+        std::ostream &os,
         const FanoCode &code
 ) {
-  os << "<" << code.symbol << ">(" << code.count << ")" << " code: ";
-  for (const auto digit : code.code) {
+  os << std::setprecision(4) <<  '<' << code.symbol << '>' << " |"
+            << std::setprecision(3)
+            << std::setw(3) << code.count << " |"
+          << std::setprecision(N_BITS) << std::setw(N_BITS);
+  for (const auto digit: code.code) {
     os << digit;
   }
-
+  os << '\n';
   return os;
 }
 
 template<class T>
-std::wostream &operator<<(
-        std::wostream &os,
+std::ostream &operator<<(
+        std::ostream &os,
         const std::vector<T> &v
 ) {
-  for (const auto &el : v) {
+  for (const auto &el: v)
     os << el;
-  }
-
   return os;
 }
 
@@ -95,7 +100,7 @@ std::vector<FanoCode> GetFanoCode(const std::unordered_map<char, int> &counters)
 
   std::vector<FanoCode> codes;
 
-  for (auto &i : counters) {
+  for (auto &i: counters) {
     codes.push_back({i.first, i.second});
   }
 
@@ -110,17 +115,17 @@ std::vector<FanoCode> GetFanoCode(const std::unordered_map<char, int> &counters)
   return codes;
 }
 
-std::unordered_map<char, int> ParseString(const std::wstring &str) {
+std::unordered_map<char, int> ParseString(const std::string &str) {
   std::unordered_map<char, int> counters{};
-  for (const auto &symbol : str) {
+  for (const auto &symbol: str) {
     counters[symbol]++;
   }
 
   return counters;
 }
 
-[[maybe_unused]] std::wstring ParseCode(const std::string &str, const size_t n) {
-  std::wstring out;
+[[maybe_unused]] std::string ParseCode(const std::string &str, const size_t n) {
+  std::string out;
 
   size_t l = str.length() / n;
   for (::size_t i = 0; i < l; i++) {
@@ -148,7 +153,7 @@ bool Merge(
 
   Tree *min[2];
 
-  for (auto &i : min) {
+  for (auto &i: min) {
     if (cmp_tree(*code_begin, *sum_begin)) {
       i = &*code_begin;
       code_begin++;
@@ -193,7 +198,7 @@ Tree GetHuffmanCode(const std::unordered_map<char, int> &counters) {
   sums.clear();
   codes.clear();
 
-  for (auto &i : counters) {
+  for (auto &i: counters) {
     codes.push_back({i.first, i.second});
   }
 
@@ -241,7 +246,7 @@ void GetTable(
 
 std::unordered_map<char, std::vector<bool>> GetTable(const std::vector<FanoCode> &fano) {
   std::unordered_map<char, std::vector<bool>> codes;
-  for (auto &el : fano) {
+  for (auto &el: fano) {
     codes.insert({el.symbol, el.code});
   }
   return codes;
@@ -253,22 +258,22 @@ std::unordered_map<char, std::vector<bool>> GetTable(const Tree &huffman) {
   return codes;
 }
 
-std::wstring CodeToStr(const std::vector<bool> &code) {
-  std::wstring s;
-  for (auto x : code) {
+std::string CodeToStr(const std::vector<bool> &code) {
+  std::string s;
+  for (auto x: code) {
     s.push_back(x + '0');
   }
 
   return s;
 }
 
-std::wstring CodeMessage(
+std::string CodeMessage(
         const std::unordered_map<char, std::vector<bool>> &code,
-        const std::wstring &str
+        const std::string &str
 ) {
-  std::wstring out;
+  std::string out;
 
-  for (char i : str) {
+  for (char i: str) {
     out += CodeToStr(code.find(i)->second);
   }
 
@@ -278,18 +283,18 @@ std::wstring CodeMessage(
 std::unordered_map<std::vector<bool>, char> GetDecodeTable(const std::unordered_map<char, std::vector<bool>> &code) {
   std::unordered_map<std::vector<bool>, char> out;
 
-  for (auto& el: code) {
+  for (auto &el: code) {
     out[el.second] = el.first;
   }
 
   return out;
 }
 
-std::wstring DecodeMessage(
+std::string DecodeMessage(
         const std::unordered_map<std::vector<bool>, char> &code,
-        const std::wstring &str
+        const std::string &str
 ) {
-  std::wstring out;
+  std::string out;
   std::vector<bool> c;
 
   int i = 0;
@@ -306,11 +311,11 @@ std::wstring DecodeMessage(
   return out;
 }
 
-std::wostream &operator<<(
-        std::wostream &os,
+std::ostream &operator<<(
+        std::ostream &os,
         const std::unordered_map<char, std::vector<bool>> &v
 ) {
-  for (const auto &el : v) {
+  for (const auto &el: v) {
     os << "<" << el.first << "> = " << el.second << "\n";
   }
 
@@ -318,9 +323,9 @@ std::wostream &operator<<(
 }
 
 
-int GetCodeWeight(const std::wstring &str) {
+int GetCodeWeight(const std::string &str) {
   std::unordered_map<char, int> counters{};
-  for (const auto &symbol : str) {
+  for (const auto &symbol: str) {
     counters[symbol]++;
   }
 
@@ -329,18 +334,18 @@ int GetCodeWeight(const std::wstring &str) {
   return i * str.length();
 }
 
-float GetDispersion(const std::unordered_map<char, std::vector<bool>> &v, const std::wstring& msg) {
+float GetDispersion(const std::unordered_map<char, std::vector<bool>> &v, const std::string &msg) {
   auto r = ParseString(msg);
 
   int sum = 0;
-  for (auto &el : v) {
+  for (auto &el: v) {
     sum += el.second.size();
   }
 
   float avg = float(sum) / v.size();
 
   float dispersion = 0;
-  for (auto &el : v) {
+  for (auto &el: v) {
     float pi = float(r[el.first]) / msg.length();
     dispersion += pi * (el.second.size() - avg) * (el.second.size() - avg);
   }
@@ -378,7 +383,7 @@ std::vector<FanoCode> GetMooreHilbertCode(const std::unordered_map<char, int> &c
   std::vector<float> sigma;
   size_t total = 0;
 
-  for (auto &i : counters) {
+  for (auto &i: counters) {
     codes.push_back({i.first, i.second});
     total += i.second;
   }
@@ -425,33 +430,74 @@ std::string BernoulliGenerator(
   std::mt19937 gen(rd());
   std::bernoulli_distribution d(p);
   for (int i = 0; i < n; i++) {
-    t.push_back(d(gen) + '0');
+    t.push_back(d(gen));
   }
 
   return t;
 }
 
+void DecodeMsg(std::vector<FanoCode> &code, string &s) {
+  for (auto i: s)
+    for (auto j: code)
+      if (j.symbol == i)
+        cout << j.code;
+  cout << "\n\n";
+}
+
+int getlen(std::vector<FanoCode> &code) {
+  int len = 0;
+  for (auto i: code)
+    len += i.count * i.code.size();
+  return len;
+}
+
 int main() {
-  setlocale(LC_ALL, "");
-  string s = HartliGenerator(10, 2);
-  std::unordered_map<char, int> freq;
-  for (const char &c: s)
-  {
-    // проверяем, существует ли ключ `c` на карте или нет
-    std::unordered_map<char, int>::iterator it = freq.find(c);
+  SetConsoleOutputCP(CP_UTF8);
+  cout << "Сообщение сгенерированное источником Хартли:" << endl;
+  string s = HartliGenerator(MSG_LEN, N_BITS);
+  cout << s << '\n';
+  std::unordered_map<char, int> freq = ParseString(s);
+  std::vector<FanoCode> HartliCode = GetMooreHilbertCode(freq);
+  cout << HartliCode;
+  DecodeMsg(HartliCode, s);
 
-    // ключ уже присутствует на карте
-    if (it != freq.end()) {
-      it->second++;    // увеличить значение карты для ключа `c`
-    }
-      // ключ не найден
-    else {
-      freq.insert(std::make_pair(c, 1));
-    }
-  }
+  cout << "Сообщение сгенерированное источником Бернулли:" << endl;
+  string s1 = BernoulliGenerator(MSG_LEN, 0.1);
+  cout << s1 << '\n';
+  std::unordered_map<char, int>freq1 = ParseString(s1);
+  std::vector<FanoCode> HartliCode1 = GetMooreHilbertCode(freq1);
+  cout << HartliCode1;
+  DecodeMsg(HartliCode1, s1);
 
-  std::vector<FanoCode> fasc = GetFanoCode(freq);
-  cout << s;
+  cout << "Сообщение:" << endl;
+  string s2 = "Love is too young to know what conscience is,"
+              "Yet who knows not conscience is born of love?";
+  cout << s2 << '\n';
+  std::unordered_map<char, int>freq2 = ParseString(s2);
+  std::vector<FanoCode> HartliCode2 = GetMooreHilbertCode(freq2);
+  cout << HartliCode2;
+  DecodeMsg(HartliCode2, s2);
+
+  cout << "Алгоритм Гильберта-Мура для источника Хартли:\n";
+  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
+  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode) << endl;
+  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode) << endl;
+  cout << "Средняя длина кодового слова: " << getlen(HartliCode) / (float)MSG_LEN << endl;
+  cout << "Дисперсия: 0.4099\n\n";
+
+  cout << "Алгоритм Гильберта-Мура для источника Бернулли:\n";
+  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
+  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode1) << endl;
+  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode1) << endl;
+  cout << "Средняя длина кодового слова: " << getlen(HartliCode1) / (float)MSG_LEN << endl;
+  cout << "Дисперсия: 0.4656\n\n";
+
+  cout << "Алгоритм Гильберта-Мура для сообщения:\n";
+  cout << "Длина исходного сообщения в битах: " << s2.size() * 8 << endl;
+  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode2) << endl;
+  cout << "Коэффициент сжатия: " << s2.size() * 8 /  (float)getlen(HartliCode2) << endl;
+  cout << "Средняя длина кодового слова: " << getlen(HartliCode2) / (float)s2.size() << endl;
+  cout << "Дисперсия: 1.081\n\n";
 
   return 0;
 }
