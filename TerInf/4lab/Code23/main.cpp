@@ -452,52 +452,81 @@ int getlen(std::vector<FanoCode> &code) {
 }
 
 int main() {
-  SetConsoleOutputCP(CP_UTF8);
-  cout << "Сообщение сгенерированное источником Хартли:" << endl;
-  string s = HartliGenerator(MSG_LEN, N_BITS);
-  cout << s << '\n';
-  std::unordered_map<char, int> freq = ParseString(s);
-  std::vector<FanoCode> HartliCode = GetMooreHilbertCode(freq);
-  cout << HartliCode;
-  DecodeMsg(HartliCode, s);
+  setlocale(LC_ALL, "");
 
-  cout << "Сообщение сгенерированное источником Бернулли:" << endl;
-  string s1 = BernoulliGenerator(MSG_LEN, 0.1);
-  cout << s1 << '\n';
-  std::unordered_map<char, int>freq1 = ParseString(s1);
-  std::vector<FanoCode> HartliCode1 = GetMooreHilbertCode(freq1);
-  cout << HartliCode1;
-  DecodeMsg(HartliCode1, s1);
+  std::vector<std::string> msgs {"в чащах юга жил бы цитрус? да но, фальшивый экземпляр!","Victoria nulla est, Quam quae confessos animo quoque subjugat hostes"};
+          for (auto& msg : msgs) {
+            auto table = GetTable(GetFanoCode(ParseString(msg)));
+            auto coded = CodeMessage(table, msg);
+            std::cout << "[FANO]\n" << "Table:\n" << table << "Message:\n" << msg <<
+                       "\nCoded:\n" << coded <<"\nInitial length: " << GetCodeWeight(msg) << " ---Coded length: " << coded.length() << " --- Coefficient: " <<
+            float(GetCodeWeight(msg)) / coded.length() << " --- Dispersion: " <<
+                                                       GetDispersion(table, msg) << "\n";
+            std::cout << "Decoded\n" << DecodeMessage(GetDecodeTable(table), coded)
+                       << "\n";
+          }
 
-  cout << "Сообщение:" << endl;
-  string s2 = "Love is too young to know what conscience is,"
-              "Yet who knows not conscience is born of love?";
-  cout << s2 << '\n';
-  std::unordered_map<char, int>freq2 = ParseString(s2);
-  std::vector<FanoCode> HartliCode2 = GetMooreHilbertCode(freq2);
-  cout << HartliCode2;
-  DecodeMsg(HartliCode2, s2);
+          for (auto& msg : msgs) {
+            auto table = GetTable(GetHuffmanCode(ParseString(msg)));
+            auto coded = CodeMessage(table, msg);
+            std::cout << "[HUFFMAN]\n" << "Table:\n" << table << "Message:\n" << msg
+                       << "\nCoded:\n" << coded <<"\nInitial length: " << GetCodeWeight(msg) << " --- Coded length: " << coded.length() << " --- Coefficient: " <<
+            float(GetCodeWeight(msg)) / coded.length() << " --- Dispersion: " <<
+                                                       GetDispersion(table, msg) << "\n";
+            std::cout << "Decoded\n" << DecodeMessage(GetDecodeTable(table), coded)
+                       << "\n";
+          }
+          return 0;
+  }
 
-  cout << "Алгоритм Гильберта-Мура для источника Хартли:\n";
-  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
-  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode) << endl;
-  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode) << endl;
-  cout << "Средняя длина кодового слова: " << getlen(HartliCode) / (float)MSG_LEN << endl;
-  cout << "Дисперсия: 0.4099\n\n";
 
-  cout << "Алгоритм Гильберта-Мура для источника Бернулли:\n";
-  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
-  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode1) << endl;
-  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode1) << endl;
-  cout << "Средняя длина кодового слова: " << getlen(HartliCode1) / (float)MSG_LEN << endl;
-  cout << "Дисперсия: 0.4656\n\n";
-
-  cout << "Алгоритм Гильберта-Мура для сообщения:\n";
-  cout << "Длина исходного сообщения в битах: " << s2.size() * 8 << endl;
-  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode2) << endl;
-  cout << "Коэффициент сжатия: " << s2.size() * 8 /  (float)getlen(HartliCode2) << endl;
-  cout << "Средняя длина кодового слова: " << getlen(HartliCode2) / (float)s2.size() << endl;
-  cout << "Дисперсия: 1.081\n\n";
-
-  return 0;
-}
+//int main() {
+//  SetConsoleOutputCP(CP_UTF8);
+//  cout << "Сообщение сгенерированное источником Хартли:" << endl;
+//  string s = HartliGenerator(MSG_LEN, N_BITS);
+//  cout << s << '\n';
+//  std::unordered_map<char, int> freq = ParseString(s);
+//  std::vector<FanoCode> HartliCode = GetMooreHilbertCode(freq);
+//  cout << HartliCode;
+//  DecodeMsg(HartliCode, s);
+//
+//  cout << "Сообщение сгенерированное источником Бернулли:" << endl;
+//  string s1 = BernoulliGenerator(MSG_LEN, 0.1);
+//  cout << s1 << '\n';
+//  std::unordered_map<char, int>freq1 = ParseString(s1);
+//  std::vector<FanoCode> HartliCode1 = GetMooreHilbertCode(freq1);
+//  cout << HartliCode1;
+//  DecodeMsg(HartliCode1, s1);
+//
+//  cout << "Сообщение:" << endl;
+//  string s2 = "Love is too young to know what conscience is,"
+//              "Yet who knows not conscience is born of love?";
+//  cout << s2 << '\n';
+//  std::unordered_map<char, int>freq2 = ParseString(s2);
+//  std::vector<FanoCode> HartliCode2 = GetMooreHilbertCode(freq2);
+//  cout << HartliCode2;
+//  DecodeMsg(HartliCode2, s2);
+//
+//  cout << "Алгоритм Гильберта-Мура для источника Хартли:\n";
+//  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
+//  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode) << endl;
+//  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode) << endl;
+//  cout << "Средняя длина кодового слова: " << getlen(HartliCode) / (float)MSG_LEN << endl;
+//  cout << "Дисперсия: 0.4099\n\n";
+//
+//  cout << "Алгоритм Гильберта-Мура для источника Бернулли:\n";
+//  cout << "Длина исходного сообщения в битах: " << MSG_LEN * 8 << endl;
+//  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode1) << endl;
+//  cout << "Коэффициент сжатия: " << MSG_LEN * 8 /  (float)getlen(HartliCode1) << endl;
+//  cout << "Средняя длина кодового слова: " << getlen(HartliCode1) / (float)MSG_LEN << endl;
+//  cout << "Дисперсия: 0.4656\n\n";
+//
+//  cout << "Алгоритм Гильберта-Мура для сообщения:\n";
+//  cout << "Длина исходного сообщения в битах: " << s2.size() * 8 << endl;
+//  cout << "Длина закодированного сообщения в битах: " << getlen(HartliCode2) << endl;
+//  cout << "Коэффициент сжатия: " << s2.size() * 8 /  (float)getlen(HartliCode2) << endl;
+//  cout << "Средняя длина кодового слова: " << getlen(HartliCode2) / (float)s2.size() << endl;
+//  cout << "Дисперсия: 1.081\n\n";
+//
+//  return 0;
+//}
