@@ -6,13 +6,13 @@
 
 using namespace std;
 
-#define k1 20000
+#define k1 10000
 #define k2 10000
-#define k3 40000
+#define k3 10000
 #define n1 1
 #define n2 0.5
 #define n3 0.7
-#define m 10
+#define m 0.001
 #define g 10
 #define dif 0.001
 
@@ -79,8 +79,8 @@ int main() {
       Values[1] -= ffff[1];
     }
     cout << setw(8) << F << " |" << setprecision(3) << setw(7)
-         << Values[0] * 100 << " cm | " << setprecision(3)
-         << setw(7) << Values[1] * 100 << " cm |\n";
+         << -Values[0] * 100 << " cm | " << setprecision(3)
+         << setw(7) << -Values[1] * 100 << " cm |\n";
   }
 
   return 0;

@@ -140,5 +140,5 @@ int main() {
     << "\nМетод Эйлера: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Euler", 0.0001)
     << "\nМетод Эйлера Коши: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Euler Koshi", 0.0001)
     << "\nМетод модифицированный Эйлера: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Modified Euler", 0.0001)
-    << "\nМетод Рунге Кутта: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Runge Kutta", 0.0001);
+    << "\nМетод Рунге Кутта: " << solver.solveKoshiWithPrecision(target_function, x0, y0, 2, 1, "Runge Kutta", 0.00001);
 }
