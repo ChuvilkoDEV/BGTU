@@ -14,8 +14,7 @@ int getPriority(char operation) {
     return 0;
 }
 
-template<typename T>
-int Calculate(T op1, T op2, T op) {
+int Calculate(int op1, int op2, char op) {
   if (op == '+')
     return op1 + op2;
   else if (op == '-')
@@ -28,11 +27,10 @@ int Calculate(T op1, T op2, T op) {
     return 0;
 }
 
-string getReversePolish(string infixInputString) {
+string getReversePolish(const string& infixInputString) {
   stack<char> operatorStack;
-  string postfix = "";
-  for (int i = 0; i < infixInputString.length(); i++) {
-    char current = infixInputString[i];
+  string postfix;
+  for (char current : infixInputString) {
     if (isdigit(current)) {
       postfix += current;
     } else if (current == '(') {
@@ -61,10 +59,9 @@ string getReversePolish(string infixInputString) {
   return postfix;
 }
 
-int EvaluatePostfixExpression(string postfix) {
+int EvaluatePostfixExpression(const string& postfix) {
   stack<int> operandStack;
-  for (int i = 0; i < postfix.length(); i++) {
-    char current = postfix[i];
+  for (char current : postfix) {
     if (isdigit(current)) {
       operandStack.push(current - '0');
     } else {
@@ -79,12 +76,12 @@ int EvaluatePostfixExpression(string postfix) {
   return operandStack.top();
 }
 
-int getSolution(string &infix) {
+void getSolution(string &infix) {
   cout << "normal exp: " << infix << endl;
   string postfix = getReversePolish(infix);
   cout << "reverse polish exp: " << postfix << endl;
   int result = EvaluatePostfixExpression(postfix);
-  cout << "result: " << result << endl;
+  cout << "result: " << result << endl << endl;
 }
 
 int main() {
