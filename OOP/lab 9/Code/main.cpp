@@ -85,7 +85,7 @@ void getSolution(string &infix) {
 }
 
 int main() {
-  string infix = "1+2*3-4";
+  string infix = "1+2*3-7";
   getSolution(infix);
   infix = "(5+6)*8/2";
   getSolution(infix);
