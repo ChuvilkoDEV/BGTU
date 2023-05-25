@@ -1,3 +1,3 @@
-C:/BGTU/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/Code23.dir
-C:/BGTU/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/BGTU/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/Code23.dir
+D:/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/TerInf/4lab/Code23/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,8 @@
-# Install script for directory: D:/BGTU/TerInf/4lab/Code23
+# Install script for directory: D:/BGTU/TerInf/7lab/Code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Code23")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Code")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/BGTU/TerInf/4lab/Code23/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/BGTU/TerInf/7lab/Code/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
