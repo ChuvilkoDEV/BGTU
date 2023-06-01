@@ -1,0 +1,159 @@
+#include <iostream>
+#include <vector>
+
+class Cell {
+private:
+    int x;
+    int y;
+    bool isFree;
+
+public:
+    Cell(int x, int y, bool isFree) : x(x), y(y), isFree(isFree) {}
+
+    int getX() const {
+        return x;
+    }
+
+    int getY() const {
+        return y;
+    }
+
+    bool getIsFree() const {
+        return isFree;
+    }
+
+    void setIsFree(bool free) {
+        isFree = free;
+    }
+};
+
+class Player {
+private:
+    int health;
+    int level;
+    int x;
+    int y;
+
+public:
+    Player(int health, int level, int x, int y) : health(health), level(level), x(x), y(y) {}
+
+    void move(int dx, int dy) {
+        x += dx;
+        y += dy;
+    }
+
+    void attack(Monster& monster) {
+        // Логика атаки
+    }
+
+    void collectItem(Item& item) {
+        // Логика сбора предмета
+    }
+};
+
+class Monster {
+private:
+    int health;
+    int attackLevel;
+    int x;
+    int y;
+
+public:
+    Monster(int health, int attackLevel, int x, int y) : health(health), attackLevel(attackLevel), x(x), y(y) {}
+
+    void move(int dx, int dy) {
+        x += dx;
+        y += dy;
+    }
+
+    void attack(Player& player) {
+        // Логика атаки игрока
+    }
+};
+
+class Item {
+private:
+    std::string type;
+    int effect;
+
+public:
+    Item(std::string type, int effect) : type(type), effect(effect) {}
+
+    std::string getType() const {
+        return type;
+    }
+
+    int getEffect() const {
+        return effect;
+    }
+};
+
+class Weapon : public Item {
+private:
+    int attackLevel;
+
+public:
+    Weapon(std::string type, int effect, int attackLevel) : Item(type, effect), attackLevel(attackLevel) {}
+
+    int getAttackLevel() const {
+        return attackLevel;
+    }
+};
+
+class Defense : public Item {
+private:
+    int defenseLevel;
+
+public:
+    Defense(std::string type, int effect, int defenseLevel) : Item(type, effect), defenseLevel(defenseLevel) {}
+
+    int getDefenseLevel() const {
+        return defenseLevel;
+    }
+};
+
+class Maze {
+private:
+    std::vector<std::vector<Cell>> cells;
+
+public:
+    Maze(int width, int height) {
+        // Логика генерации лабиринта
+        // Заполнение cells
+    }
+
+    bool isCellFree(int x, int y) const {
+        // Проверка доступности ячейки
+        // Возвращает true, если ячейка свободна, иначе false
+    }
+
+    std::vector<Cell> getPathToExit(int startX, int startY) const {
+        std::vector<Cell> path;
+        // Логика поиска пути к выходу из лабиринта
+        // Заполнение path
+        return path;
+    }
+};
+
+class Game {
+private:
+    Player player;
+    Maze maze;
+    std::vector<Monster> monsters;
+    std::vector<Item> items;
+
+public:
+    Game(int playerHealth, int playerLevel, int playerX, int playerY, int mazeWidth, int mazeHeight)
+        : player(playerHealth, playerLevel, playerX, playerY), maze(mazeWidth, mazeHeight) {}
+
+    void run() {
+        // Логика игрового процесса
+    }
+};
+
+int main() {
+    Game game(100, 1, 0, 0, 10, 10);
+    game.run();
+
+    return 0;
+}

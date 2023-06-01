@@ -282,33 +282,37 @@ std::vector<std::string> &integerVar) {
 }
 
 int main(int argc, char **argv) {
-  size_t numberOfIntegerVar{};
+  size_t numberOfIntegerVar = 5;
   std::cout << "Number of integer variables = ";
-  std::cin >> numberOfIntegerVar;
+//  std::cin >> numberOfIntegerVar;
   std::cout << "Enter variables that are integers (In ascending "
                "order of indices) : ";
-  std::vector<std::string>
-          integerVariables(numberOfIntegerVar);
-  for (size_t i{}; i < numberOfIntegerVar; ++i) {
-    std::cin >> integerVariables.at(i);
-  }
-  size_t numberOfRows{};
-  size_t numberOfCols{};
-  std::cout << "Number of rows in simplex table = ";
-  std::cin >> numberOfRows;
-  std::cout << "Number of cols in simplex table = ";
-  std::cin >> numberOfCols;
-  std::cout << "Enter simplex table(with the names of basic "
-               "variables) : \n";
+  std::vector<std::string> integerVariables = {"x1", "x2", "x3", "x4", "x5"};
+//  for (size_t i{}; i < numberOfIntegerVar; ++i) {
+//    std::cin >> integerVariables.at(i);
+//  }
+  size_t numberOfRows = 4;
+  size_t numberOfCols = 6;
+//  std::cout << "Number of rows in simplex table = ";
+//  std::cin >> numberOfRows;
+//  std::cout << "Number of cols in simplex table = ";
+//  std::cin >> numberOfCols;
+//  std::cout << "Enter simplex table(with the names of basic "
+//               "variables) : \n";
+  std::vector<std::string> a = {"x3", "x4", "x5", "z"};
+  std::vector<std::vector<double>> m = {{75, 9, 3, 1, 0, 0},
+                                        {-7, -6, 1, 0, 1, 0},
+                                        {18, 2, -10, 0, 0, 1},
+                                        {-29, -34, 10, 0, 0, 0}};
   SimplexTable simplexTable(numberOfRows);
   for (size_t i{}; i < numberOfRows; ++i) {
-    std::string basisVarName{};
-    std::cin >> basisVarName;
-    simplexTable.at(i).first = basisVarName;
+//    std::string basisVarName{};
+//    std::cin >> basisVarName;
+    simplexTable.at(i).first = a[i];
     for (size_t j{}; j < numberOfCols; ++j) {
-      double value{};
-      std::cin >> value;
-      simplexTable.at(i).second.push_back(value);
+//      double value{};
+//      std::cin >> value;
+      simplexTable.at(i).second.push_back(m[i][j]);
     }
   }
   std::cout << std::setprecision(3);

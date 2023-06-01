@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <utility>
 #include <vector>
 #include <cstdlib> // Для генерации случайных чисел
 #include <ctime> // Для инициализации генератора случайных чисел
@@ -9,7 +10,7 @@
 
 // Класс Генератор случайных чисел
 class RandomNumberGenerator {
-  public:
+public:
   static int generateRandomNumber(int min, int max) {
     static bool initialized = false;
     if (!initialized) {
@@ -23,22 +24,30 @@ class RandomNumberGenerator {
 
 // Класс Игрок
 class Player {
-  private:
+private:
   std::string name;
   int speed;
   int shootingAccuracy;
   int stamina;
+  int price;
 
-  public:
+public:
   Player(std::string playerName, int playerSpeed,
          int playerShootingAccuracy, int playerStamina)
-    : name(playerName), speed(playerSpeed),
-      shootingAccuracy(playerShootingAccuracy), stamina(playerStamina) {}
+          : name(std::move(playerName)), speed(playerSpeed),
+            shootingAccuracy(playerShootingAccuracy), stamina(playerStamina) {
+    price = (speed * 10 + shootingAccuracy * 10 + stamina * 10) *
+            RandomNumberGenerator::generateRandomNumber(50, 150) / 100;
+  }
 
   // Геттеры и сеттеры для атрибутов игрока
 
   std::string getName() const {
     return name;
+  }
+
+  int getPrice() const {
+    return price;
   }
 
   int getSpeed() const {
@@ -61,18 +70,27 @@ class Player {
 
     return Player(playerName, speed, shootingAccuracy, stamina);
   }
+
+  static Player generateRandomPlayer(std::pair<int, int> Stats) {
+    std::string playerName = "Player";
+    int speed = RandomNumberGenerator::generateRandomNumber(Stats.first, Stats.second);
+    int shootingAccuracy = RandomNumberGenerator::generateRandomNumber(Stats.first, Stats.second);
+    int stamina = RandomNumberGenerator::generateRandomNumber(Stats.first, Stats.second);
+
+    return {playerName, speed, shootingAccuracy, stamina};
+  }
 };
 
 // Класс Команда
 class Team {
-  private:
+private:
   std::string name;
   std::vector<Player> players;
   std::vector<std::string> matchResults;
 
-  public:
+public:
   Team(std::string teamName)
-    : name(std::move(teamName)) {}
+          : name(std::move(teamName)) {}
 
   // Метод для добавления игрока в команду
   void addPlayer(const Player &player) {
@@ -95,24 +113,54 @@ class Team {
     for (int i = 0; i < numPlayers; i++)
       players.push_back(Player::generateRandomPlayer());
   }
+
+  void generateRandomTeam(int numPlayers,
+                          std::pair<int, int> Stats) {
+    players.clear();
+    // Генерация случайных характеристик для каждого игрока
+    for (int i = 0; i < numPlayers; i++)
+      players.push_back(Player::generateRandomPlayer(Stats));
+  }
+
+  // Метод для вывода средних показателей игроков
+  void printAveragePlayerStats() const {
+    std::cout << "Average Player Stats for Team " << name << ":" << std::endl;
+    int totalSpeed = 0;
+    int totalShootingAccuracy = 0;
+    int totalStamina = 0;
+
+    for (const Player &player: players) {
+      totalSpeed += player.getSpeed();
+      totalShootingAccuracy += player.getShootingAccuracy();
+      totalStamina += player.getStamina();
+    }
+
+    int numPlayers = players.size();
+    double averageSpeed = static_cast<double>(totalSpeed) / numPlayers;
+    double averageShootingAccuracy = static_cast<double>(totalShootingAccuracy) / numPlayers;
+    double averageStamina = static_cast<double>(totalStamina) / numPlayers;
+
+    std::cout << "Average Speed: " << averageSpeed << std::endl;
+    std::cout << "Average Shooting Accuracy: " << averageShootingAccuracy << std::endl;
+    std::cout << "Average Stamina: " << averageStamina << std::endl;
+  }
 };
 
 // Класс Матч
 class Match {
-  private:
+private:
   Team homeTeam;
   Team awayTeam;
   int homeScore;
   int awayScore;
   std::string result;
 
-  public:
+public:
   Match(Team team1, Team team2)
-    : homeTeam(std::move(team1)), awayTeam(std::move(team2)), homeScore(0),
-      awayScore(0) {}
+          : homeTeam(std::move(team1)), awayTeam(std::move(team2)), homeScore(0),
+            awayScore(0) {}
 
   // Геттеры и сеттеры для атрибутов матча
-
   [[nodiscard]] Team getHomeTeam() const {
     return homeTeam;
   }
@@ -154,8 +202,8 @@ class Match {
     for (const Player &homePlayer: homePlayers) {
       // Расчет способности игрока влиять на результаты матча
       int playerAbility =
-        (homePlayer.getSpeed() + homePlayer.getShootingAccuracy() +
-         homePlayer.getStamina()) / 3;
+              (homePlayer.getSpeed() + homePlayer.getShootingAccuracy() +
+               homePlayer.getStamina()) / 3;
 
       // Генерация случайного числа для определения результата действия игрока
       int randomNumber = RandomNumberGenerator::generateRandomNumber(0, 100);
@@ -170,8 +218,8 @@ class Match {
     for (const Player &awayPlayer: awayPlayers) {
       // Расчет способности игрока влиять на результаты матча
       int playerAbility =
-        (awayPlayer.getSpeed() + awayPlayer.getShootingAccuracy() +
-         awayPlayer.getStamina()) / 3;
+              (awayPlayer.getSpeed() + awayPlayer.getShootingAccuracy() +
+               awayPlayer.getStamina()) / 3;
 
       // Генерация случайного числа для определения результата действия игрока
       int randomNumber = RandomNumberGenerator::generateRandomNumber(0, 110);
@@ -184,28 +232,40 @@ class Match {
 
     // Обновление счета и результата матча
     if (homeScore > awayScore) {
-      result = "Home Team Win";
+      result = homeTeam.getName();
     } else if (homeScore < awayScore) {
-      result = "Away Team Win";
+      result = awayTeam.getName();
     } else {
       result = "Draw";
     }
   }
-
-  // Другие методы матча
 };
 
 // Класс Турнир
 class Tournament {
-  private:
+private:
+  std::string name;
   std::vector<Team> teams;
   std::vector<Match> matches;
   std::vector<std::string> results;
+  std::pair<int, int> stats;
 
-  public:
+
+public:
+  Tournament(std::string &difficult,
+             std::pair<int, int> stats) : name(difficult), stats(std::move(stats)) {}
+
   // Метод для добавления команды в турнир
   void addTeam(const Team &team) {
     teams.push_back(team);
+  }
+
+  std::string getName() {
+    return name;
+  }
+
+  std::pair<int, int> getAverageStats() {
+    return stats;
   }
 
   std::vector<std::string> getResults() const {
@@ -236,112 +296,70 @@ class Tournament {
     }
   }
 
-  // Другие методы турнира
+  // Метод для генерации заданного количества команд со случайными характеристиками
+  void generateRandomTeams(int numTeams) {
+    teams.clear();
+    for (int i = 0; i < numTeams; i++) {
+      Team team("Team " + std::to_string(i + 1));
+      team.generateRandomTeam(10, stats);
+      teams.push_back(team);
+    }
+  }
 };
 
 // Класс Стадион
 class Stadium {
-  private:
-  std::string name;
+private:
   int capacity;
-  std::string weather;
-  std::vector<Match> upcomingMatches;
+  std::vector<Tournament> tournaments;
 
-  public:
-  Stadium(std::string stadiumName, int stadiumCapacity,
-          std::string stadiumWeather)
-    : name(stadiumName), capacity(stadiumCapacity), weather(stadiumWeather) {}
-
-  // Геттеры и сеттеры для атрибутов стадиона
-
-  std::string getName() const {
-    return name;
+public:
+  Stadium() {
+    Tournament noobs((std::string &) "Низшая лига", (std::pair<int, int>) {10, 25});
+    Tournament medium((std::string &) "Средняя лига", (std::pair<int, int>) {25, 50});
+    Tournament pro((std::string &) "Высшая лига", (std::pair<int, int>) {50, 85});
+    tournaments = {noobs, medium, pro};
   }
 
+  // Геттеры и сеттеры для атрибутов стадиона
   int getCapacity() const {
     return capacity;
   }
 
-  std::string getWeather() const {
-    return weather;
+  std::vector<Tournament> getTournaments() const {
+    return tournaments;
   }
 
-  // Методы для работы со списком предстоящих матчей
-
-  void addUpcomingMatch(const Match &match) {
-    upcomingMatches.push_back(match);
+  void outputTournaments() {
+    std::cout << "Available Tournaments:\n" << std::endl;
+    for (Tournament &tournament : tournaments) {
+      std::cout << tournament.getName() << ": " <<
+      tournament.getAverageStats().first << " - " <<
+      tournament.getAverageStats().second <<std::endl;
+    }
   }
-
-  void removeUpcomingMatch(const Match &match) {
-    // Логика удаления матча из списка предстоящих матчей
-    // ...
-  }
-
-  std::vector<Match> getUpcomingMatches() const {
-    return upcomingMatches;
-  }
-
   // Другие методы стадиона
 };
 
-class PlayerMarket {
-  private:
-  std::vector<Player> availablePlayers;
-
-  public:
-  PlayerMarket() {
-    generateAvailablePlayers();
-  }
-
-  void generateAvailablePlayers() {
-    availablePlayers.clear();
-    for (int i = 0; i < 10; i++)
-      availablePlayers.push_back(Player::generateRandomPlayer());
-  }
-
-  void displayAvailablePlayers() const {
-    for (const Player &player: availablePlayers) {
-      std::cout << "Name: " << player.getName() << ", Speed: "
-                << player.getSpeed()
-                << ", Shooting Accuracy: " << player.getShootingAccuracy()
-                << ", Stamina: " << player.getStamina() << std::endl;
-    }
-  }
-
-  void purchasePlayer(int playerIndex, Team &team) {
-    if (playerIndex >= 0 && playerIndex < availablePlayers.size()) {
-      Player purchasedPlayer = availablePlayers[playerIndex];
-      team.addPlayer(purchasedPlayer);
-
-      // Удаление приобретенного игрока из доступных игроков на рынке
-      availablePlayers.erase(availablePlayers.begin() + playerIndex);
-      std::cout << "Player " << purchasedPlayer.getName()
-                << " purchased successfully!" << std::endl;
-    } else {
-      std::cout << "Invalid player index." << std::endl;
-    }
-  }
-};
-
 class PlayerTeam : public Team {
-  private:
+private:
   int money;
   int gamesWon;
   int gamesLost;
 
-  public:
-  PlayerTeam(const std::string &teamName)
-    : Team(teamName), money(100000), gamesWon(0), gamesLost(0) {}
+public:
+  PlayerTeam(int teamMoney)
+          : Team(""), money(teamMoney), gamesWon(0), gamesLost(0) {}
 
-  int getMoney() const {
+  [[nodiscard]] int getMoney() {
     return money;
   }
 
-  int getGamesWon() const {
+  [[nodiscard]] int getGamesWon() {
     return gamesWon;
   }
 
-  int getGamesLost() const {
+  [[nodiscard]] int getGamesLost() {
     return gamesLost;
   }
 
@@ -360,78 +378,124 @@ class PlayerTeam : public Team {
   void increaseGamesLost() {
     gamesLost++;
   }
-
-  // ...
 };
 
+PlayerTeam player(10000);    // Создание объекта команды игрока
+Stadium stadium();
 
-void clearConsole()
-{
-  std::system("cls");
+class PlayerMarket {
+private:
+  static std::vector<Player> availablePlayers;
+
+public:
+  PlayerMarket() {
+    generateAvailablePlayers();
+  }
+
+  void generateAvailablePlayers() {
+    availablePlayers.clear();
+    for (int i = 0; i < 10; i++)
+      availablePlayers.push_back(Player::generateRandomPlayer());
+  }
+
+  static void displayAvailablePlayers() {
+    for (const Player &availablePlayer: availablePlayers) {
+      std::cout << "Name: " << availablePlayer.getName()
+                << ", Speed: " << availablePlayer.getSpeed()
+                << ", Accuracy: " << availablePlayer.getShootingAccuracy()
+                << ", Stamina: " << availablePlayer.getStamina()
+                << ", Price: " << availablePlayer.getPrice() << std::endl;
+    }
+  }
+
+  static void purchasePlayer(int playerIndex, Team &team) {
+    if (playerIndex >= 0 && playerIndex < availablePlayers.size()) {
+      Player purchasedPlayer = availablePlayers[playerIndex];
+      if (purchasedPlayer.getPrice() <= player.getMoney()) {
+        team.addPlayer(purchasedPlayer);
+
+        // Удаление приобретенного игрока из доступных игроков на рынке
+        availablePlayers.erase(availablePlayers.begin() + playerIndex);
+        std::cout << "Player " << purchasedPlayer.getName()
+                  << " purchased successfully!" << std::endl;
+      } else {
+        std::cout << "Недостаточно денег.\n" << std::endl;
+      }
+    } else {
+      std::cout << "Invalid player index.\n" << std::endl;
+    }
+  }
+};
+
+//void clearConsole() {
+//  std::system("cls");
+//}
+
+void menuMain(std::string &menuName) {
+  std::cout << "Доступные команды:\n";
+  std::cout << "1. Рынок игроков\n";
+  std::cout << "2. Посмотреть турниры\n";
+  std::cout << "0. Выйти из программы\n";
+  std::cout << "Введите команду: ";
+
+  int choice;
+  std::cin >> choice;
+  clearConsole();
+  if (choice == 1) {
+    // Показать список доступных игроков
+    PlayerMarket::displayAvailablePlayers();
+    menuName = "market";
+  } else if (choice == 2) {
+    stadium().outputTournaments();
+    menuName = "tournaments";
+  } else if (choice == 0) {
+    // Выход из программы
+    std::cout << "Программа завершена.\n";
+    exit(0);
+  } else {
+    std::cout << "Неверный выбор команды. Попробуйте снова.\n";
+  }
+
+  std::cout << "\n";
 }
+
+//void menuMarket() {
+//  if (choice == 2) {
+//    // Покупка игрока
+//    std::cout << "Введите имя игрока, которого хотите купить: ";
+//    std::string playerName;
+//    std::cin >> playerName;
+//
+//    if (market.buyPlayer(playerName, myTeam)) {
+//      std::cout << "Игрок " << playerName << " успешно куплен!\n";
+//    } else {
+//      std::cout << "Ошибка: Игрок " << playerName << " не найден или недостаточно денег.\n";
+//    }
+//  } else if (choice == 3) {
+//    // Продажа игрока
+//    std::cout << "Введите имя игрока, которого хотите продать: ";
+//    std::string playerName;
+//    std::cin >> playerName;
+//
+//    if (myTeam.sellPlayer(playerName, market)) {
+//      std::cout << "Игрок " << playerName << " успешно продан!\n";
+//    } else {
+//      std::cout << "Ошибка: Игрок " << playerName << " не найден в вашей команде.\n";
+//    }
+//  }
+//}
+
 
 int main() {
   PlayerMarket market;  // Создание объекта рынка игроков
   std::cout << "Введите название вашей команды: ";
   std::string teamName;
   std::cin >> teamName;
-  PlayerTeam myTeam(teamName);    // Создание объекта команды игрока
 
   std::string menuName = "main";
   while (true) {
-    std::cout << "Доступные команды:\n";
-    std::cout << "1. Посмотреть список доступных игроков\n";
-    std::cout << "2. Купить игрока\n";
-    std::cout << "3. Продать игрока\n";
-    std::cout << "4. Записаться на турнир\n";
-    std::cout << "5. Выйти из программы\n";
-    std::cout << "Введите команду: ";
-
-    int choice;
-    std::cin >> choice;
-
-    if (choice == 1) {
-      // Показать список доступных игроков
-      market.displayAvailablePlayers();
-    } else if (choice == 2) {
-      // Покупка игрока
-      std::cout << "Введите имя игрока, которого хотите купить: ";
-      std::string playerName;
-      std::cin >> playerName;
-
-      if (market.buyPlayer(playerName, myTeam)) {
-        std::cout << "Игрок " << playerName << " успешно куплен!\n";
-      } else {
-        std::cout << "Ошибка: Игрок " << playerName << " не найден или недостаточно денег.\n";
-      }
-    } else if (choice == 3) {
-      // Продажа игрока
-      std::cout << "Введите имя игрока, которого хотите продать: ";
-      std::string playerName;
-      std::cin >> playerName;
-
-      if (myTeam.sellPlayer(playerName, market)) {
-        std::cout << "Игрок " << playerName << " успешно продан!\n";
-      } else {
-        std::cout << "Ошибка: Игрок " << playerName << " не найден в вашей команде.\n";
-      }
-    } else if (choice == 4) {
-      // Запись на турнир
-      Tournament tournament;  // Создание объекта турнира
-      tournament.addTeam(myTeam);  // Добавление команды игрока в турнир
-
-      std::cout << "Вы успешно записались на турнир!\n";
-      // Дополнительная логика для проведения турнира и отображения результатов
-      break;  // Выход из цикла
-    } else if (choice == 5) {
-      // Выход из программы
-      std::cout << "Программа завершена.\n";
-      break;  // Выход из цикла
-    } else {
-      std::cout << "Неверный выбор команды. Попробуйте снова.\n";
-    }
-
-    std::cout << "\n";
+    if (menuName == "main")
+      menuMain(menuName);
   }
 
   return 0;
