@@ -300,10 +300,15 @@ int main(int argc, char **argv) {
 //  std::cout << "Enter simplex table(with the names of basic "
 //               "variables) : \n";
   std::vector<std::string> a = {"x3", "x4", "x5", "z"};
-  std::vector<std::vector<double>> m = {{75, 9, 3, 1, 0, 0},
-                                        {-7, -6, 1, 0, 1, 0},
-                                        {18, 2, -10, 0, 0, 1},
-                                        {-29, -34, 10, 0, 0, 0}};
+  std::vector<std::vector<double>>
+//          m = {{110, 9,   4,  1, 0, 0},
+//               {-24, -11, 3,  0, 1, 0},
+//               {-15, -2,  7,  0, 0, 1},
+//               {0,   -7,  -1, 0, 0, 0}};
+  m = {{75, 9, 3, 1, 0, 0, 0},
+       {-7, -6, 1, 0, 1, 0},
+       {18, 2, -10, 0, 0, 1},
+       {-29, 34, 10, 0, 0, 0}};
   SimplexTable simplexTable(numberOfRows);
   for (size_t i{}; i < numberOfRows; ++i) {
 //    std::string basisVarName{};
@@ -316,8 +321,10 @@ int main(int argc, char **argv) {
     }
   }
   std::cout << std::setprecision(3);
-  double maxFunctValue{GomorysFirstAlgorithm(simplexTable,
-                                             integerVariables)};
+  double maxFunctValue{
+          GomorysFirstAlgorithm(simplexTable,
+                                integerVariables)
+  };
   std::cout << "Max function value = " << maxFunctValue <<
             ",\t";
   derivationOfTheOptimumPoint(simplexTable, integerVariables);

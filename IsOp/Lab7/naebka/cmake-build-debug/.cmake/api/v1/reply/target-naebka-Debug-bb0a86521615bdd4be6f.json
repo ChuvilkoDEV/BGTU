@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Code1.exe"
+			"path" : "naebka.exe"
 		},
 		{
-			"path" : "Code1.pdb"
+			"path" : "naebka.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "Code1::@6890427a1f51a3e7e1df",
+	"id" : "naebka::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Code1",
-	"nameOnDisk" : "Code1.exe",
+	"name" : "naebka",
+	"nameOnDisk" : "naebka.exe",
 	"paths" : 
 	{
 		"build" : ".",

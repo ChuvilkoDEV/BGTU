@@ -1,12 +1,10 @@
 #include <iostream>
-#include <algorithm>
 #include <string>
 #include <utility>
 #include <vector>
 #include <cstdlib> // Для генерации случайных чисел
 #include <ctime> // Для инициализации генератора случайных чисел
 #include <map>
-#include <cstdlib>
 #include <valarray>
 #include "windows.h"
 
@@ -108,6 +106,7 @@ public:
               << ", Price: " << price << std::endl;
   }
 };
+
 
 // Класс Команда
 class Team {
@@ -476,8 +475,6 @@ public:
   void printTeamInfo() {
     std::cout << "Team Name: " << getName() << std::endl;
     std::cout << "Money: " << getMoney() << std::endl;
-    std::cout << "Games Won: " << getGamesWon() << std::endl;
-    std::cout << "Games Lost: " << getGamesLost() << std::endl;
 
     std::cout << "Players:" << std::endl;
     for (int i = 0; i < players.size(); i++) {
