@@ -8,33 +8,32 @@ def find_matrices(data):
         for row in matrix_rows:
             row_values = list(map(int, row.split()))  # Преобразуем элементы строки в числа
             matrix.append(row_values)
-
-        row_sums = [sum(row) for row in matrix]  # Вычисляем суммы элементов в каждой строке
-
+        matching_matrices.insert(matrix)
     return matching_matrices
 
 
 # Пример входных данных
 input_data = '''
-1 2 3
-4 5 6
-7 8 9
+1 1 1 2
+3 1 1 4
+2 1 5 3
 
-1 2 3
-4 5 6
-7 8 10
+1 1 1 2
+3 1 3 4
+2 1 5 3
 
-2 2
-2 2
-
-1 2 3
-4 5 6
+1 2 1 1
+1 2 1 5
+1 1 5 4
 '''
 
-matching_matrices = find_matching_matrices(input_data)
+matching_matrices = find_matrices(input_data)
 
 # Вывод результатов
 print("Matching Matrices:")
+matrixSums = []
 for matrix in matching_matrices:
-    print(matrix)
-    print()
+    row_sums = [sum(row) for row in matrix]  # Вычисляем суммы элементов в каждой строке
+    matrixSums.append(row_sums)
+
+print(matrixSums)

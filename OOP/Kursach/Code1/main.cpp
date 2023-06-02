@@ -43,23 +43,23 @@ public:
 
   // Геттеры и сеттеры для атрибутов игрока
 
-  std::string getName() const {
+  [[nodiscard]] std::string getName() const {
     return name;
   }
 
-  int getPrice() const {
+  [[nodiscard]] int getPrice() const {
     return price;
   }
 
-  int getSpeed() const {
+  [[nodiscard]] int getSpeed() const {
     return speed;
   }
 
-  int getShootingAccuracy() const {
+  [[nodiscard]] int getShootingAccuracy() const {
     return shootingAccuracy;
   }
 
-  int getStamina() const {
+  [[nodiscard]] int getStamina() const {
     return stamina;
   }
 
@@ -107,7 +107,6 @@ public:
   }
 };
 
-
 // Класс Команда
 class Team {
 protected:
@@ -116,9 +115,9 @@ protected:
   std::vector<std::string> matchResults;
 
 public:
-  Team() {}
+  Team() = default;
 
-  Team(std::string teamName)
+  explicit Team(std::string teamName)
           : name(std::move(teamName)) {}
 
   // Метод для добавления игрока в команду
@@ -128,11 +127,11 @@ public:
 
   // Методы для получения информации о команде и игроках
 
-  std::string getName() const {
+  [[nodiscard]] std::string getName() const {
     return name;
   }
 
-  std::vector<Player> getPlayers() const {
+  [[nodiscard]] std::vector<Player> getPlayers() const {
     return players;
   }
 
@@ -531,15 +530,25 @@ public:
   }
 };
 
-class UserInterface {
+class UserInteraction {
+private:
+  static UserInteraction *instance;  // Статический указатель на единственный экземпляр класса
+
+  UserInteraction() {}  // Приватный конструктор для предотвращения прямого создания объектов
+
 public:
   std::string menuName;
-  PlayerTeam player;    // Создание объекта команды игрока
+  PlayerTeam player;
   Stadium stadium;
   PlayerMarket market;
   Tournament tournament;
 
-  UserInterface() {}
+  static UserInteraction *getInstance() {
+    if (!instance) {
+      instance = new UserInteraction();
+    }
+    return instance;
+  }
 
   void menuMain() {
     std::cout << "Доступные команды:\n";
@@ -643,7 +652,7 @@ public:
     int choice;
     std::cin >> choice;
     if (choice > 0 && choice <= stadium.getTournaments().size()) {
-      tournament = stadium.getTournaments()[choice];
+      tournament = stadium.getTournaments()[choice - 1];
       std::cout << "Вы записаны на турнир в Лигу: " << tournament.getName() << std::endl;
       menuName = "match";
     } else {
@@ -685,24 +694,25 @@ public:
   }
 };
 
+// Инициализация статического указателя на ноль
+UserInteraction* UserInteraction::instance = nullptr;
 
 int main() {
   SetConsoleOutputCP(CP_UTF8);
   std::cout << "Введите название вашей команды: ";
   std::string teamName;
   std::cin >> teamName;
-  UserInterface userInterface;
-  userInterface.menuName = "main";
-  userInterface.player.setTeamName(teamName);
+  UserInteraction::getInstance()->menuName = "main";
+  UserInteraction::getInstance()->player.setTeamName(teamName);
 
   while (true) {
-    if (userInterface.menuName == "main")
-      userInterface.menuMain();
-    else if (userInterface.menuName == "market")
-      userInterface.menuMarket();
-    else if (userInterface.menuName == "tournaments")
-      userInterface.menuTournaments();
-    else if (userInterface.menuName == "match")
-      userInterface.menuMatch();
+    if (UserInteraction::getInstance()->menuName == "main")
+      UserInteraction::getInstance()->menuMain();
+    else if (UserInteraction::getInstance()->menuName == "market")
+      UserInteraction::getInstance()->menuMarket();
+    else if (UserInteraction::getInstance()->menuName == "tournaments")
+      UserInteraction::getInstance()->menuTournaments();
+    else if (UserInteraction::getInstance()->menuName == "match")
+      UserInteraction::getInstance()->menuMatch();
   }
 }
