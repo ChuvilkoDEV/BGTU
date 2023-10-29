@@ -1,3 +1,0 @@
-D:/BGTU/codeforce/1154c/cmake-build-debug/CMakeFiles/1154c.dir
-D:/BGTU/codeforce/1154c/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/BGTU/codeforce/1154c/cmake-build-debug/CMakeFiles/rebuild_cache.dir

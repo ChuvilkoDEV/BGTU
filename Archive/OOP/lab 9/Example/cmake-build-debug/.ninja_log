@@ -1,7 +1,0 @@
-# ninja log v5
-0	2237	7055370078684954	CMakeFiles/Example.dir/Task.cpp.obj	c48b2ae88a14cbf8
-24	2745	7055370083800655	CMakeFiles/Example.dir/Executor.cpp.obj	66262cfe3eeebd4f
-6	2892	7055370085249438	CMakeFiles/Example.dir/TaskQueue.cpp.obj	8975c26c693b6b86
-12	2929	7055370085559183	CMakeFiles/Example.dir/main.cpp.obj	919033cc3c3c5bb6
-18	2966	7055370086138703	CMakeFiles/Example.dir/MainTaskQueue.cpp.obj	9063ae39d0735e15
-2966	3493	7055370091259737	Example.exe	49aa908f199f8306

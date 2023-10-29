@@ -1,3 +1,0 @@
-D:\BGTU\OOP\lab 1\Code\3\3\Debug\3.vcxproj.AssemblyReference.cache
-D:\BGTU\OOP\lab 1\Code\3\3\Debug\My3.MyForm.resources
-D:\BGTU\OOP\lab 1\Code\3\3\Debug\3.vcxproj.GenerateResource.cache

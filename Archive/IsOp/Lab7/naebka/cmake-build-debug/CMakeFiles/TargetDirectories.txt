@@ -1,3 +1,0 @@
-C:/BGTU/BGTU/IsOp/Lab7/naebka/cmake-build-debug/CMakeFiles/naebka.dir
-C:/BGTU/BGTU/IsOp/Lab7/naebka/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/BGTU/BGTU/IsOp/Lab7/naebka/cmake-build-debug/CMakeFiles/rebuild_cache.dir

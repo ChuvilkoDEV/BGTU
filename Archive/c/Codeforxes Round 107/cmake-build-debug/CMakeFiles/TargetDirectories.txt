@@ -1,3 +1,0 @@
-D:/BGTU/c/Codeforxes Round 107/cmake-build-debug/CMakeFiles/Codeforxes_Round_107.dir
-D:/BGTU/c/Codeforxes Round 107/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/BGTU/c/Codeforxes Round 107/cmake-build-debug/CMakeFiles/rebuild_cache.dir

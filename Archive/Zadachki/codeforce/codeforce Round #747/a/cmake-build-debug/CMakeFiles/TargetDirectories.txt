@@ -1,3 +1,0 @@
-D:/BGTU/codeforce/codeforce Round #747/a/cmake-build-debug/CMakeFiles/a.dir
-D:/BGTU/codeforce/codeforce Round #747/a/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/BGTU/codeforce/codeforce Round #747/a/cmake-build-debug/CMakeFiles/rebuild_cache.dir

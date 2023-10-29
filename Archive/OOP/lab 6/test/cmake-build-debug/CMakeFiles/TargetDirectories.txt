@@ -1,3 +1,0 @@
-D:/BGTU/OOP/lab 6/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/BGTU/OOP/lab 6/test/cmake-build-debug/CMakeFiles/test.dir
-D:/BGTU/OOP/lab 6/test/cmake-build-debug/CMakeFiles/edit_cache.dir

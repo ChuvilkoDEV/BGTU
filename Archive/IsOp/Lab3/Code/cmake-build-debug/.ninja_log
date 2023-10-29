@@ -1,8 +1,0 @@
-# ninja log v5
-7	710	7056191420323993	CMakeFiles/Code.dir/main.cpp.obj	38e610ae9ff70c4b
-3	160	7056191636238550	CMakeFiles/Code.dir/simplexTable.cpp.obj	49ea1b74af4191c2
-10	709	7056191641703931	CMakeFiles/Code.dir/main.cpp.obj	38e610ae9ff70c4b
-709	1003	7056191644491596	Code.exe	f31650cec38d6653
-4	167	7056193540339238	CMakeFiles/Code.dir/simplexTable.cpp.obj	49ea1b74af4191c2
-9	634	7056193545115223	CMakeFiles/Code.dir/main.cpp.obj	38e610ae9ff70c4b
-634	871	7056193547403274	Code.exe	f31650cec38d6653

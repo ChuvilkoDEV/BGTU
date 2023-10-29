@@ -1,3 +1,0 @@
-D:/BGTU/OOP/lab 2/Code/cmake-build-debug/CMakeFiles/Code.dir
-D:/BGTU/OOP/lab 2/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/BGTU/OOP/lab 2/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-C:/BGTU/BGTU/VicMat/Lab4/Example/Code/cmake-build-debug/CMakeFiles/Code.dir
-C:/BGTU/BGTU/VicMat/Lab4/Example/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/BGTU/BGTU/VicMat/Lab4/Example/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir

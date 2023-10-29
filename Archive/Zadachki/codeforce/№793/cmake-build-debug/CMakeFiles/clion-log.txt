@@ -1,1 +1,0 @@
-CMakeLists.txt not found in D:\BGTU\codeforce\№793 Select CMakeLists.txt

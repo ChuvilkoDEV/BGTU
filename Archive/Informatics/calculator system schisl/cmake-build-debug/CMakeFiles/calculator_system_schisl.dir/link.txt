@@ -1,3 +1,0 @@
-"D:\Programms\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\calculator_system_schisl.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe cr CMakeFiles\calculator_system_schisl.dir/objects.a @CMakeFiles\calculator_system_schisl.dir\objects1.rsp
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\calculator_system_schisl.dir/objects.a -Wl,--no-whole-archive -o calculator_system_schisl.exe -Wl,--out-implib,libcalculator_system_schisl.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\calculator_system_schisl.dir\linklibs.rsp

@@ -1,3 +1,0 @@
-C:/BGTU/BGTU/Archive/Programming Basics/DisMatProgramm/1.4/cmake-build-debug/CMakeFiles/1_4.dir
-C:/BGTU/BGTU/Archive/Programming Basics/DisMatProgramm/1.4/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/BGTU/BGTU/Archive/Programming Basics/DisMatProgramm/1.4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

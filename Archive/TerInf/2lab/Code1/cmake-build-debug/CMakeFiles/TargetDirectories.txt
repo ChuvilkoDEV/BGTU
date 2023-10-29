@@ -1,3 +1,0 @@
-D:/BGTU/TerInf/2lab/Code1/cmake-build-debug/CMakeFiles/Code1.dir
-D:/BGTU/TerInf/2lab/Code1/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/BGTU/TerInf/2lab/Code1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

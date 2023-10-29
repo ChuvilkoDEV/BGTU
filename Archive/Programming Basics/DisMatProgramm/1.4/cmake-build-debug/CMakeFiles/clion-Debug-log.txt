@@ -1,1 +1,0 @@
-CMakeLists.txt not found in C:\BGTU\BGTU\Archive\Programming Basics\DisMatProgramm\1.4 Select CMakeLists.txt
