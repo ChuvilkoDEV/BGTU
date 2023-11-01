@@ -1,0 +1,13 @@
+# Target labels
+ json-populate
+# Source files and their labels
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/CMakeFiles/json-populate
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/CMakeFiles/json-populate.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/CMakeFiles/json-populate-complete.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-build.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-configure.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-download.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-install.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-mkdir.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-patch.rule
+D:/BGTU/TA/lab1/Example/cmake-build-debug/_deps/json-subbuild/json-populate-prefix/src/json-populate-stamp/json-populate-test.rule

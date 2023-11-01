@@ -1,0 +1,10 @@
+"C:\Program Files\JetBrains\CLion 2023.1.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.1.1/bin/ninja/win/x64/ninja.exe" -G Ninja -S D:\BGTU\TA\lab1\Example -B D:\BGTU\TA\lab1\Example\cmake-build-debug
+CMake Error at C:/Program Files/JetBrains/CLion 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1199 (message):
+  No content details recorded for json
+Call Stack (most recent call first):
+  C:/Program Files/JetBrains/CLion 2023.1.1/bin/cmake/win/x64/share/cmake-3.25/Modules/FetchContent.cmake:1685 (__FetchContent_getSavedDetails)
+  CMakeLists.txt:17 (FetchContent_Populate)
+
+
+-- Configuring incomplete, errors occurred!
+See also "D:/BGTU/TA/lab1/Example/cmake-build-debug/CMakeFiles/CMakeOutput.log".

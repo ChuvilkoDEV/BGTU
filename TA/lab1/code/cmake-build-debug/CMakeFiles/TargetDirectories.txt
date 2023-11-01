@@ -1,0 +1,6 @@
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/GrammaParser.dir
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/GrammaScanner.dir
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/TreeBuilder.dir
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/code.dir
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/TA/lab1/code/cmake-build-debug/CMakeFiles/rebuild_cache.dir

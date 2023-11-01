@@ -12,10 +12,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED)
 include(FetchContent)
 set(FETCHCONTENT_UPDATES_DISCONNECTED TRUE)
 
-FetchContent_Declare(json
-  GIT_REPOSITORY https://github.com/nlohmann/json
-  GIT_TAG v3.11.2
-)
 FetchContent_GetProperties(json)
 if(NOT json_POPULATED)
   FetchContent_Populate(json)
@@ -34,3 +30,5 @@ target_link_libraries(TreeBuilder GrammaScanner)
 
 add_executable(ta1 main.cpp)
 target_link_libraries(ta1 PRIVATE GrammaParser GrammaScanner TreeBuilder)
+
+
