@@ -1,0 +1,9 @@
+# ninja log v5
+1	1058	7216685794785940	CMakeFiles/formula.dir/main.cpp.obj	abb16c94c0c7e23f
+1063	1545	7216685799582545	formula.exe	8e56487b90a47bce
+8	746	7216687027782270	CMakeFiles/formula.dir/main.cpp.obj	abb16c94c0c7e23f
+747	1084	7216687031122070	formula.exe	8e56487b90a47bce
+8	612	7216687330715281	CMakeFiles/formula.dir/main.cpp.obj	abb16c94c0c7e23f
+613	915	7216687333697099	formula.exe	8e56487b90a47bce
+5	680	7216687550458082	CMakeFiles/formula.dir/main.cpp.obj	abb16c94c0c7e23f
+681	930	7216687552952129	formula.exe	8e56487b90a47bce

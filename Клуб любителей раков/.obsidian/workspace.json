@@ -1,0 +1,160 @@
+{
+  "main": {
+    "id": "51a51baa3d51057c",
+    "type": "split",
+    "children": [
+      {
+        "id": "bf0b354db9a4ca8e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7bbb3fc4b3ab46d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "534aea431c09d3b8",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "17601ad6464d127a",
+    "type": "split",
+    "children": [
+      {
+        "id": "b5735722642a05fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "581caefdd4bf970d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "907a1872752fa2b8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "42428d1b688ad346",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3cfbdfafca4373cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "00d07ca8f415c4f4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a5e439462749d76",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a463a12269fc979d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bd2b4c9c53355bfc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ae4207bf02bb2990",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "534aea431c09d3b8",
+  "lastOpenFiles": [
+    "огурчики.md",
+    "пикули.md",
+    "элитные пикули.md",
+    "Корнишонная.md",
+    "корнишон.md",
+    "рассол.md",
+    "корнишоны.md"
+  ]
+}

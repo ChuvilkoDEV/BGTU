@@ -1,0 +1,3 @@
+D:/BGTU/ABC/lab3/formula/cmake-build-debug/CMakeFiles/formula.dir
+D:/BGTU/ABC/lab3/formula/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/BGTU/ABC/lab3/formula/cmake-build-debug/CMakeFiles/rebuild_cache.dir
