@@ -106,6 +106,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
     rotate(cursor, angle);
     // Вращаем и рисуем 4 фигуры
     for (int i = 0; i < 4; ++i) {
+        painter.setBrush(QBrush(QColor(Qt::black)));
         rotate(cursor, 45);
         painter.drawRect(cursor.x() - figureSize /1.41/ 2, cursor.y() - figureSize /1.41/ 2, figureSize/ 1.41, figureSize/1.41);
 
@@ -118,7 +119,7 @@ void MainWindow::paintEvent(QPaintEvent *event)
 
 void MainWindow::rotatePoint()
 {
-    angle += 5; // Угол вращения
+    angle += 1; // Угол вращения
     update(); // Перерисовать окно
 }
 

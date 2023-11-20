@@ -8,13 +8,40 @@ INCLUDE user32.inc
 INCLUDE msvcrt.inc
 
 .DATA
-    f DW -5
-    g DD 1000
-    h DB 2
+    f DW ?
+    g DD ?
+    h DB ?
     result DD 0
+    fmtDD db "%d", 0
+    fmtDW db "%hd", 0
+    fmtDB db "%hhd", 0
+	fmtOut db "%hd * %d + %hd / (10^6 * %hhd) - %d^3 / %hhd^2 = %d", 0
 
 .CODE
 START:
+	; lea eax, x = mov eax, offset x; offset - адрес x
+
+    lea eax, f
+    push eax
+    lea eax, fmtDD
+    push eax
+    call crt_scanf
+    add esp, 2*4
+	
+	lea eax, g
+    push eax
+    lea eax, fmtDW
+    push eax
+    call crt_scanf
+    add esp, 2*4
+	
+	lea eax, h
+    push eax
+    lea eax, fmtDB
+    push eax
+    call crt_scanf
+    add esp, 2*4
+
     ; f * g
     MOV AX, f
     CWDE
@@ -24,7 +51,9 @@ START:
     ; (f * g) / (10^6 * h)
     MOV EAX, 1000000
     IMUL h
-    CDQ   
+	CBW
+	CWDE
+    CDQ
     IDIV result
     MOV result, EAX
 
@@ -36,13 +65,32 @@ START:
     MOVZX ECX, h
     CDQ
     IDIV ECX
-	CDQ
+    CDQ
     IDIV ECX
 
     ; (f * g) / (10^6 * h) - f^3 / h^2
     SUB result, EAX
-	
-	mov EAX, result
+
+ ; (f * g) / (10^6 * h) - f^3 / h^2
+    ; Вывод результата
+    movzx eax, dword ptr [f]
+    push eax
+    movzx eax, g
+    push eax
+    movzx eax, f
+    push eax
+    movzx eax, h
+    push eax
+    movzx eax, g
+    push eax
+    movzx eax, h
+    push eax
+	movzx eax, result
+    push eax
+    lea eax, fmtOut
+    push eax
+    call crt_printf
+    add esp, 8*4
 
     ; Exit the program
     PUSH 0
